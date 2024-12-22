@@ -1,53 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cyprien Bons - CV</title>
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body>
-    <header>
+<header>
+    <div class="header">
+        <div class="carre"></div>
         <h1>Cyprien Bons</h1>
-        <p>Étudiant en Informatique</p>
-        <img src="img/cyprien.jpg" alt="Photo of Cyprien Bons" style="width:150px;height:auto;">
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <section id="experiences">
-        <h2>Expériences Professionnelles</h2>
-        <div>
-            <h3>CCBTA</h3>
-            <p>Agent de propreté urbaine, Bellegarde (30)</p>
-            <p>Juillet / Août 2024</p>
-            <p>Cette expérience m'a permis de découvrir le monde professionnel, d'apprendre à travailler en équipe et d'accomplir mes tâches de manière efficace et autonome.</p>
+        <div>/ Étudiant en Informatique</div>
+    </div>
+    <div class="header2">
+        <a href="http://localhost:63342/Site-Web/index.html">
+            <p class="actuel">À PROPOS DE MOI</p>
+        </a>
+        <a href="http://localhost:63342/Site-Web/cv.html">
+            <p>CV</p>
+        </a>
+        <a href="http://localhost:63342/Site-Web/projets.html">
+            <p>PROJETS</p>
+        </a>
+        <a href="http://localhost:63342/Site-Web/contact.html">
+            <p>CONTACT</p>
+        </a>
+    </div>
+</header>
+<body style="margin: 0">
+<div class="bodyprofil">
+    <div class="left">
+        <div class="profil">
+            <div style="box-shadow: 10px 10px rgba(0,0,0,0.1);">
+                <div class="profil1" >
+                    <img src="css/img/cyprien.jpg" alt="Photo de profil" class="imgprofil">
+                    <p style="font-size: 27px; font-family: 'poppins-semibold', sans-serif;"><Strong>Cyprien<br>Bons</Strong></p>
+                    <div class="trait"></div>
+                    <p>Étudiant en Informatique</p>
+                </div>
+                <div class="profilicon">
+                    <a href="https://www.linkedin.com/in/cyprien-bons/">
+                        <img src="css/img/linkedin.svg" alt="Linkedin" style="width: 25px;">
+                    </a>
+                    <a href="https://www.instagram.com/cypri1.bons/">
+                        <img src="css/img/instagram.svg" alt="Instagram" style="width: 25px;">
+                    </a>
+                </div>
+            </div>
+            <div style="text-align: left; padding-left: 30px">
+                <p style="font-size: 100px; font-family: 'poppins-semibold', sans-serif;"><strong>Hello</strong></p>
+                <h1>Qui je suis et ce que je fais</h1>
+                <div style="display: flex; padding: 30px; gap: 30px; text-align: center">
+                    <a href="http://localhost:63342/Site-Web/cv.html" class="bonton1">
+                        <p>CV</p>
+                    </a>
+                    <a href="http://localhost:63342/Site-Web/cv.html" class="bonton2">
+                        <p>PROJETS</p>
+                    </a>
+                </div>
+                <p>
+                    Actuellement étudiant en deuxième année de BUT Informatique, je suis à la recherche d’un stage de 10
+                    à 12 semaines débutant le 13 janvier 2025. Ce stage représente pour moi une opportunité de mettre en
+                    pratique mes compétences dans un cadre professionnel stimulant.
+                </p>
+            </div>
         </div>
-    </section>
-    <section id="education">
-        <h2>Diplômes et Formations</h2>
-        <div>
-            <h3>Lycée Emmanuel d’Alzon Nîmes (30)</h3>
-            <p>Admis Mention Assez Bien</p>
-            <p>2019 - 2023</p>
-            <p>BAC technologique STI2D</p>
-        </div>
-        <div>
-            <h3>IUT Montpellier</h3>
-            <p>En cours de formation</p>
-            <p>2023 - 2026</p>
-            <p>BUT Informatique</p>
-        </div>
-    </section>
-    <footer>
-        <p>Email: <a href="mailto:pro.bons.cyprien@gmail.com">pro.bons.cyprien@gmail.com</a></p>
-        <p>Phone: +07 68 51 20 06</p>
-        <p>Address: 91 Impasse Villehardouin, 34090 Montpellier</p>
-        <p>Permis B</p>
-    </footer>
+    </div>
+</div>
 </body>
+<footer>
+    <div class="footer">
+        <div>
+            <p>@2024 par Cyprien Bons</p>
+        </div>
+        <div class="footer2">
+            <div>
+                <h2>Tel</h2>
+                <p>07 68 51 20 06</p>
+            </div>
+            <div>
+                <h2>Email</h2>
+                <p>pro.bons.cyprien@gmail.com</p>
+            </div>
+            <div>
+                <h2>En ligne</h2>
+                <div style="display: flex; justify-content: space-evenly;">
+                    <a href="https://www.linkedin.com/in/cyprien-bons/">
+                        <img src="css/img/linkedin.svg" alt="Linkedin" style="width: 18px;">
+                    </a>
+                    <a href="https://www.instagram.com/cypri1.bons/">
+                        <img src="css/img/instagram.svg" alt="Instagram" style="width: 18px;">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
 </html>
