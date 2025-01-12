@@ -280,3 +280,10 @@ header {
     top: 0;
     left: 0;
 }
+
+/* Escalade */
+.sectionEscalade {
+    justify-content: center;
+    padding: 10px 0;
+    margin: 20px;
+}
