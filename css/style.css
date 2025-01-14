@@ -117,6 +117,68 @@ header {
     color: #0050FF;
 }
 
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.burger-menu span {
+    display: block;
+    height: 3px;
+    background-color: black;
+    border-radius: 5px;
+}
+
+/* Menu déroulant */
+.burger-nav {
+    display: none;
+    position: absolute;
+    top: 70px; /* Ajuste selon la hauteur de votre header */
+    right: 20px;
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    flex-direction: column;
+    z-index: 999;
+}
+
+.burger-nav a {
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px solid #eee;
+}
+
+.burger-nav a:last-child {
+    border-bottom: none;
+}
+
+.burger-nav a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Affichage pour les petits écrans */
+@media (max-width: 850px) {
+    .header2 {
+        display: none; /* Cache le menu principal */
+    }
+
+    .burger-menu {
+        display: flex; /* Affiche le bouton burger */
+    }
+
+    .burger-nav.active {
+        display: flex; /* Affiche le menu burger lorsqu'il est actif */
+    }
+}
+
 /* Footer */
 
 .footer {
@@ -435,17 +497,5 @@ header {
         flex-direction: column;
         align-items: center;
     }
-
-    .idframe {
-        display: inline;
-        padding: 20px;
-        justify-content: center;
-    }
-}
-
-.idframe {
-    display: flex;
-    padding: 20px;
-    justify-content: center;
 }
 
