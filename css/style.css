@@ -436,8 +436,16 @@ header {
         align-items: center;
     }
 
-    idframe {
-        width: 100%;
+    .idframe {
+        display: inline;
+        padding: 20px;
+        justify-content: center;
     }
+}
+
+.idframe {
+    display: flex;
+    padding: 20px;
+    justify-content: center;
 }
 
