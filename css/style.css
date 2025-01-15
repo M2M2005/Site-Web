@@ -369,6 +369,12 @@ header {
     margin: 20px;
 }
 
+.idframe {
+    display: flex;
+    padding: 20px;
+    justify-content: center;
+}
+
 /* Responsive */
 
 .resWidth {
@@ -659,7 +665,7 @@ header {
     }
 
     .profil2 {
-        padding-left: 15px;
+        padding-left: 20px;
     }
 
     .imgprofil {
