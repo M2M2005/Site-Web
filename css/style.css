@@ -115,7 +115,7 @@ p {
     display: flex;
     margin: 20px 0;
     background-color: white;
-    box-shadow: 10px 10px rgba(0,0,0,0.1);
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Header */
@@ -250,6 +250,11 @@ header {
     padding: 30px 50px;
 }
 
+.profil2 {
+    text-align: left;
+    padding-left: 30px;
+}
+
 .imgprofil {
     position: relative;
     width: 205px;
@@ -272,8 +277,13 @@ header {
     padding: 10px 50px;
 }
 
-.titre {
+.titreprofil {
     font-size: 100px;
+    font-family: 'poppins-semibold', sans-serif;
+}
+
+.titreprofil2 {
+    font-size: 27px;
     font-family: 'poppins-semibold', sans-serif;
 }
 
@@ -321,6 +331,10 @@ header {
 
 .competencecv2 {
     padding: 10px 0;
+}
+
+.secret {
+    color: white;
 }
 
 /* Projet */
@@ -430,13 +444,21 @@ header {
         padding: 25px 45px;
     }
 
+    .profil2 {
+        padding-left: 25px;
+    }
+
     .imgprofil {
         width: 160px;
         height: 160px;
     }
 
-    .titre {
+    .titreprofil {
         font-size: 70px;
+    }
+
+    .titreprofil2 {
+        font-size: 25px;
     }
 
     .bontonindex {
@@ -456,6 +478,104 @@ header {
     .sectioncv3 {
         margin: 0;
         padding: 10px;
+    }
+}
+
+@media (max-width: 550px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer2 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section {
+        flex-direction: column;
+    }
+
+    .image-container {
+        width: 100%;
+        height: 250px;
+    }
+
+    .sectionprojet1 {
+        min-width: 100%;
+        max-width: 100%;
+    }
+
+    .sectioncv2 {
+        margin: 0;
+        padding: 10px 10px 10px 10px;
+    }
+
+    .sectioncv3 {
+        margin: 0;
+        padding: 0 10px 10px 10px;
+    }
+
+    .competencecv {
+        padding: 0;
+    }
+
+    .competencecv2 {
+        padding: 5px;
+    }
+
+    .secret {
+        font-size: 0;
+        margin: 0;
+    }
+
+    .bodyprofil {
+        display: block;
+        height: 100%;
+    }
+
+    .profil {
+        right: 0;
+        padding: 10px;
+    }
+
+    .left {
+        width: 100%;
+        background-color: #FFFFFF;
+    }
+
+    .profil1 {
+        padding: 10px 10px;
+    }
+
+    .profil2 {
+        padding-left: 20px;
+    }
+
+    .imgprofil {
+        width: 100px;
+        height: 100px;
+    }
+
+    .titreprofil {
+        font-size: 40px;
+    }
+
+    .titreprofil2 {
+        font-size: 20px;
+    }
+
+    .bontonindex {
+        padding: 10px 10px;
+        gap: 10px;
+    }
+
+    .profilicon {
+        gap: 10px;
+    }
+
+    .footer {
+        padding: 10px 0;
     }
 }
 
@@ -519,11 +639,6 @@ header {
         width: 110px;
     }
 
-    .bontonindex {
-        padding: 10px 10px;
-        gap: 10px;
-    }
-
     .resWidth {
         width: 100%;
     }
@@ -537,86 +652,37 @@ header {
     h1. {
         font-size: 10px;
     }
-}
 
-@media (max-width: 550px) {
-    .footer {
-        flex-direction: column;
-        align-items: center;
+    .bontonindex {
+        padding: 10px 0;
+        gap: 5px;
     }
 
-    .footer2 {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .section {
-        flex-direction: column;
-    }
-
-    .image-container {
-        width: 100%;
-        height: 250px;
-    }
-
-    .sectionprojet1 {
-        min-width: 100%;
-        max-width: 100%;
-    }
-
-    .sectioncv2 {
-        margin: 0;
-        padding: 10px 0 10px 10px;
-    }
-
-    .sectioncv3 {
-        margin: 0;
-        padding: 0 0 10px 10px;
-    }
-
-    .competencecv {
-        padding: 0;
-    }
-
-    .bodyprofil {
-        display: block;
-        height: 100%;
-    }
-
-    .profil {
-        right: 0;
-        padding: 10px;
-    }
-
-    .left {
-         width: 100%;
-        background-color: #FFFFFF;
-     }
-
-    .profil1 {
-        padding: 10px 10px;
+    .profil2 {
+        padding-left: 15px;
     }
 
     .imgprofil {
-        width: 100px;
-        height: 100px;
+        width: 80px;
+        height: 80px;
     }
 
-    .titre {
-        font-size: 40px;
+    .profil2 .bonton1 {
+        height: 20px;
+        width: 60px;
     }
 
-    .bontonindex {
-        padding: 10px 10px;
-        gap: 10px;
+    .profil2 .bonton2 {
+        height: 20px;
+        width: 60px;
     }
 
-    .profilicon {
-        gap: 10px;
+    .sectioncv2 {
+        width: 100%;
     }
 
-    .footer {
-        padding: 10px 0;
+    .sectioncv3 {
+        width: 100%;
     }
 }
 
