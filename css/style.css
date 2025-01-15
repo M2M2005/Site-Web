@@ -92,6 +92,13 @@ p {
     color: white;
 }
 
+.section {
+    display: flex;
+    margin: 20px 0;
+    background-color: white;
+    box-shadow: 10px 10px rgba(0,0,0,0.1);
+}
+
 /* Header */
 
 header {
@@ -264,13 +271,6 @@ header {
     background-color: #E6DACE;
 }
 
-.section {
-    display: flex;
-    margin: 20px 0;
-    background-color: white;
-    box-shadow: 10px 10px rgba(0,0,0,0.1);
-}
-
 .bonton3 {
     background-color: #0050FF;
     color: white;
@@ -330,7 +330,7 @@ header {
 
 .image-container {
     width: 600px;
-    height: 400px; /* Ajuste selon ton besoin */
+    height: 400px;
     position: relative;
 }
 
@@ -478,7 +478,7 @@ header {
 }
 
 @media (max-width: 400px) {
-    header {
+    .header {
         flex-direction: column;
     }
 
@@ -496,6 +496,20 @@ header {
     .footer2 {
         flex-direction: column;
         align-items: center;
+    }
+
+    .section {
+        flex-direction: column;
+    }
+
+    .image-container {
+        width: 100%;
+        height: 250px;
+    }
+
+    .sectionprojet1 {
+        min-width: 100%;
+        max-width: 100%;
     }
 }
 
