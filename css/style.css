@@ -92,6 +92,25 @@ p {
     color: white;
 }
 
+.bonton3 {
+    background-color: #0050FF;
+    color: white;
+    height: 40px;
+    width: 160px;
+    border: 1px solid #0050FF;
+    border-radius: 100px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+}
+
+.bonton3:hover {
+    background-color: white;
+    border-color: black;
+    color: black;
+}
+
 .section {
     display: flex;
     margin: 20px 0;
@@ -219,13 +238,6 @@ header {
     align-items: center;
 }
 
-@media (max-width: 1000px) {
-    .left {
-        width: 393px;
-        flex: none;
-    }
-}
-
 .profil {
     position: relative;
     right: -30vw;
@@ -260,6 +272,18 @@ header {
     padding: 10px 50px;
 }
 
+.titre {
+    font-size: 100px;
+    font-family: 'poppins-semibold', sans-serif;
+}
+
+.bontonindex {
+    display: flex;
+    padding: 30px;
+    gap: 30px;
+    text-align: center
+}
+
 /* CV */
 
 .cvprojet {
@@ -269,25 +293,6 @@ header {
     flex-direction: column;
     padding: 30px 0;
     background-color: #E6DACE;
-}
-
-.bonton3 {
-    background-color: #0050FF;
-    color: white;
-    height: 40px;
-    width: 160px;
-    border: 1px solid #0050FF;
-    border-radius: 100px;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    display: flex;
-}
-
-.bonton3:hover {
-    background-color: white;
-    border-color: black;
-    color: black;
 }
 
 .sectioncv2 {
@@ -412,8 +417,45 @@ header {
         width: 120px;
     }
 
+    .bonton3 {
+        height: 30px;
+        width: 120px;
+    }
+
     .resWidth {
         width: 100%;
+    }
+
+    .profil1 {
+        padding: 25px 45px;
+    }
+
+    .imgprofil {
+        width: 160px;
+        height: 160px;
+    }
+
+    .titre {
+        font-size: 70px;
+    }
+
+    .bontonindex {
+        padding: 20px 10px;
+        gap: 15px;
+    }
+
+    .section {
+        justify-content: space-between;
+    }
+
+    .sectioncv2 {
+        margin: 0;
+        padding: 10px;
+    }
+
+    .sectioncv3 {
+        margin: 0;
+        padding: 10px;
     }
 }
 
@@ -463,13 +505,23 @@ header {
     }
 
     .bonton1 {
+        height: 20px;
+        width: 80px;
+    }
+
+    .bonton2 {
+        height: 20px;
+        width: 80px;
+    }
+
+    .bonton3 {
         height: 25px;
         width: 110px;
     }
 
-    .bonton2 {
-        height: 25px;
-        width: 110px;
+    .bontonindex {
+        padding: 10px 10px;
+        gap: 10px;
     }
 
     .resWidth {
@@ -510,6 +562,61 @@ header {
     .sectionprojet1 {
         min-width: 100%;
         max-width: 100%;
+    }
+
+    .sectioncv2 {
+        margin: 0;
+        padding: 10px 0 10px 10px;
+    }
+
+    .sectioncv3 {
+        margin: 0;
+        padding: 0 0 10px 10px;
+    }
+
+    .competencecv {
+        padding: 0;
+    }
+
+    .bodyprofil {
+        display: block;
+        height: 100%;
+    }
+
+    .profil {
+        right: 0;
+        padding: 10px;
+    }
+
+    .left {
+         width: 100%;
+        background-color: #FFFFFF;
+     }
+
+    .profil1 {
+        padding: 10px 10px;
+    }
+
+    .imgprofil {
+        width: 100px;
+        height: 100px;
+    }
+
+    .titre {
+        font-size: 40px;
+    }
+
+    .bontonindex {
+        padding: 10px 10px;
+        gap: 10px;
+    }
+
+    .profilicon {
+        gap: 10px;
+    }
+
+    .footer {
+        padding: 10px 0;
     }
 }
 
