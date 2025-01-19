@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <header>
-    <a href="../../CompetitionEscalade/escalade.html" class="header">
+    <a href="../escalade.html" class="header">
         <div style="display: flex; align-items: center">
             <div class="carre"></div>
             <h1>Compétition Escalade</h1>
@@ -16,7 +16,7 @@
         <div>/ COBEscalade</div>
     </a>
     <div class="header2">
-        <a href="../../CompetitionEscalade/escalade.html" class="actuel">Liste</a>
+        <a href="../escalade.html">Liste</a>
     </div>
     <!-- Bouton burger -->
     <div class="burger-menu" id="burger-menu">
@@ -26,24 +26,18 @@
     </div>
     <!-- Menu déroulant pour le burger -->
     <nav class="burger-nav" id="burger-nav">
-        <a href="../../CompetitionEscalade/escalade.html" class="actuel">Liste</a>
+        <a href="../escalade.html">Liste</a>
     </nav>
-    <script src="../../js/script.js"></script>
 </header>
 <body style="margin: 0;">
 <div class="cvprojet">
     <div class="resWidth">
         <div style="display: flex; align-items: center; justify-content: center">
             <div class="carre1"></div>
-            <p style="font-size: 35px; font-family: 'poppins-semibold', sans-serif;"><strong>Résultat UXM</strong>
-            </p>
+            <p style="font-size: 35px; font-family: 'poppins-semibold', sans-serif;"><strong>Résultats 2000</strong></p>
         </div>
-        <div class="idframe">
-            <iframe
-                    src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQsVs5IHhcXnbtouaQaL72c4ErO8fLRhnV6ZzbrE4p5mfQeVuP4hbxvFanr2s6w_2x8utI8gYqBbS8B/pubhtml?gid=385620086&amp;single=true&amp;widget=true&amp;headers=false"
-                    style="width: 315px; height: 750px; border: none; border-radius: 5px;">
-            </iframe>
-        </div>
+        <div id="results"></div>
+        <script src="../../js/script.js"> buttonFeuille(); </script>
     </div>
 </div>
 </body>

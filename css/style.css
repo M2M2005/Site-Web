@@ -369,14 +369,39 @@ header {
     margin: 20px;
 }
 
-.idframe {
-    display: flex;
-    padding: 20px;
-    justify-content: center;
+.sheet-button {
+    background-color: white;
+    border: none;
+    padding: 10px;
+    margin: 5px 0;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    font-size: 16px;
 }
 
-iframe {
+.sheet-button:hover {
+    background-color: #f2f2f2;
+}
+
+.sheet-container {
+    margin-bottom: 15px;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
     box-shadow: 10px 10px rgba(0,0,0,0.1);
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+tr {
+    background-color: white;
 }
 
 /* Responsive */
