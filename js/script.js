@@ -115,3 +115,79 @@ async function sheetDataResultat(sheetName, button, container, range) {
 window.addEventListener("DOMContentLoaded", () => {
     buttonFeuille();
 });
+
+async function generatePDF() {
+    const sheetName = "Topo";
+    const range = "A1:F65"; // Plage des données
+    const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${sheetName}!${range}?key=${API_KEY}`;
+
+    try {
+        // Récupérer les données depuis Google Sheets
+        const response = await fetch(url);
+        const data = await response.json();
+
+        if (!data.values || data.values.length === 0) {
+            console.error("Aucune donnée trouvée.");
+            return;
+        }
+
+        // Préparer le corps du tableau
+        const body = [
+            [
+                { text: "COULOIR", rowSpan: 2, style: "tableHeader", margin: [0, 10, 0, 10] },
+                { text: "COULEUR", rowSpan: 2, style: "tableHeader", margin: [0, 10, 0, 10] },
+                { text: "COTATION", rowSpan: 2, style: "tableHeader", margin: [0, 10, 0, 10] },
+                { text: "POINTS", colSpan: 2, style: "tableHeader" },
+                {},
+                { text: "JUGE", rowSpan: 2, style: "tableHeader", margin: [0, 10, 0, 10] },
+            ],
+            [
+                "",
+                "",
+                "",
+                { text: "ZONE", style: "tableHeader" },
+                { text: "TOP", style: "tableHeader" },
+                "",
+            ],
+        ];
+
+        // Ajouter les lignes du tableau avec les données
+        const rows = data.values.slice(1); // Ignorer les en-têtes de la feuille Google Sheets
+        rows.forEach(row => {
+            body.push(row);
+        });
+
+        // Définir le document PDF
+        const docDefinition = {
+            content: [
+                { text: "Challenge 2025", style: "header" },
+                {
+                    table: {
+                        headerRows: 2,
+                        widths: ["*", "*", "*", "*", "*", "*"],
+                        body: body,
+                    },
+                },
+            ],
+            styles: {
+                header: {
+                    fontSize: 20,
+                    bold: true,
+                    margin: [0, 10, 0, 10],
+                    alignment: "center",
+                },
+                tableHeader: {
+                    bold: true,
+                    alignment: "center",
+                    fillColor: "#f2f2f2",
+                },
+            },
+        };
+
+        pdfMake.createPdf(docDefinition).download("topo_escalade.pdf");
+    } catch (error) {
+        console.error("Erreur lors de la récupération des données :", error);
+    }
+}
+
+
