@@ -6,6 +6,8 @@
     <title>Compétition Résultat</title>
     <link rel="stylesheet" href="../../css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
 </head>
 <header>
     <a href="../escalade.html" class="header">
@@ -37,10 +39,13 @@
             <p style="font-size: 35px; font-family: 'poppins-semibold', sans-serif;"><strong>Résultats 2000</strong></p>
         </div>
         <div id="results"></div>
-        <script src="../../js/script.js"> buttonFeuille(); </script>
+    </div>
+    <div style="display: flex; padding: 10px 20px; gap: 20px">
+        <button onclick="generatePDF()">Générer le PDF</button>
     </div>
 </div>
 </body>
+<script src="../../js/script.js"> buttonFeuille(); </script>
 <footer>
     <div class="footer">
         <div>

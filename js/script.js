@@ -14,7 +14,6 @@ async function buttonFeuille() {
         }
 
         const resultsContainer = document.getElementById("results");
-        resultsContainer.innerHTML = "";
 
         // Feuille spécifique "RG"
         const filteredSheetsRG = data.sheets
@@ -35,7 +34,10 @@ async function buttonFeuille() {
         });
     } catch (error) {
         console.error("Erreur lors de la récupération des données :", error);
-        document.getElementById("results").innerText = "Erreur lors de la récupération des données.";
+        const resultsContainer = document.getElementById("results");
+        if (!resultsContainer) {
+            console.error("L'élément avec l'ID 'results' est introuvable.");
+        }
     }
 }
 
@@ -85,15 +87,13 @@ async function sheetDataResultat(sheetName, button, container, range) {
             const table = document.createElement("table");
 
             data.values.forEach(row => {
-                if (row[1]) { // Vérifie si la deuxième colonne est remplie
-                    const tr = document.createElement("tr");
-                    row.forEach(cell => {
-                        const td = document.createElement("td");
-                        td.textContent = cell;
-                        tr.appendChild(td);
-                    });
-                    table.appendChild(tr);
-                }
+                const tr = document.createElement("tr");
+                row.forEach(cell => {
+                    const td = document.createElement("td");
+                    td.textContent = cell || "";
+                    tr.appendChild(td);
+                });
+                table.appendChild(tr);
             });
 
             resultDiv.innerHTML = "";
@@ -122,16 +122,14 @@ async function generatePDF() {
     const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${sheetName}!${range}?key=${API_KEY}`;
 
     try {
-        // Récupérer les données depuis Google Sheets
         const response = await fetch(url);
         const data = await response.json();
 
-        if (!data.values || data.values.length === 0) {
-            console.error("Aucune donnée trouvée.");
+        if (!data || !data.values) {
+            console.error("Les données récupérées sont invalides :", data);
             return;
         }
 
-        // Préparer le corps du tableau
         const body = [
             [
                 { text: "COULOIR", rowSpan: 2, style: "tableHeader", margin: [0, 10, 0, 10] },
@@ -151,13 +149,35 @@ async function generatePDF() {
             ],
         ];
 
-        // Ajouter les lignes du tableau avec les données
-        const rows = data.values.slice(1); // Ignorer les en-têtes de la feuille Google Sheets
-        rows.forEach(row => {
-            body.push(row);
+        const rows = data.values.slice(0);
+        let previousRow = null;
+        let rowspanCount = 0;
+
+        rows.forEach((row, index) => {
+            if (row[2] !== "X") {
+                const formattedRow = [
+                    "",
+                    { text: row[1] || "", alignment: "center" },
+                    { text: row[2] || "", alignment: "center" },
+                    { text: row[3] || "", alignment: "center" },
+                    { text: row[4] || "", alignment: "center" },
+                    { text: row[5] || "", alignment: "center" },
+                ];
+
+                if (!previousRow || row[0] !== "") {
+                    formattedRow[0] = { text: row[0], alignment: "center", rowSpan: 1, margin: [0, 0, 0, 10] };
+                    rowspanCount = 1;
+                } else {
+                    rowspanCount++;
+                    body[body.length - rowspanCount +1][0].rowSpan = rowspanCount;
+                    body[body.length - rowspanCount +1][0].margin = [0, (rowspanCount - 1) * 10, 0, 10];
+                }
+
+                body.push(formattedRow);
+                previousRow = row;
+            }
         });
 
-        // Définir le document PDF
         const docDefinition = {
             content: [
                 { text: "Challenge 2025", style: "header" },
@@ -190,4 +210,10 @@ async function generatePDF() {
     }
 }
 
-
+// Burger menu
+const burgerMenu = document.getElementById('burger-menu'); // Le bouton burger
+const burgerNav = document.getElementById('burger-nav');   // Le menu qui sera affiché/masqué
+burgerMenu.addEventListener('click', () => {
+    burgerNav.classList.toggle('active');
+    burgerMenu.classList.toggle('open');
+});
