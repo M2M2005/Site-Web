@@ -116,12 +116,14 @@ async function sheetDataResultat(sheetName, button, container, range) {
                     }
                 });
 
-            resultDiv.innerHTML = "";
-            resultDiv.appendChild(table);
+                resultDiv.innerHTML = "";
+                resultDiv.appendChild(table);
+            }
         } catch (error) {
             console.error("Erreur lors de la récupération des données :", error);
             resultDiv.innerText = "Erreur lors de la récupération des données.";
         }
+
     } else {
         if (sheetName === "RG") {
             button.innerHTML = `► Résultat général`;
@@ -137,90 +139,73 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 async function generatePDF() {
-    const sheetName = "Topo";
-    const range = "A1:F65"; // Plage des données
-    const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${sheetName}!${range}?key=${API_KEY}`;
-
     try {
-        const response = await fetch(url);
-        const data = await response.json();
+        const body = await tableauTopo();
 
-        if (!data || !data.values) {
-            console.error("Les données récupérées sont invalides :", data);
-            return;
-        }
+        const point = await tableauPoint();
 
-        const body = [
+        const information = [
             [
-                { text: "COULOIR", rowSpan: 2, style: "tableHeader", margin: [0, 10, 0, 10] },
-                { text: "COULEUR", rowSpan: 2, style: "tableHeader", margin: [0, 10, 0, 10] },
-                { text: "COTATION", rowSpan: 2, style: "tableHeader", margin: [0, 10, 0, 10] },
-                { text: "POINTS", colSpan: 2, style: "tableHeader" },
-                {},
-                { text: "JUGE", rowSpan: 2, style: "tableHeader", margin: [0, 10, 0, 10] },
-            ],
-            [
-                "",
-                "",
-                "",
-                { text: "ZONE", style: "tableHeader" },
-                { text: "TOP", style: "tableHeader" },
-                "",
+                { text: "NOM :", style: "tableInfo" },
+                { text: "PRÉNOM :", style: "tableInfo" },
+                { text: "CATÉGORIE :", style: "tableInfo" },
+                { text: "GOÛTER :", style: "tableInfo" },
             ],
         ];
 
-        const rows = data.values.slice(0);
-        let previousRow = null;
-        let rowspanCount = 0;
-
-        rows.forEach((row, index) => {
-            if (row[2] !== "X") {
-                const formattedRow = [
-                    "",
-                    { text: row[1] || "", alignment: "center" },
-                    { text: row[2] || "", alignment: "center" },
-                    { text: row[3] || "", alignment: "center" },
-                    { text: row[4] || "", alignment: "center" },
-                    { text: row[5] || "", alignment: "center" },
-                ];
-
-                if (!previousRow || row[0] !== "") {
-                    formattedRow[0] = { text: row[0], alignment: "center", rowSpan: 1, margin: [0, 0, 0, 10] };
-                    rowspanCount = 1;
-                } else {
-                    rowspanCount++;
-                    body[body.length - rowspanCount +1][0].rowSpan = rowspanCount;
-                    body[body.length - rowspanCount +1][0].margin = [0, (rowspanCount - 1) * 10, 0, 10];
-                }
-
-                body.push(formattedRow);
-                previousRow = row;
-            }
-        });
-
         const docDefinition = {
             content: [
-                { text: "Challenge 2025", style: "header" },
+                {text: "Challenge 2025", style: "header"},
                 {
                     table: {
                         headerRows: 2,
-                        widths: ["*", "*", "*", "*", "*", "*"],
+                        widths: ["*", "*", "*", 20, 20, 20, 20, 20, 20, 20, "*"],
                         body: body,
+                    },
+                },
+                { text: " ", style: "saut" },
+                {
+                    table: {
+                        headerRows: 1,
+                        widths: [60, "*", "*", "*", "*", "*", "*", "*", "*", "*", "*", "*", "*", "*", "*", "*"],
+                        body: point,
+                    },
+                },
+                { text: " ", style: "saut" },
+                {
+                    table: {
+                        headerRows: 0,
+                        widths: ["*", "*", "*", "*"],
+                        heights: [40],
+                        body: information,
                     },
                 },
             ],
             styles: {
                 header: {
-                    fontSize: 20,
+                    fontSize: 18,
                     bold: true,
-                    margin: [0, 10, 0, 10],
+                    margin: [0, 0, 0, 10],
                     alignment: "center",
                 },
                 tableHeader: {
+                    fontSize: 7,
                     bold: true,
                     alignment: "center",
                     fillColor: "#f2f2f2",
                 },
+                tableBody: {
+                    fontSize: 5,
+                    alignment: "center",
+                    margin: [0, 0, 0, 0],
+                },
+                tableInfo: {
+                    fontSize: 10,
+                    bold: true,
+                },
+                saut: {
+                    fontSize: 5,
+                }
             },
         };
 
@@ -228,6 +213,130 @@ async function generatePDF() {
     } catch (error) {
         console.error("Erreur lors de la récupération des données :", error);
     }
+}
+
+async function tableauTopo() {
+    const sheetName = "Topo";
+    const range = "A1:K65";
+    const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${sheetName}!${range}?key=${API_KEY}`;
+    const response = await fetch(url);
+    const data = await response.json();
+
+    if (!data || !data.values) {
+        console.error("Les données récupérées sont invalides :", data);
+        return;
+    }
+
+    const body = [
+        [
+            {text: "COULOIR", rowSpan: 2, style: "tableHeader", margin: [0, 7, 0, 0]},
+            {text: "COULEUR", rowSpan: 2, style: "tableHeader", margin: [0, 7, 0, 0]},
+            {text: "COTATION", rowSpan: 2, style: "tableHeader", margin: [0, 7, 0, 0]},
+            {text: "POINTS", colSpan: 7, style: "tableHeader"},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {text: "JUGE", rowSpan: 2, style: "tableHeader", margin: [0, 7, 0, 0]},
+        ],
+        [
+            "",
+            "",
+            "",
+            {text: "1", style: "tableHeader"},
+            {text: "2", style: "tableHeader"},
+            {text: "3", style: "tableHeader"},
+            {text: "4", style: "tableHeader"},
+            {text: "5", style: "tableHeader"},
+            {text: "6", style: "tableHeader"},
+            {text: "TOP", style: "tableHeader"},
+            "",
+        ],
+    ];
+
+    const rows = data.values.slice(0);
+    let previousRow = null;
+    let rowspanCount = 0;
+
+    rows.forEach((row) => {
+        if (row[2] !== "X") {
+            const formattedRow = [
+                "",
+                {text: row[1] || "", alignment: "center", style: "tableBody"},
+                {text: row[2] || "", alignment: "center", style: "tableBody"},
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+            ];
+
+            if (!previousRow || row[0] !== "") {
+                formattedRow[0] = {
+                    text: row[0],
+                    alignment: "center",
+                    rowSpan: 1,
+                    margin: [0, 0, 0, 0],
+                    style: "tableBody"
+                };
+                rowspanCount = 1;
+            } else {
+                rowspanCount++;
+                body[body.length - rowspanCount + 1][0].rowSpan = rowspanCount;
+                body[body.length - rowspanCount + 1][0].margin = [0, (rowspanCount - 1) * 7, 0, 0];
+            }
+
+            if (String(row[8]).toLowerCase() === "x") {
+                formattedRow[8] = {text: "", style: "tableBody", fillColor: "#a5a3a3"};
+            }
+
+            body.push(formattedRow);
+            previousRow = row;
+        }
+    });
+
+    return body;
+}
+
+async function tableauPoint() {
+    const sheetName = "Point";
+    const range = "C7:R14";
+    const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${sheetName}!${range}?key=${API_KEY}`;
+    const response = await fetch(url);
+    const data = await response.json();
+
+    if (!data || !data.values) {
+        console.error("Les données récupérées sont invalides :", data);
+        return;
+    }
+
+    const body = [
+        [
+            {text: "POINTS", colSpan: 16, style: "tableHeader"},
+            {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {},
+        ],
+    ];
+
+    const rows = data.values.slice(0);
+    let previousRow = null;
+    let rowspanCount = 0;
+
+    rows.forEach((row) => {
+        const formattedRow = [];
+        row.forEach((cell, index) => {
+            formattedRow.push({text: cell || "", alignment: "center", style: "tableBody"});
+        });
+
+        body.push(formattedRow);
+        previousRow = row;
+    });
+
+    return body;
 }
 
 // Burger menu
