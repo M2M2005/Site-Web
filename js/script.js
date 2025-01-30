@@ -74,27 +74,47 @@ async function sheetDataResultat(sheetName, button, container, range) {
         }
         resultDiv.style.display = "block";
 
-        const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${sheetName}!${range}?key=${API_KEY}`;
         try {
-            const response = await fetch(url);
-            const data = await response.json();
+            let urlStatut;
+            if (sheetName === "RG") {
+                urlStatut = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${sheetName}!L2?key=${API_KEY}`;
+            } else {
+                urlStatut = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${sheetName}!D2?key=${API_KEY}`;
+            }
 
-            if (!data.values || data.values.length === 0) {
-                resultDiv.innerText = "Aucune donnée trouvée.";
+            const responseStatut = await fetch(urlStatut);
+            const dataStatut = await responseStatut.json();
+
+            if (!dataStatut.values || !dataStatut.values[0]) {
+                resultDiv.innerText = "Erreur : Impossible de récupérer le statut.";
                 return;
             }
 
-            const table = document.createElement("table");
+            if (dataStatut.values[0][0] === "FALSE") {
+                resultDiv.innerText = "Les résultats ne sont pas encore disponibles.";
+            } else {
+                const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${sheetName}!${range}?key=${API_KEY}`;
+                const response = await fetch(url);
+                const data = await response.json();
 
-            data.values.forEach(row => {
-                const tr = document.createElement("tr");
-                row.forEach(cell => {
-                    const td = document.createElement("td");
-                    td.textContent = cell || "";
-                    tr.appendChild(td);
+                if (!data.values || data.values.length === 0) {
+                    resultDiv.innerText = "Aucune donnée trouvée.";
+                    return;
+                }
+
+                const table = document.createElement("table");
+
+                data.values.forEach(row => {
+                    if (row.length !== 1) {
+                        const tr = document.createElement("tr");
+                        row.forEach(cell => {
+                            const td = document.createElement("td");
+                            td.textContent = cell || "";
+                            tr.appendChild(td);
+                        });
+                        table.appendChild(tr);
+                    }
                 });
-                table.appendChild(tr);
-            });
 
             resultDiv.innerHTML = "";
             resultDiv.appendChild(table);
