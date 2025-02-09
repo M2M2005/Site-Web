@@ -1,7 +1,6 @@
 const API_KEY = "AIzaSyCTdn9QwIBop7xelDyXuaOmtT1Qwi2hppY";
-const SHEET_ID = "1BXhP5J1tHUlvA_l8hit_4NZScHQOrTWrGBuT1j2iL-Q";
 
-async function buttonFeuille() {
+async function buttonFeuille(SHEET_ID) {
     const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}?key=${API_KEY}`;
 
     try {
@@ -52,7 +51,7 @@ function createSheetButton(sheetName, container, range) {
         button.innerHTML = `► ${sheetName}`;
     }
     button.className = "sheet-button";
-    button.onclick = () => sheetDataResultat(sheetName, button, sheetContainer, range);
+    button.onclick = () => sheetDataResultat(sheetName, button, sheetContainer, range, SHEET_ID);
 
     const resultDiv = document.createElement("div");
     resultDiv.className = "sheet-results";
@@ -63,7 +62,7 @@ function createSheetButton(sheetName, container, range) {
     container.appendChild(sheetContainer);
 }
 
-async function sheetDataResultat(sheetName, button, container, range) {
+async function sheetDataResultat(sheetName, button, container, range, SHEET_ID) {
     const resultDiv = container.querySelector(".sheet-results");
 
     if (resultDiv.style.display === "none") {
@@ -135,14 +134,14 @@ async function sheetDataResultat(sheetName, button, container, range) {
 }
 
 window.addEventListener("DOMContentLoaded", () => {
-    buttonFeuille();
+    buttonFeuille(SHEET_ID);
 });
 
-async function generatePDF() {
+async function generatePDF(SHEET_ID) {
     try {
-        const body = await tableauTopo();
+        const body = await tableauTopo(SHEET_ID);
 
-        const point = await tableauPoint();
+        const point = await tableauPoint(SHEET_ID);
 
         const information = [
             [
@@ -225,7 +224,7 @@ async function generatePDF() {
     }
 }
 
-async function tableauTopo() {
+async function tableauTopo(SHEET_ID) {
     const sheetName = "Topo";
     const range = "A1:K65";
     const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${sheetName}!${range}?key=${API_KEY}`;
@@ -313,7 +312,7 @@ async function tableauTopo() {
     return body;
 }
 
-async function tableauPoint() {
+async function tableauPoint(SHEET_ID) {
     const sheetName = "Point";
     const range = "C7:R14";
     const url = `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${sheetName}!${range}?key=${API_KEY}`;
