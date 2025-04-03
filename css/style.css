@@ -362,6 +362,10 @@ header {
     left: 0;
 }
 
+.image-projet {
+    width: 150px;
+}
+
 /* Escalade */
 .sectionEscalade {
     justify-content: center;
@@ -515,6 +519,10 @@ tr {
         margin: 0;
         padding: 10px;
     }
+
+    .image-projet {
+        width: 100px;
+    }
 }
 
 @media (max-width: 550px) {
@@ -612,6 +620,10 @@ tr {
 
     .footer {
         padding: 10px 0;
+    }
+
+    .image-projet {
+        width: 0;
     }
 }
 
