@@ -158,7 +158,7 @@ async function generatePDF(SHEET_ID) {
                 {
                     table: {
                         headerRows: 2,
-                        widths: ["*", "*", "*", 20, 20, 20, 20, 20, 20, 20, "*"],
+                        widths: ["*", "*", "*", 20, 20, 20, 20, 20, 20, "*"],
                         body: body,
                     },
                 },
@@ -241,8 +241,7 @@ async function tableauTopo(SHEET_ID) {
             {text: "COULOIR", rowSpan: 2, style: "tableHeader", margin: [0, 7, 0, 0]},
             {text: "COULEUR", rowSpan: 2, style: "tableHeader", margin: [0, 7, 0, 0]},
             {text: "COTATION", rowSpan: 2, style: "tableHeader", margin: [0, 7, 0, 0]},
-            {text: "POINTS", colSpan: 7, style: "tableHeader"},
-            {},
+            {text: "POINTS", colSpan: 6, style: "tableHeader"},
             {},
             {},
             {},
@@ -259,7 +258,6 @@ async function tableauTopo(SHEET_ID) {
             {text: "3", style: "tableHeader"},
             {text: "4", style: "tableHeader"},
             {text: "5", style: "tableHeader"},
-            {text: "6", style: "tableHeader"},
             {text: "TOP", style: "tableHeader"},
             "",
         ],
@@ -282,7 +280,6 @@ async function tableauTopo(SHEET_ID) {
                 "",
                 "",
                 "",
-                "",
             ];
 
             if (!previousRow || row[0] !== "") {
@@ -297,11 +294,7 @@ async function tableauTopo(SHEET_ID) {
             } else {
                 rowspanCount++;
                 body[body.length - rowspanCount + 1][0].rowSpan = rowspanCount;
-                body[body.length - rowspanCount + 1][0].margin = [0, (rowspanCount - 1) * 6, 0, 0];
-            }
-
-            if (String(row[8]).toLowerCase() === "x") {
-                formattedRow[8] = {text: "", style: "tableBody", fillColor: "#a5a3a3"};
+                body[body.length - rowspanCount + 1][0].margin = [0, (rowspanCount - 1) * 5, 0, 0];
             }
 
             body.push(formattedRow);
