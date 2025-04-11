@@ -19,7 +19,9 @@ h3 {
     margin: 5px;
     font-size: 20px;
     font-family: 'poppins-semibold', sans-serif;
-    color: #0050FF;
+    background: linear-gradient(to right, #0050FF, #7f3bcf) border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 a {
@@ -35,33 +37,32 @@ p {
 .carre {
     width: 16px;
     height: 16px;
-    background-color: #0050FF;
+    background: linear-gradient(to right, #0050FF, #7f3bcf) border-box;
 }
 
 .carre1 {
     width: 20px;
     height: 20px;
-    background-color: #0050FF;
+    background: linear-gradient(to right, #0050FF, #7f3bcf) border-box;
 }
 
 .carre2 {
     width: 13px;
     height: 13px;
-    background-color: #0050FF;
+    background: linear-gradient(to right, #0050FF, #7f3bcf) border-box;
 }
 
 .carre3 {
     width: 10px;
     height: 50px;
-    background-color: #0050FF;
+    background: linear-gradient(to bottom, #0050FF, #7f3bcf) border-box;
 }
 
 .bonton1 {
-    background-color: #0050FF;
+    background: linear-gradient(to right, #0050FF, #7f3bcf) border-box;
     color: white;
     height: 35px;
     width: 130px;
-    border: 1px solid #0050FF;
     border-radius: 100px;
     align-items: center;
     justify-content: center;
@@ -69,10 +70,8 @@ p {
     display: flex;
 }
 
-.bonton1:hover {
-    background-color: white;
-    border-color: black;
-    color: black;
+.bonton1:hover p {
+    font-size: 110%;
 }
 
 .bonton2 {
@@ -86,18 +85,15 @@ p {
     display: flex;
 }
 
-.bonton2:hover {
-    background-color: #0050FF;
-    border-color: #0050FF;
-    color: white;
+.bonton2:hover p {
+    font-size: 110%;
 }
 
 .bonton3 {
-    background-color: #0050FF;
+    background: linear-gradient(to right, #0050FF, #7f3bcf) border-box;
     color: white;
     height: 40px;
     width: 160px;
-    border: 1px solid #0050FF;
     border-radius: 100px;
     align-items: center;
     justify-content: center;
@@ -105,10 +101,8 @@ p {
     display: flex;
 }
 
-.bonton3:hover {
-    background-color: white;
-    border-color: black;
-    color: black;
+.bonton3:hover p {
+    font-size: 110%;
 }
 
 .section {
@@ -140,7 +134,9 @@ header {
 }
 
 .actuel {
-    color: #0050FF;
+    background: linear-gradient(to right, #0050FF, #7f3bcf) border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .burger-menu {
@@ -265,7 +261,7 @@ header {
 .trait {
     width: 50px;
     height: 2px;
-    background-color: #0050FF;
+    background: linear-gradient(to right, #0050FF, #7f3bcf) border-box;
     margin: 20px auto;
 }
 
@@ -374,47 +370,39 @@ header {
     margin: 0 10px
 }
 
-/* Escalade */
-.sectionEscalade {
-    justify-content: center;
-    padding: 10px 0;
-    margin: 20px;
-}
-
-.sheet-button {
-    background-color: white;
-    border: none;
+/* Apprentissage */
+.button-back-apprentissage {
     padding: 10px;
-    margin: 5px 0;
-    cursor: pointer;
-    text-align: left;
-    width: 100%;
-    font-size: 16px;
-    box-shadow: 10px 10px rgba(0,0,0,0.1);
+    background-color: #E6DACE;
 }
 
-.sheet-button:hover {
-    background-color: #f2f2f2;
+.section1-apprentissage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 0;
+    background-color: #E6DACE;
 }
 
-.sheet-container {
-    margin-bottom: 15px;
+.section2-apprentissage {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0;
+    width: 550px;
 }
 
-table {
-    border-collapse: collapse;
-    width: 100%;
-    margin-top: 20px;
-    box-shadow: 10px 10px rgba(0,0,0,0.1);
-}
+.section3-apprentissage {
+    width: 400px;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px;
 
-th, td {
-    border: 1px solid #ddd;
-    padding: 8px;
-}
-
-tr {
-    background-color: white;
+    border: 7px solid transparent;
+    background: linear-gradient(#F4ECE6, white) padding-box,
+    linear-gradient(to bottom, #E6DACE, #F4ECE6) border-box;
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
 }
 
 /* Responsive */
