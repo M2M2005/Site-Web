@@ -23,6 +23,7 @@ h3 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
 a {
     cursor: pointer;
     text-decoration: none;
@@ -42,36 +43,104 @@ p {
     background: linear-gradient(to bottom, #0050FF, #7f3bcf) border-box;
 }
 
-.size-10x50 { width: 10px; height: 50px; }
-.size-13x13 { width: 13px; height: 13px; }
-.size-16x16 { width: 16px; height: 16px; }
-.size-20x20 { width: 20px; height: 20px; }
+.size-10x50 {
+    width: 10px;
+    height: 50px;
+}
+
+.size-13x13 {
+    width: 13px;
+    height: 13px;
+}
+
+.size-16x16 {
+    width: 16px;
+    height: 16px;
+}
+
+.size-20x20 {
+    width: 20px;
+    height: 20px;
+}
 
 /* Utility Classes - Layout & Spacing */
-.d-flex { display: flex; }
-.align-items-center { align-items: center; }
-.justify-content-center { justify-content: center; }
-.justify-content-between { justify-content: space-between; }
-.justify-content-around { justify-content: space-around; }
-.justify-content-evenly { justify-content: space-evenly; }
-.m-0 { margin: 0; }
-.mt-50 { margin-top: 50px; }
-.p-0 { padding: 0; }
-.px-20 { padding-left: 20px; padding-right: 20px; }
-.p-5-15 { padding: 5px 15px; }
-.gap-10 { gap: 10px; }
+.d-flex {
+    display: flex;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.justify-content-around {
+    justify-content: space-around;
+}
+
+.justify-content-evenly {
+    justify-content: space-evenly;
+}
+
+.m-0 {
+    margin: 0;
+}
+
+.mt-50 {
+    margin-top: 50px;
+}
+
+.p-0 {
+    padding: 0;
+}
+
+.px-20 {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.p-5-15 {
+    padding: 5px 15px;
+}
+
+.gap-10 {
+    gap: 10px;
+}
 
 /* Utility Classes - Text */
-.font-semibold { font-family: 'poppins-semibold', sans-serif; }
-.font-normal { font-weight: normal; }
-.text-page-title { font-size: 35px; font-family: 'poppins-semibold', sans-serif; }
+.font-semibold {
+    font-family: 'poppins-semibold', sans-serif;
+}
+
+.font-normal {
+    font-weight: normal;
+}
+
+.text-page-title {
+    font-size: 35px;
+    font-family: 'poppins-semibold', sans-serif;
+}
 
 /* Utility Classes - Icons */
-.icon-sm { width: 18px; }
-.icon-md { width: 25px; }
+.icon-sm {
+    width: 18px;
+}
+
+.icon-md {
+    width: 25px;
+}
 
 /* Specific Utility Classes */
-.profile-card-shadow { box-shadow: 10px 10px rgba(0,0,0,0.1); height: 100%; }
+.profile-card-shadow {
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.1);
+    height: 100%;
+}
 
 /* Button Styles */
 .button {
@@ -383,6 +452,64 @@ header {
     margin: 0 10px
 }
 
+/* Contact */
+.contact-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.contact-form .form-group-line {
+    display: flex;
+    gap: 1rem;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 90%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: white;
+    transition: border-color 0.2s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+.contact-form button {
+    padding: 0.75rem 1.5rem;
+    background-color: #007BFF;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
 /* Apprentissage */
 .button-back-apprentissage {
     padding: 10px;
@@ -418,220 +545,205 @@ header {
     background-clip: padding-box, border-box;
 }
 
-/* Responsive - Styles pour adapter la mise en page sans changer l'apparence visuelle */
+/* Responsive */
 
-/* Styles pour le menu burger (regroupés et légèrement ajustés) */
+/* Menu burger*/
 .burger-menu {
-    display: none; /* Caché par défaut sur grand écran */
+    display: none;
     flex-direction: column;
     justify-content: space-between;
     width: 25px;
     height: 20px;
     cursor: pointer;
-    z-index: 1000; /* Assure qu'il est au-dessus des autres éléments */
+    z-index: 1000;
 }
 
 .burger-menu span {
     display: block;
     height: 3px;
-    background-color: black; /* Couleur des barres */
+    background-color: black;
     border-radius: 5px;
-    transition: all 0.3s ease-in-out; /* Animation douce pour la transformation */
+    transition: all 0.3s ease-in-out;
 }
 
 /* Styles pour le menu déroulant */
 .burger-nav {
-    display: none; /* Caché par défaut */
+    display: none;
     position: absolute;
-    top: 80px; /* Ajuster selon la hauteur du header + marge */
-    right: 50px; /* Aligner avec le padding du header */
+    top: 80px;
+    right: 50px;
     background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    overflow: hidden; /* Empêche le contenu de déborder */
+    overflow: hidden;
     flex-direction: column;
-    z-index: 999; /* Juste en dessous du bouton burger */
+    z-index: 999;
 }
 
 .burger-nav a {
-    padding: 12px 25px; /* Augmenter le padding pour une meilleure lisibilité */
-    text-align: left; /* Aligner le texte à gauche */
+    padding: 12px 25px;
+    text-align: left;
     text-decoration: none;
-    color: black; /* Assurer la couleur du texte */
-    border-bottom: 1px solid #eee; /* Séparateur léger */
-    transition: background-color 0.2s ease; /* Effet au survol */
+    color: black;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s ease;
 }
 
 .burger-nav a:last-child {
-    border-bottom: none; /* Pas de bordure pour le dernier élément */
+    border-bottom: none;
 }
 
 .burger-nav a:hover {
-    background-color: #f9f9f9; /* Léger fond au survol */
+    background-color: #f9f9f9;
 }
 
-/* Media Query pour afficher le burger et cacher le menu normal (Point de rupture existant) */
 @media (max-width: 850px) {
     .header2 {
-        display: none; /* Cache le menu de navigation standard */
+        display: none;
     }
 
     .burger-menu {
-        display: flex; /* Affiche le bouton burger */
+        display: flex;
     }
 
-    .burger-nav.active { /* La classe .active est ajoutée par JS */
-        display: flex; /* Affiche le menu déroulant */
+    .burger-nav.active {
+        display: flex;
     }
 
-    /* Optionnel: Animation du bouton burger en croix */
     .burger-menu.active span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
     }
+
     .burger-menu.active span:nth-child(2) {
         opacity: 0;
     }
+
     .burger-menu.active span:nth-child(3) {
         transform: rotate(-45deg) translate(5px, -5px);
     }
 }
 
-/* Points de rupture pour la responsivité (Layout uniquement) */
-
-/* Tablette et écrans intermédiaires */
 @media (max-width: 1024px) {
     header, .footer {
-        padding: 25px 30px; /* Réduire le padding horizontal */
-    }
-
-    .profil {
-        /* Ajustement de la position relative si nécessaire pour l'espacement */
-        /* Exemple: right: -35vw; ou utiliser flex/grid pour un meilleur contrôle */
-        /* Pour l'instant, on ne change pas 'right' pour éviter des effets imprévus */
+        padding: 25px 30px;
     }
 
     .profil1 {
-        padding: 25px 40px; /* Ajuster le padding interne de la carte */
+        padding: 25px 40px;
     }
 
     .profil2 {
-        padding-left: 25px; /* Ajuster l'espacement à gauche du texte */
+        padding-left: 25px;
     }
 
-    /* Empiler les sections génériques si elles sont côte à côte par défaut */
     .section {
         flex-direction: column;
-        align-items: center; /* Centrer les éléments empilés */
-        margin: 20px 15px; /* Ajuster les marges latérales */
+        align-items: center;
+        margin: 20px 15px;
     }
 
-    /* Ajuster la largeur des sections spécifiques pour qu'elles prennent plus de place */
     .sectionprojet1, .section2-apprentissage, .section3-apprentissage {
         width: 90%;
-        max-width: 600px; /* Limite max pour ne pas trop s'étirer */
-        min-width: initial; /* Retirer min-width fixe */
+        max-width: 600px;
+        min-width: initial;
         margin-left: auto;
         margin-right: auto;
     }
-     .sectioncv2, .sectioncv3, .sectioncv4 {
-        width: auto; /* Laisser la largeur s'adapter au contenu */
-        max-width: 90%; /* Limiter */
+
+    .sectioncv2, .sectioncv3, .sectioncv4 {
+        width: auto;
+        max-width: 90%;
         margin-left: auto;
         margin-right: auto;
     }
 
 
     .image-container {
-        width: 100%; /* Prendre toute la largeur de la section parente */
-        height: auto; /* Hauteur automatique basée sur le ratio */
-        padding-top: 60%; /* Ratio d'aspect (hauteur/largeur * 100) */
+        width: 100%;
+        height: auto;
+        padding-top: 60%;
     }
 
-    .resWidth { /* Si cette classe est encore utilisée */
+    .resWidth {
         width: 100%;
     }
-
-    /* Ajustements spécifiques CV pour 1024px (si nécessaire) */
-    /* Actuellement, les règles générales semblent suffisantes */
 }
 
-/* Petites tablettes et grands mobiles */
 @media (max-width: 768px) {
     header {
-        padding: 20px; /* Réduire encore le padding */
-        /* Garder flex-direction: row par défaut, mais ajuster si besoin */
-        /* justify-content: space-between; est déjà défini */
+        padding: 20px;
     }
 
-     .header a.header { /* Cibler le lien du logo/titre */
-        /* Ajuster la taille ou le wrapping si nécessaire */
-        flex-wrap: wrap; /* Permettre au texte de passer à la ligne */
-     }
-     .header a.header div:last-child { /* Cibler "/ Étudiant en Informatique" */
-        margin-left: 5px; /* Ajouter un peu d'espace */
-     }
+    .header a.header {
+        flex-wrap: wrap;
+    }
+
+    .header a.header div:last-child {
+        margin-left: 5px;
+    }
 
 
     .burger-nav {
-        right: 20px; /* Ajuster la position */
-        top: 70px; /* Ajuster la position verticale */
-        width: auto; /* Largeur automatique basée sur le contenu */
-        min-width: 200px; /* Largeur minimale pour la lisibilité */
+        right: 20px;
+        top: 70px;
+        width: auto;
+        min-width: 200px;
     }
 
     .footer {
         padding: 20px;
-        flex-direction: column; /* Empiler les éléments du footer */
-        align-items: center; /* Centrer le contenu */
+        flex-direction: column;
+        align-items: center;
         text-align: center;
     }
 
     .footer2 {
-        flex-direction: column; /* Empiler les infos de contact */
-        gap: 15px; /* Espace entre les infos */
-        margin-top: 20px; /* Espace avec le copyright */
-        width: 100%; /* Prendre toute la largeur */
-        align-items: center; /* Centrer les blocs d'info */
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px;
+        width: 100%;
+        align-items: center;
     }
-     .footer2 > div { /* Cibler les conteneurs directs (Tel, Email, En ligne) */
-        margin-bottom: 10px; /* Ajouter un espace en bas de chaque bloc */
-     }
-     .footer2 > div:last-child {
+
+    .footer2 > div {
+        margin-bottom: 10px;
+    }
+
+    .footer2 > div:last-child {
         margin-bottom: 0;
-     }
+    }
 
 
     .bodyprofil {
-        flex-direction: column; /* Empiler la section 'left' */
-        height: auto; /* Hauteur automatique */
+        flex-direction: column;
+        height: auto;
     }
 
     .left {
-        flex: 1; /* Prendre toute la largeur */
+        flex: 1;
         width: 100%;
-        background-color: white; /* Fond blanc pour la section profil sur mobile */
-        padding: 30px 0; /* Ajouter du padding vertical */
-        /* Retirer la couleur de fond #E6DACE si elle était sur .left */
+        background-color: white;
+        padding: 30px 0;
     }
 
     .profil {
-        position: static; /* Enlever le positionnement spécifique */
+        position: static;
         right: auto;
-        flex-direction: column; /* Empiler la carte de profil et le texte */
-        align-items: center; /* Centrer les éléments */
-        width: 90%; /* Limiter la largeur sur mobile */
-        max-width: 500px; /* Limite max */
-        margin: 0 auto; /* Centrer le conteneur */
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        max-width: 500px;
+        margin: 0 auto;
     }
 
     .profil1 {
-        margin-bottom: 30px; /* Espace entre la carte et le texte */
+        margin-bottom: 30px;
     }
 
     .profil2 {
-        padding-left: 0; /* Pas de padding à gauche */
-        text-align: center; /* Centrer le texte */
-        width: 100%; /* Prendre la largeur du conteneur .profil */
+        padding-left: 0;
+        text-align: center;
+        width: 100%;
     }
 
     .profile-card-shadow {
@@ -639,48 +751,50 @@ header {
     }
 
     .bontonindex {
-        justify-content: center; /* Centrer les boutons */
-        gap: 20px; /* Espacement entre les boutons */
-        flex-wrap: wrap; /* Permettre aux boutons de passer à la ligne */
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
     }
 
-    /* Ajustements pour les sections CV, Projets, Apprentissage */
     .section {
-        margin: 20px 10px; /* Marges latérales réduites */
-        padding: 20px; /* Ajouter un padding interne */
+        margin: 20px 10px;
+        padding: 20px;
     }
 
-    .sectioncv2, .sectioncv3, .sectioncv4 {
-        width: 100%; /* Pleine largeur dans la section */
-        max-width: 100%; /* S'assurer qu'ils ne dépassent pas */
-        margin: 15px 0; /* Espacement vertical, pas de marge latérale auto */
-        padding: 15px; /* Padding interne */
+    .sectioncv2,
+    .sectioncv3,
+    .sectioncv4 {
+        width: 100%;
+        max-width: 100%;
+        margin: 15px 0;
+        padding: 15px;
     }
 
     .sectionprojet1 {
-        padding: 20px; /* Padding interne */
+        padding: 20px;
         width: 100%;
         max-width: 100%;
     }
 
     .image-container {
-        padding-top: 66.66%; /* Maintenir le ratio 3:2 */
+        padding-top: 66.66%;
     }
 
     .bonton-container {
-        flex-direction: column; /* Empiler les boutons */
-        align-items: center; /* Centrer les boutons */
+        flex-direction: column;
+        align-items: center;
         gap: 15px;
-        width: 100%; /* Prendre toute la largeur */
+        width: 100%;
     }
 
-    /* Assurer que les boutons gardent une taille raisonnable */
-    .button-size-sm, .button-size-md {
-        width: 160px; /* Donner une largeur fixe ou max-width */
-        max-width: 80%; /* Limiter par rapport au conteneur */
+    .button-size-sm,
+    .button-size-md {
+        width: 160px;
+        max-width: 80%;
     }
 
-    .section1-apprentissage, .section2-apprentissage {
+    .section1-apprentissage,
+    .section2-apprentissage {
         padding: 20px;
         width: 100%;
         max-width: 100%;
@@ -693,142 +807,147 @@ header {
         margin: 15px 0;
     }
 
-    /* Ajustements spécifiques CV pour 768px */
-    .sectioncv2 h3, .sectioncv3 h3, .sectioncv4 h3 {
-        font-size: 18px; /* Réduire légèrement la taille des titres de section CV */
-    }
-    .competencecv {
-        padding: 10px 0; /* Réduire padding vertical */
-        /* Si l'icône et le texte doivent s'empiler: */
-        /* flex-direction: column; */
-        /* align-items: flex-start; */
-        /* gap: 5px; */
-    }
-    .sectioncv2, .sectioncv3, .sectioncv4 {
-        padding: 15px; /* Assurer un padding cohérent */
+    .sectioncv2 h3,
+    .sectioncv3 h3,
+    .sectioncv4 h3 {
+        font-size: 18px;
     }
 
-    /* Ajustements spécifiques index.html pour 768px */
+    .competencecv {
+        padding: 10px 0;
+    }
+
+    .sectioncv2,
+    .sectioncv3,
+    .sectioncv4 {
+        padding: 15px;
+    }
+
     .imgprofil {
-        width: 180px; /* Réduire taille image profil */
+        width: 180px;
         height: 180px;
     }
+
     .titreprofil {
-        font-size: 70px; /* Réduire taille titre principal */
+        font-size: 70px;
     }
+
     .titreprofil2 {
-        font-size: 22px; /* Réduire taille sous-titre */
+        font-size: 22px;
+    }
+
+    @media (max-width: 480px) {
+        header,
+        .footer {
+            padding: 15px;
+        }
+
+        .burger-nav {
+            width: calc(100% - 30px);
+            right: 15px;
+            top: 65px;
+        }
+
+        .profil {
+            width: 95%;
+        }
+
+        .profil1 {
+            padding: 20px;
+        }
+
+        .bontonindex {
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .button-size-sm,
+        .button-size-md {
+            width: 100%;
+            max-width: 220px;
+        }
+
+        .section {
+            margin: 15px 0;
+            padding: 15px;
+            box-shadow: none;
+            border-radius: 0;
+        }
+
+        .sectionprojet1,
+        .sectioncv2,
+        .sectioncv3,
+        .sectioncv4,
+        .section1-apprentissage,
+        .section2-apprentissage,
+        .section3-apprentissage {
+            width: 100%;
+            max-width: 100%;
+            padding-left: 10px;
+            padding-right: 10px;
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .image-container {
+            padding-top: 75%;
+        }
+
+        .bonton-container {
+            gap: 10px;
+        }
+
+        .imgprofil {
+            width: 150px;
+            height: 150px;
+        }
+
+        .titreprofil {
+            font-size: 50px;
+        }
+
+        .titreprofil2 {
+            font-size: 18px;
+        }
+
+        .sectioncv2 h3,
+        .sectioncv3 h3,
+        .sectioncv4 h3 {
+            font-size: 16px;
+        }
+
+        .competencecv {
+            padding: 8px 0;
+            align-items: center;
+        }
+
+        .sectioncv2,
+        .sectioncv3,
+        .sectioncv4 {
+            padding: 10px;
+        }
+
+        .sectioncv4 .d-flex.justify-content-around {
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+        }
+
+        .sectioncv4 .competencecv2 {
+            width: 100%;
+            padding: 5px 0;
+        }
+
+        .cvprojet > .resWidth > .d-flex.justify-content-end {
+            justify-content: center !important;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .cvprojet > .resWidth > .d-flex.justify-content-end .button-size-md {
+            width: 100%;
+            max-width: 250px;
+        }
     }
 }
-
-/* Mobiles */
-@media (max-width: 480px) {
-    header, .footer {
-        padding: 15px; /* Padding encore réduit */
-    }
-
-    .header a.header {
-        /* Le titre peut devenir trop long, ajuster si nécessaire */
-        /* Exemple: réduire la taille de h1 ou de la div "/ Étudiant..." via des classes spécifiques si besoin */
-    }
-
-    .burger-nav {
-        width: calc(100% - 30px); /* Prendre presque toute la largeur */
-        right: 15px;
-        top: 65px; /* Ajuster si la hauteur du header change */
-    }
-
-    .profil {
-        width: 95%; /* Utiliser encore plus de largeur */
-    }
-
-    .profil1 {
-         padding: 20px; /* Réduire le padding interne */
-    }
-
-    .imgprofil {
-        /* La taille est déjà définie, pas besoin de la changer ici sauf si souhaité */
-    }
-
-    .bontonindex {
-        flex-direction: column; /* Empiler les boutons */
-        gap: 15px; /* Espacement */
-        align-items: center; /* Centrer les boutons empilés */
-    }
-
-    .button-size-sm, .button-size-md {
-        width: 100%; /* Boutons pleine largeur */
-        max-width: 220px; /* Limiter la largeur max pour l'esthétique */
-    }
-
-    .section {
-        margin: 15px 0; /* Pas de marge horizontale */
-        padding: 15px; /* Padding interne */
-        box-shadow: none; /* Optionnel: supprimer l'ombre */
-        border-radius: 0; /* Optionnel: supprimer les coins arrondis */
-    }
-
-    /* Assurer que toutes les sections prennent toute la largeur */
-    .sectionprojet1, .sectioncv2, .sectioncv3, .sectioncv4, .section1-apprentissage, .section2-apprentissage, .section3-apprentissage {
-        width: 100%;
-        max-width: 100%;
-        padding-left: 10px; /* Petit padding latéral */
-        padding-right: 10px;
-        margin-left: 0;
-        margin-right: 0;
-    }
-
-    .image-container {
-        padding-top: 75%; /* Ajuster ratio si les images sont plus hautes sur mobile */
-    }
-
-     .bonton-container {
-        gap: 10px; /* Réduire l'espace entre les boutons empilés */
-     }
-
-   /* Ajustements spécifiques index.html pour 480px */
-   .imgprofil {
-       width: 150px; /* Réduire encore taille image profil */
-       height: 150px;
-   }
-   .titreprofil {
-       font-size: 50px; /* Réduire encore taille titre principal */
-   }
-   .titreprofil2 {
-       font-size: 18px; /* Réduire encore taille sous-titre */
-   }
-
-   /* Ajustements spécifiques CV pour 480px */
-   .sectioncv2 h3, .sectioncv3 h3, .sectioncv4 h3 {
-       font-size: 16px; /* Réduire davantage la taille des titres */
-   }
-   .competencecv {
-       padding: 8px 0; /* Réduire encore padding */
-       align-items: center; /* Centrer si icône et texte restent côte à côte */
-   }
-   .sectioncv2, .sectioncv3, .sectioncv4 {
-       padding: 10px; /* Réduire padding interne */
-   }
-
-   /* CV: Empiler les colonnes de compétences sur mobile */
-   .sectioncv4 .d-flex.justify-content-around {
-       flex-direction: column;
-       align-items: center; /* Centrer les colonnes empilées */
-       gap: 0; /* Réinitialiser le gap si nécessaire */
-   }
-   .sectioncv4 .competencecv2 {
-       width: 100%; /* Assurer que chaque colonne prend toute la largeur */
-       padding: 5px 0; /* Ajuster le padding si besoin */
-   }
-
-   /* CV: Centrer le bouton Télécharger CV sur mobile */
-   .cvprojet > .resWidth > .d-flex.justify-content-end {
-       justify-content: center !important; /* Forcer le centrage */
-       margin-top: 10px; /* Ajuster la marge */
-       margin-bottom: 10px;
-   }
-   .cvprojet > .resWidth > .d-flex.justify-content-end .button-size-md {
-        width: 100%; /* Bouton pleine largeur */
-        max-width: 250px; /* Limiter la largeur max */
-   }
-} /* Fin de @media (max-width: 480px) */

@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyprien Bons - À PROPOS DE MOI</title>
+    <title>Cyprien Bons - Contact</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" href="img/Logo_CB.png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
 <header>
     <a href="index.html" class="header">
         <div class="d-flex align-items-center">
@@ -17,64 +18,58 @@
         <div>/ Étudiant en Informatique</div>
     </a>
     <div class="header2">
-        <a href="index.html" class="actuel">À PROPOS DE MOI</a>
+        <a href="index.html">À PROPOS DE MOI</a>
         <a href="cv.html">CV</a>
         <a href="projets.html">PROJETS</a>
-        <a href="contact.html">CONTACT</a>
+        <a href="contact.html" class="actuel">CONTACT</a>
     </div>
-    <!-- Bouton burger -->
     <div class="burger-menu" id="burger-menu">
         <span></span>
         <span></span>
         <span></span>
     </div>
-    <!-- Menu déroulant pour le burger -->
     <nav class="burger-nav" id="burger-nav">
-        <a href="index.html" class="actuel">À PROPOS DE MOI</a>
+        <a href="index.html">À PROPOS DE MOI</a>
         <a href="cv.html">CV</a>
         <a href="projets.html">PROJETS</a>
-        <a href="contact.html">CONTACT</a>
+        <a href="contact.html" class="actuel">CONTACT</a>
     </nav>
     <script src="js/script.js"></script>
 </header>
 <body class="m-0">
-<div class="bodyprofil">
-    <div class="left">
-        <div class="profil">
-            <div class="profile-card-shadow">
-                <div class="profil1" >
-                    <img src="img/cyprien.jpg" alt="Photo de profil" class="imgprofil">
-                    <p class="titreprofil2"><Strong>Cyprien<br>Bons</Strong></p>
-                    <div class="trait"></div>
-                    <p>Étudiant en Informatique</p>
-                </div>
-                <div class="profilicon">
-                    <a href="https://www.linkedin.com/in/cyprien-bons/" target="_blank">
-                        <img src="img/linkedin.svg" alt="Linkedin" class="icon-md">
-                    </a>
-                    <a href="https://github.com/M2M2005" target="_blank">
-                        <img src="img/github.svg" alt="GitHub" class="icon-md">
-                    </a>
-                </div>
-            </div>
-            <div class="profil2">
-                <p class="titreprofil"><strong>Hello</strong></p>
-                <h1>Qui je suis et ce que je fais</h1>
-                <div class="bontonindex">
-                    <a href="cv.html" class="button button-primary button-size-sm">
-                        <p>CV</p>
-                    </a>
-                    <a href="projets.html" class="button button-secondary button-size-sm">
-                        <p>PROJETS</p>
-                    </a>
-                </div>
-                <p>
-                    Actuellement étudiant en deuxième année de BUT Informatique, je suis à la recherche d’une alternance à partir de maintenant. J’aimerais mettre à profit mes compétences et mon expérience auprès d’une entreprise afin de contribuer activement à ses projets tout en poursuivant ma formation.
-                </p>
-            </div>
+<main class="cvprojet">
+    <div class="contact-container">
+        <div class="d-flex align-items-center justify-content-center">
+            <div class="size-20x20 gradient-bg-right"></div>
+            <p class="text-page-title"><strong>Me contacter</strong></p>
         </div>
+        <form class="contact-form">
+            <div class="form-group-line">
+                <div class="form-group">
+                    <label for="prenom">Prénom</label>
+                    <input type="text" id="prenom" name="prenom" required>
+                </div>
+                <div class="form-group">
+                    <label for="nom">Nom</label>
+                    <input type="text" id="nom" name="nom" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Adresse mail</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="titre">Titre</label>
+                <input type="text" id="titre" name="titre" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="6" required></textarea>
+            </div>
+            <button type="submit" class="button button-primary">Envoyer</button>
+        </form>
     </div>
-</div>
+</main>
 </body>
 <footer>
     <div class="footer">
