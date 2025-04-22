@@ -626,14 +626,16 @@ header {
 
     .profil1 {
         margin-bottom: 30px; /* Espace entre la carte et le texte */
-        width: 100%; /* Prendre la largeur du conteneur .profil */
-        /* L'ombre vient de .profile-card-shadow, pas besoin de la redéfinir ici */
     }
 
     .profil2 {
         padding-left: 0; /* Pas de padding à gauche */
         text-align: center; /* Centrer le texte */
         width: 100%; /* Prendre la largeur du conteneur .profil */
+    }
+
+    .profile-card-shadow {
+        margin: 20px;
     }
 
     .bontonindex {
