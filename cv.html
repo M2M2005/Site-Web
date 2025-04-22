@@ -10,8 +10,8 @@
 </head>
 <header>
     <a href="index.html" class="header">
-        <div style="display: flex; align-items: center">
-            <div class="carre"></div>
+        <div class="d-flex align-items-center">
+            <div class="size-16x16 gradient-bg-right"></div>
             <h1>Cyprien Bons</h1>
         </div>
         <div>/ Étudiant en Informatique</div>
@@ -35,54 +35,35 @@
     </nav>
     <script src="js/script.js"></script>
 </header>
-<body style="margin: 0;">
+<body class="m-0">
 <div class="cvprojet">
     <div class="resWidth">
-        <div style="display: flex; align-items: center; justify-content: center">
-            <div class="carre1"></div>
-            <p style="font-size: 35px; font-family: 'poppins-semibold', sans-serif;"><strong>CV</strong></p>
+        <div class="d-flex align-items-center justify-content-center">
+            <div class="size-20x20 gradient-bg-right"></div>
+            <p class="text-page-title"><strong>CV</strong></p>
         </div>
-        <div style="display: flex; justify-content: space-between; margin: 20px;">
-            <h1>Formation</h1>
-            <a href="docs/CV_BONS.pdf" class="bonton3" target="_blank">
+        <div class="d-flex justify-content-end" style="margin: 20px;"> <!-- Titre Formation enlevé d'ici, justify-content-end pour aligner le bouton à droite -->
+            <a href="docs/CV_BONS.pdf" class="button button-primary button-size-md" target="_blank">
                 TÉLÉCHARGER CV
             </a>
         </div>
-        <div class="section">
-            <div class="sectioncv2">
-                <h3>2023 - Maintenant</h3>
-                <h2>Étudiant en Informatique</h2>
-                <h2 style="font-weight: normal">IUT Montpellier-Sète</h2>
-                <h2 style="font-weight: normal">Montpellier, France</h2>
-                <h2 style="font-weight: normal">En cours de formation</h2>
-                <br>
-                <div style="display: flex; justify-content: center;">
-                    <img class="image-projet" src="img/iut-Montpellier-cete.jpeg" alt="IUT - Montpellier - Cète">
-                </div>
-            </div>
-            <div class="sectioncv3">
-                <p>
-                    Étudiant à l'IUT Montpellier-Sète depuis 2023, je suis actuellement en deuxième année de BUT Informatique.
-                    Passionné par l'informatique et les nouvelles technologies, j'ai choisi cette formation pour acquérir des compétences solides en développement et en gestion des systèmes informatiques.
-                </p>
-                <p>
-                    J'ai opté pour l'option DACS afin de me spécialiser en cybersécurité et en programmation avancée.
-                </p>
-            </div>
+        <!-- SECTION EXPÉRIENCE -->
+        <div class="mt-50">
+            <h1>Expérience</h1>
         </div>
-        <div class="section">
+        <div class="section"> <!-- Stage Orchestra -->
             <div class="sectioncv2">
                 <h3>Février 2025 - Mars 2025</h3>
                 <h2>Stage - Software Engineer</h2>
-                <h2 style="font-weight: normal">Orchestra - TravelSoft</h2>
-                <h2 style="font-weight: normal">Paris, France</h2>
-                <h2 style="font-weight: normal">8 semaines</h2>
+                <h2 class="font-normal">Orchestra - TravelSoft</h2>
+                <h2 class="font-normal">Paris, France</h2>
+                <h2 class="font-normal">8 semaines</h2>
                 <br>
-                <a href="docs/Rapport_Stage_BONS_Orchestra_TravelSoft.pdf" class="bonton2" target="_blank">
-                    <p style="margin: 0;">Rapport</p>
+                <a href="docs/Rapport_Stage_BONS_Orchestra_TravelSoft.pdf" class="button button-secondary button-size-sm" target="_blank">
+                    <p class="m-0">Rapport</p>
                 </a>
                 <br>
-                <div style="display: flex; justify-content: center;">
+                <div class="d-flex justify-content-center">
                     <img class="image-projet" src="img/orchestra-plateforme.jpg" alt="Orchestra - TravelSoft">
                 </div>
             </div>
@@ -97,15 +78,41 @@
                 </p>
             </div>
         </div>
-        <div class="section">
+        <!-- SECTION FORMATION -->
+        <div class="mt-50">
+             <h1>Formation</h1>
+        </div>
+        <div class="section"> <!-- Formation IUT -->
+            <div class="sectioncv2">
+                <h3>2023 - Maintenant</h3>
+                <h2>Étudiant en Informatique</h2>
+                <h2 class="font-normal">IUT Montpellier-Sète</h2>
+                <h2 class="font-normal">Montpellier, France</h2>
+                <h2 class="font-normal">En cours de formation</h2>
+                <br>
+                <div class="d-flex justify-content-center">
+                    <img class="image-projet" src="img/iut-Montpellier-cete.jpeg" alt="IUT - Montpellier - Cète">
+                </div>
+            </div>
+            <div class="sectioncv3">
+                <p>
+                    Étudiant à l'IUT Montpellier-Sète depuis 2023, je suis actuellement en deuxième année de BUT Informatique.
+                    Passionné par l'informatique et les nouvelles technologies, j'ai choisi cette formation pour acquérir des compétences solides en développement et en gestion des systèmes informatiques.
+                </p>
+                <p>
+                    J'ai opté pour l'option DACS afin de me spécialiser en cybersécurité et en programmation avancée.
+                </p>
+            </div>
+        </div>
+        <div class="section"> <!-- Formation Bac -->
             <div class="sectioncv2">
                 <h3>2020 - 2023</h3>
                 <h2>Baccalauréat technologique STI2D</h2>
-                <h2 style="font-weight: normal">Lycée Emmanuel d’Alzon</h2>
-                <h2 style="font-weight: normal">Nîmes, France</h2>
-                <h2 style="font-weight: normal">Admis avec Mention Assez Bien</h2>
+                <h2 class="font-normal">Lycée Emmanuel d’Alzon</h2>
+                <h2 class="font-normal">Nîmes, France</h2>
+                <h2 class="font-normal">Admis avec Mention Assez Bien</h2>
                 <br>
-                <div style="display: flex; justify-content: center;">
+                <div class="d-flex justify-content-center">
                     <img class="image-projet" src="img/d'alzon.png" alt="D'Alzon Logo">
                 </div>
             </div>
@@ -122,98 +129,100 @@
                 </p>
             </div>
         </div>
-        <div style="margin-top: 50px">
+        <!-- SECTION COMPÉTENCES -->
+        <div class="mt-50">
             <h1>Compétences</h1>
         </div>
         <div class="section">
             <div class="sectioncv4">
-                <div style="justify-content: left;">
+                <div> <!-- style="justify-content: left;" n'est pas une propriété CSS valide -->
                     <h1>Langage de programmation</h1>
                 </div>
-                <div style="display: flex; justify-content: space-around;">
+                <div class="d-flex justify-content-around">
                     <div class="competencecv2">
                         <div class="competencecv">
-                            <div class="carre2"></div>
-                            <h2 style="font-weight: normal">HTML/CSS</h2>
+                            <div class="size-13x13 gradient-bg-right"></div>
+                            <h2 class="font-normal">HTML/CSS</h2>
                         </div>
                         <div class="competencecv">
-                            <div class="carre2"></div>
-                            <h2 style="font-weight: normal">PHP</h2>
+                            <div class="size-13x13 gradient-bg-right"></div>
+                            <h2 class="font-normal">PHP</h2>
                         </div>
                         <div class="competencecv">
-                            <div class="carre2"></div>
-                            <h2 style="font-weight: normal">Java / JavaFX</h2>
+                            <div class="size-13x13 gradient-bg-right"></div>
+                            <h2 class="font-normal">Java / JavaFX</h2>
                         </div>
                     </div>
                     <div class="competencecv2">
                         <div class="competencecv">
-                            <div class="carre2"></div>
-                            <h2 style="font-weight: normal">SQL / PL SQL</h2>
+                            <div class="size-13x13 gradient-bg-right"></div>
+                            <h2 class="font-normal">SQL / PL SQL</h2>
                         </div>
                         <div class="competencecv">
-                            <div class="carre2"></div>
-                            <h2 style="font-weight: normal">C</h2>
+                            <div class="size-13x13 gradient-bg-right"></div>
+                            <h2 class="font-normal">C</h2>
                         </div>
                     </div>
                 </div>
-                <div style="justify-content: left;">
+                <div> <!-- style="justify-content: left;" n'est pas une propriété CSS valide -->
                     <h1>Outils</h1>
                 </div>
-                <div style="display: flex; justify-content: space-around;">
+                <div class="d-flex justify-content-around">
                     <div class="competencecv2">
                         <div class="competencecv">
-                            <div class="carre2"></div>
-                            <h2 style="font-weight: normal">Suite Google</h2>
+                            <div class="size-13x13 gradient-bg-right"></div>
+                            <h2 class="font-normal">Suite Google</h2>
                         </div>
                         <div class="competencecv">
-                            <div class="carre2"></div>
-                            <h2 style="font-weight: normal">Jet Brain</h2>
+                            <div class="size-13x13 gradient-bg-right"></div>
+                            <h2 class="font-normal">Jet Brain</h2>
                         </div>
                     </div>
                     <div class="competencecv2">
                         <div class="competencecv">
-                            <div class="carre2"></div>
-                            <h2 style="font-weight: normal">GitHub</h2>
+                            <div class="size-13x13 gradient-bg-right"></div>
+                            <h2 class="font-normal">GitHub</h2>
                         </div>
                         <div class="competencecv">
-                            <div class="carre2"></div>
-                            <h2 style="font-weight: normal">Linux</h2>
+                            <div class="size-13x13 gradient-bg-right"></div>
+                            <h2 class="font-normal">Linux</h2>
                         </div>
                     </div>
                 </div>
-                <div style="justify-content: left;">
+                <div> <!-- style="justify-content: left;" n'est pas une propriété CSS valide -->
                     <h1>Langues</h1>
                 </div>
-                <div style="display: flex; justify-content: space-around;">
+                <div class="d-flex justify-content-around">
                     <div class="competencecv2">
                         <div class="competencecv">
-                            <div class="carre2"></div>
-                            <h2 style="font-weight: normal">Francais</h2>
+                            <div class="size-13x13 gradient-bg-right"></div>
+                            <h2 class="font-normal">Francais</h2>
                         </div>
                     </div>
                     <div class="competencecv2">
                         <div class="competencecv">
-                            <div class="carre2"></div>
-                            <h2 style="font-weight: normal">Anglais : B2</h2>
+                            <div class="size-13x13 gradient-bg-right"></div>
+                            <h2 class="font-normal">Anglais : B2</h2>
                         </div>
                     </div>
                 </div>
                 <p>Vous pouvez consulter mon Portfolio d'apprentissage pour consulter le lien entre les compétences de ma troisième année de BUT et mes projets :</p>
-                <a href="portfolio-apprentissage.html" class="bonton2" style="width: 300px; font-size: 14px">
-                    <p style="margin: 0;">Voir mon Portfolio d’apprentissage</p>
+                <a href="portfolio-apprentissage.html" class="button button-secondary button-size-sm" style="width: 300px; font-size: 14px"> <!-- Garde style pour width/font-size spécifique -->
+                    <p class="m-0">Voir mon Portfolio d’apprentissage</p>
                 </a>
             </div>
         </div>
-        <div style="margin-top: 50px">
+        <!-- SECTION LOISIR -->
+        <div class="mt-50">
             <h1>Loisir</h1>
         </div>
         <div class="section">
             <div class="sectioncv2">
                 <h3>2018 - Maintenant</h3>
                 <h2>Escalade</h2>
-                <p class="secret">Niveau max : 7C</p>
-                <div style="display: flex; justify-content: center;">
-                    <img class="image-projet" src="img/COBE-Logo.png" alt="Orchestra - TravelSoft">
+                <p>Niveau max : 7C</p>
+                <div class="d-flex justify-content-center">
+                    <img class="image-projet" src="img/COBE-Logo.png" alt="Orchestra - TravelSoft"> <!-- L'alt text ici est incorrect, devrait être lié à l'escalade -->
                 </div>
             </div>
             <div class="sectioncv3">
@@ -243,12 +252,12 @@
             </div>
             <div>
                 <h2>En ligne</h2>
-                <div style="display: flex; justify-content: space-evenly;">
+                <div class="d-flex justify-content-evenly">
                     <a href="https://www.linkedin.com/in/cyprien-bons/" target="_blank">
-                        <img src="img/linkedin.svg" alt="Linkedin" style="width: 18px;">
+                        <img src="img/linkedin.svg" alt="Linkedin" class="icon-sm">
                     </a>
                     <a href="https://github.com/M2M2005" target="_blank">
-                        <img src="img/github.svg" alt="GitHub" style="width: 18px;">
+                        <img src="img/github.svg" alt="GitHub" class="icon-sm">
                     </a>
                 </div>
             </div>
