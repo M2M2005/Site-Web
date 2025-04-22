@@ -43,7 +43,7 @@
             <div class="size-20x20 gradient-bg-right"></div>
             <p class="text-page-title"><strong>Me contacter</strong></p>
         </div>
-        <form class="contact-form">
+        <form class="contact-form" action="https://formspree.io/f/xjkwvvnl" method="POST">
             <div class="form-group-line">
                 <div class="form-group">
                     <label for="prenom">Prénom</label>
@@ -66,8 +66,12 @@
                 <label for="message">Message</label>
                 <textarea id="message" name="message" rows="6" required></textarea>
             </div>
+            <div class="form-group">
+                <div class="g-recaptcha" data-sitekey="6LcSviArAAAAABoKRVqNexK_ILYYhplLbXUlP9ej"></div>
+            </div>
             <button type="submit" class="button button-primary">Envoyer</button>
         </form>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     </div>
 </main>
 </body>
