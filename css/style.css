@@ -678,10 +678,6 @@ header {
         flex-wrap: wrap;
     }
 
-    .header a.header div:last-child {
-        margin-left: 5px;
-    }
-
 
     .burger-nav {
         right: 20px;
@@ -757,8 +753,9 @@ header {
     }
 
     .section {
+        flex-direction: column;
+        align-items: center;
         margin: 20px 10px;
-        padding: 20px;
     }
 
     .sectioncv2,
@@ -772,8 +769,8 @@ header {
 
     .sectionprojet1 {
         padding: 20px;
-        width: 100%;
-        max-width: 100%;
+        width: 90%;
+        max-width: 90%;
     }
 
     .image-container {
@@ -835,119 +832,119 @@ header {
     .titreprofil2 {
         font-size: 22px;
     }
+}
 
-    @media (max-width: 480px) {
-        header,
-        .footer {
-            padding: 15px;
-        }
+@media (max-width: 480px) {
+    header,
+    .footer {
+        padding: 15px;
+    }
 
-        .burger-nav {
-            width: calc(100% - 30px);
-            right: 15px;
-            top: 65px;
-        }
+    .burger-nav {
+        width: calc(100% - 30px);
+        right: 15px;
+        top: 65px;
+    }
 
-        .profil {
-            width: 95%;
-        }
+    .profil {
+        width: 95%;
+    }
 
-        .profil1 {
-            padding: 20px;
-        }
+    .profil1 {
+        padding: 20px;
+    }
 
-        .bontonindex {
-            flex-direction: column;
-            gap: 15px;
-            align-items: center;
-        }
+    .bontonindex {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
 
-        .button-size-sm,
-        .button-size-md {
-            width: 100%;
-            max-width: 220px;
-        }
+    .button-size-sm,
+    .button-size-md {
+        width: 100%;
+        max-width: 220px;
+    }
 
-        .section {
-            margin: 15px 0;
-            padding: 15px;
-            box-shadow: none;
-            border-radius: 0;
-        }
+    .section {
+        flex-direction: column;
+        align-items: center;
+        margin: 15px 5px;
+    }
 
-        .sectionprojet1,
-        .sectioncv2,
-        .sectioncv3,
-        .sectioncv4,
-        .section1-apprentissage,
-        .section2-apprentissage,
-        .section3-apprentissage {
-            width: 100%;
-            max-width: 100%;
-            padding-left: 10px;
-            padding-right: 10px;
-            margin-left: 0;
-            margin-right: 0;
-        }
+    .sectionprojet1,
+    .sectioncv2,
+    .sectioncv3,
+    .sectioncv4,
+    .section1-apprentissage,
+    .section2-apprentissage,
+    .section3-apprentissage {
+        width: 90%;
+        max-width: 90%;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-left: 0;
+        margin-right: 0;
+    }
 
-        .image-container {
-            padding-top: 75%;
-        }
+    .image-container {
+        padding-top: 75%;
+    }
 
-        .bonton-container {
-            gap: 10px;
-        }
+    .bonton-container {
+        gap: 10px;
+    }
 
-        .imgprofil {
-            width: 150px;
-            height: 150px;
-        }
+    .imgprofil {
+        width: 150px;
+        height: 150px;
+    }
 
-        .titreprofil {
-            font-size: 50px;
-        }
+    .titreprofil {
+        font-size: 50px;
+    }
 
-        .titreprofil2 {
-            font-size: 18px;
-        }
+    .titreprofil2 {
+        font-size: 18px;
+    }
 
-        .sectioncv2 h3,
-        .sectioncv3 h3,
-        .sectioncv4 h3 {
-            font-size: 16px;
-        }
+    .sectioncv2 h3,
+    .sectioncv3 h3,
+    .sectioncv4 h3 {
+        font-size: 16px;
+    }
 
-        .competencecv {
-            padding: 8px 0;
-            align-items: center;
-        }
+    .competencecv {
+        padding: 8px 0;
+        align-items: center;
+    }
 
-        .sectioncv2,
-        .sectioncv3,
-        .sectioncv4 {
-            padding: 10px;
-        }
+    .sectioncv2,
+    .sectioncv3,
+    .sectioncv4 {
+        padding: 10px;
+    }
 
-        .sectioncv4 .d-flex.justify-content-around {
-            flex-direction: column;
-            align-items: center;
-            gap: 0;
-        }
+    .sectioncv4 .d-flex.justify-content-around {
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
 
-        .sectioncv4 .competencecv2 {
-            width: 100%;
-            padding: 5px 0;
-        }
+    .sectioncv4 .competencecv2 {
+        width: 100%;
+        padding: 5px 0;
+    }
 
-        .cvprojet > .resWidth > .d-flex.justify-content-end {
-            justify-content: center !important;
-            margin-top: 10px;
-            margin-bottom: 10px;
-        }
+    .cvprojet > .resWidth > .d-flex.justify-content-end {
+        justify-content: center !important;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
 
-        .cvprojet > .resWidth > .d-flex.justify-content-end .button-size-md {
-            width: 100%;
-            max-width: 250px;
-        }
+    .cvprojet > .resWidth > .d-flex.justify-content-end .button-size-md {
+        width: 100%;
+        max-width: 250px;
     }
 }
+
