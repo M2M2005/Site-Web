@@ -454,7 +454,7 @@ header {
 
 /* Contact */
 .contact-container {
-    width: 100%;
+    width: 90%;
     max-width: 900px;
     margin: 2rem auto;
     padding: 2rem;
@@ -832,6 +832,40 @@ header {
     .titreprofil2 {
         font-size: 22px;
     }
+
+    .contact-container {
+        width: 90%;
+        padding: 1.5rem;
+        margin: 1.5rem auto;
+        max-width: 100%;
+    }
+
+    .contact-form .form-group-line {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .contact-form .form-group-line .form-group {
+         margin-bottom: 1.5rem;
+    }
+
+     .contact-form .form-group:last-child {
+         margin-bottom: 1.5rem;
+     }
+
+     .contact-form .form-group-line:last-of-type .form-group:last-child {
+         margin-bottom: 1.5rem;
+     }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .text-page-title {
+        font-size: 28px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -945,6 +979,36 @@ header {
     .cvprojet > .resWidth > .d-flex.justify-content-end .button-size-md {
         width: 100%;
         max-width: 250px;
+    }
+    
+    .contact-container {
+        width: 90%;
+        padding: 1rem; 
+        margin: 1rem auto;
+        box-shadow: 5px 5px rgba(0, 0, 0, 0.1); 
+    }
+
+    .contact-form .form-group {
+        margin-bottom: 1rem; 
+    }
+
+    .contact-form .form-group-line .form-group {
+        margin-bottom: 1rem;
+    }
+     .contact-form .form-group:last-child {
+         margin-bottom: 1rem;
+     }
+     .contact-form .form-group-line:last-of-type .form-group:last-child {
+         margin-bottom: 1rem;
+     }
+
+    .contact-form button {
+        width: 100%;
+        padding: 0.75rem;
+    }
+
+    .text-page-title {
+        font-size: 24px;
     }
 }
 
