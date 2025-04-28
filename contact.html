@@ -43,30 +43,36 @@
             <div class="size-20x20 gradient-bg-right"></div>
             <p class="text-page-title"><strong>Me contacter</strong></p>
         </div>
-        <form class="contact-form" action="https://formspree.io/f/xjkwvvnl" method="POST">
+        <form class="contact-form" data-form action="https://formspree.io/f/xjkwvvnl" method="POST">
             <div class="form-group-line">
                 <div class="form-group">
                     <label for="prenom">Prénom</label>
-                    <input type="text" id="prenom" name="prenom" required>
+                    <input type="text" id="prenom" name="prenom" data-form-input required>
+                    <span class="error-message"></span>
                 </div>
                 <div class="form-group">
                     <label for="nom">Nom</label>
-                    <input type="text" id="nom" name="nom" required>
+                    <input type="text" id="nom" name="nom" data-form-input required>
+                    <span class="error-message"></span>
                 </div>
             </div>
             <div class="form-group">
                 <label for="email">Adresse mail</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" data-form-input required>
+                <span class="error-message"></span>
             </div>
             <div class="form-group">
                 <label for="titre">Titre</label>
-                <input type="text" id="titre" name="titre" required>
+                <input type="text" id="titre" name="titre" data-form-input required>
+                <span class="error-message"></span>
             </div>
             <div class="form-group">
                 <label for="message">Message</label>
-                <textarea id="message" name="message" rows="6" required></textarea>
+                <textarea id="message" name="message" rows="6" data-form-input required></textarea>
+                <span class="error-message"></span>
             </div>
-            <button type="submit" class="button button-primary">Envoyer</button>
+            <button type="submit" class="button button-primary" data-form-btn disabled>Envoyer</button>
+            <p class="form-status" style="display: none;"></p>
         </form>
     </div>
 </main>

@@ -553,6 +553,14 @@ header {
     background-color: #0056b3;
 }
 
+.error-message {
+    display: block;
+    width: 90%;
+    color: red;
+    font-size: 0.8em;
+    margin-top: 0.2em;
+}
+
 /* Apprentissage */
 .button-back-apprentissage {
     padding: 10px 0 0 10px;
