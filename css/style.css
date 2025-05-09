@@ -28,6 +28,7 @@ a {
     cursor: pointer;
     text-decoration: none;
     color: black;
+
 }
 
 p {
@@ -111,6 +112,10 @@ p {
 
 .gap-10 {
     gap: 10px;
+}
+
+.underline {
+    text-decoration: underline;
 }
 
 /* Utility Classes - Text */
