@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" href="img/Logo_CB.png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 <header>
     <a href="index.html" class="header">
@@ -22,20 +24,17 @@
         <a href="projets.html" class="actuel">PROJETS</a>
         <a href="contact.html">CONTACT</a>
     </div>
-    <!-- Bouton burger -->
     <div class="burger-menu" id="burger-menu">
         <span></span>
         <span></span>
         <span></span>
     </div>
-    <!-- Menu déroulant pour le burger -->
     <nav class="burger-nav" id="burger-nav">
         <a href="index.html">À PROPOS DE MOI</a>
         <a href="cv.html">CV</a>
         <a href="projets.html" class="actuel">PROJETS</a>
         <a href="contact.html">CONTACT</a>
     </nav>
-    <script src="js/script.js"></script>
 </header>
 <body class="m-0">
 <div class="base">
@@ -44,7 +43,8 @@
             <div class="size-20x20 gradient-bg-right"></div>
             <p class="text-page-title"><strong>Projets</strong></p>
         </div>
-        <div class="section" id="projetLegendsBuster">
+
+        <div class="section project-card" id="projetLegendsBuster">
             <div class="sectionprojet1">
                 <div class="d-flex">
                     <div class="size-10x50 gradient-bg-bottom"></div>
@@ -56,19 +56,26 @@
                 <p class="p-5-15">
                     LegendsBuster est un projet d'équipe réalisé lors de la Code Game 2024.
                     Il s'agit d'un jeu vidéo de type plateformer "die and retry" qui nous a permis de découvrir Unity.
-                    Vous pouvez retrouver le projet et y jouer sur Windows et Mac en cliquant sur le bouton ci-dessous.
                 </p>
                 <div class="bonton-container">
-                    <a href="https://drive.google.com/drive/folders/1kk-ehaBQmD1dpbDoX3wrNLLrJnqQw2BI?usp=drive_link" class="button button-secondary button-size-sm" target="_blank">
-                        <p class="m-0">Drive</p>
-                    </a>
+                    <button class="button button-primary button-size-sm open-project-modal"
+                            data-title="LegendsBuster"
+                            data-category="Jeu Vidéo | Code Game Jam 2024"
+                            data-description="LegendsBuster est un projet d'équipe passionnant, réalisé lors de la Code Game 2024. Ce jeu vidéo de type plateformer en 'die and retry' a été une opportunité unique de plonger dans l'univers d'Unity et d'apprendre les bases du développement de jeux. Nous avons dû concevoir les niveaux, les mécaniques de jeu, et travailler ensemble pour relever les défis techniques dans un temps limité. C'est une expérience qui a consolidé mes compétences en gestion de projet et en résolution de problèmes créative."
+                            data-tech="Unity, C#, Pixel Art, Plateformer"
+                            data-drive-link="https://drive.google.com/drive/folders/1kk-ehaBQmD1dpbDoX3wrNLLrJnqQw2BI?usp=drive_link"
+                            data-images="img/LegendsBuster.png,img/LegendsBuster_img2.png,img/LegendsBuster_img3.png">
+                        <ion-icon name="information-circle-outline" style="margin-right: 5px;" role="img" class="md hydrated" aria-label="information circle outline"></ion-icon>
+                        <span>Voir Détails</span>
+                    </button>
                 </div>
             </div>
             <div class="image-container">
                 <img src="img/LegendsBuster.png" alt="LegendsBuster">
             </div>
         </div>
-        <div class="section" id="projetEcommerce">
+
+        <div class="section project-card" id="projetEcommerce">
             <div class="sectionprojet1">
                 <div class="d-flex">
                     <div class="size-10x50 gradient-bg-bottom"></div>
@@ -81,19 +88,25 @@
                     Création d'un site web e-commerce de vente de parfums réalisé en PHP avec une connexion à une base de données. Gestion des utilisateurs, des produits, des ventes et des paniers.
                 </p>
                 <div class="bonton-container">
-                    <a href="https://github.com/M2M2005/E-Commerce" class="button button-secondary button-size-sm" target="_blank">
-                        <p class="m-0">Github</p>
-                    </a>
-                    <a href="https://webinfo.iutmontp.univ-montp2.fr/~bonsc/Projetweb/web/controleurFrontal.php" class="button button-secondary button-size-sm" target="_blank">
-                        <p class="m-0">Site Web</p>
-                    </a>
+                    <button class="button button-primary button-size-sm open-project-modal"
+                            data-title="Site E-Commerce de Parfums"
+                            data-category="Développement Web | Projet Universitaire"
+                            data-description="Ce projet consistait en la création complète d'un site web e-commerce dédié à la vente de parfums. Réalisé en PHP, il intègre une connexion robuste à une base de données MySQL pour gérer efficacement les utilisateurs, les produits, les commandes et les paniers. J'ai mis en place un système de navigation intuitif, des fiches produits détaillées, et un processus de commande sécurisé. Ce projet a été une excellente opportunité pour approfondir mes connaissances en développement back-end et en gestion de bases de données, tout en assurant une expérience utilisateur fluide et agréable."
+                            data-tech="PHP, MySQL, HTML, CSS, JavaScript"
+                            data-github-link="https://github.com/M2M2005/E-Commerce"
+                            data-web-link="https://webinfo.iutmontp.univ-montp2.fr/~bonsc/Projetweb/web/controleurFrontal.php"
+                            data-images="img/site-e-commerce.png,img/ecommerce_img2.png,img/ecommerce_img3.png">
+                        <ion-icon name="information-circle-outline" style="margin-right: 5px;" role="img" class="md hydrated" aria-label="information circle outline"></ion-icon>
+                        <span>Voir Détails</span>
+                    </button>
                 </div>
             </div>
             <div class="image-container">
                 <img src="img/site-e-commerce.png" alt="Site E-Commerce">
             </div>
         </div>
-        <div class="section" id="projetPortfolio">
+
+        <div class="section project-card" id="projetPortfolio">
             <div class="sectionprojet1">
                 <div class="d-flex">
                     <div class="size-10x50 gradient-bg-bottom"></div>
@@ -103,21 +116,27 @@
                     </div>
                 </div>
                 <p class="p-5-15">
-                    J'ai créé un site web portfolio pour mettre en avant mes compétences, mes aptitudes et mes projets.
-                    Ce site présente également mon parcours académique, mes expériences professionnelles.
-                    Il reflète mon savoir-faire en conception web. Vous y trouverez une section dédiée à mes réalisations.
+                    J'ai créé ce site web portfolio pour mettre en avant mes compétences, mes aptitudes et mes projets. Il présente également mon parcours académique et mes expériences.
                 </p>
                 <div class="bonton-container">
-                    <a href="https://github.com/M2M2005/Site-Web" class="button button-secondary button-size-sm" target="_blank">
-                        <p class="m-0">Github</p>
-                    </a>
+                    <button class="button button-primary button-size-sm open-project-modal"
+                            data-title="Création de Mon Portfolio Personnel"
+                            data-category="Développement Web | Projet Personnel"
+                            data-description="Ce site web est mon portfolio personnel, conçu pour présenter mes compétences techniques, mes aptitudes et l'ensemble de mes projets. Il met en lumière mon parcours académique et mes expériences professionnelles, offrant une vue d'ensemble de mon savoir-faire en conception web. L'objectif était de créer une interface claire et intuitive pour permettre aux visiteurs de découvrir mes réalisations et mon profil. Le développement de ce portfolio est un processus continu, où j'intègre régulièrement de nouvelles fonctionnalités et améliorations, reflétant ainsi mon apprentissage et ma progression."
+                            data-tech="HTML, CSS, JavaScript, Responsive Design"
+                            data-github-link="https://github.com/M2M2005/Site-Web"
+                            data-web-link="https://cyprienbons.com" data-images="img/site-this.png,img/portfolio_img2.png,img/portfolio_img3.png">
+                        <ion-icon name="information-circle-outline" style="margin-right: 5px;" role="img" class="md hydrated" aria-label="information circle outline"></ion-icon>
+                        <span>Voir Détails</span>
+                    </button>
                 </div>
             </div>
             <div class="image-container">
                 <img src="img/site-this.png" alt="Port Folio">
             </div>
         </div>
-        <div class="section" id="projetReferendum">
+
+        <div class="section project-card" id="projetReferendum">
             <div class="sectionprojet1">
                 <div class="d-flex">
                     <div class="size-10x50 gradient-bg-bottom"></div>
@@ -130,16 +149,24 @@
                     Le projet consiste à créer un système de référendums sécurisés, permettant à une entreprise de gérer des votes de manière cryptée et confidentielle.
                 </p>
                 <div class="bonton-container">
-                    <a href="https://github.com/M2M2005/Referendum" class="button button-secondary button-size-sm" target="_blank">
-                        <p class="m-0">Github</p>
-                    </a>
+                    <button class="button button-primary button-size-sm open-project-modal"
+                            data-title="Système de Référendums Sécurisés"
+                            data-category="Développement d'Application | Universitaire"
+                            data-description="Ce projet universitaire a porté sur la conception et le développement d'un système de référendums sécurisés. L'objectif principal était de permettre à une entreprise de gérer des votes de manière entièrement cryptée et confidentielle. Nous avons implémenté des protocoles de sécurité robustes pour garantir l'intégrité des votes et l'anonymat des participants. Ce projet a renforcé mes compétences en sécurité informatique et en développement d'applications back-end complexes, avec un accent particulier sur la cryptographie et la gestion de données sensibles."
+                            data-tech="Java, Sécurité, Cryptographie, Base de données"
+                            data-github-link="https://github.com/M2M2005/Referendum"
+                            data-images="img/referendum.png,img/referendum_img2.png">
+                        <ion-icon name="information-circle-outline" style="margin-right: 5px;" role="img" class="md hydrated" aria-label="information circle outline"></ion-icon>
+                        <span>Voir Détails</span>
+                    </button>
                 </div>
             </div>
             <div class="image-container">
                 <img src="img/referendum.png" alt="Referendum">
             </div>
         </div>
-        <div class="section" id="projetExcel">
+
+        <div class="section project-card" id="projetExcel">
             <div class="sectionprojet1">
                 <div class="d-flex">
                     <div class="size-10x50 gradient-bg-bottom"></div>
@@ -149,20 +176,21 @@
                     </div>
                 </div>
                 <p class="p-5-15">
-                    Ce projet permet de comptabiliser et d'afficher les points des compétiteurs lors d'une compétition d'escalade.
-                    Le calcul des résultats est enregistré dans une Google Sheet, et un site web récupère dynamiquement ces résultats via l'API Google Sheets en JavaScript pour les afficher.
-                    Une interface a été développée sur Google Sheets, intégrant des boutons permettant d'automatiser certaines tâches, comme l'ajout de participants et de catégories, grâce à Google Apps Script.
+                    Ce projet combine Google Sheets, Google Apps Script et JavaScript pour gérer et afficher les scores d'une compétition d'escalade en temps réel.
                 </p>
                 <div class="bonton-container">
-                    <a href="https://drive.google.com/drive/folders/1aXPQoZu6ZVLKaPpNFQsAJGHnI8vSY_jp?usp=sharing" class="button button-secondary button-size-sm" target="_blank">
-                        <p class="m-0">Drive</p>
-                    </a>
-                    <a href="https://github.com/M2M2005/Site-Web" class="button button-secondary button-size-sm" target="_blank">
-                        <p class="m-0">Github</p>
-                    </a>
-                    <a href="https://cobescalade.cyprienbons.com/" class="button button-secondary button-size-sm" target="_blank">
-                        <p class="m-0">Site Web</p>
-                    </a>
+                    <button class="button button-primary button-size-sm open-project-modal"
+                            data-title="Système de Scoring pour Compétition d'Escalade"
+                            data-category="Automatisation & Développement Web | Projet Personnel"
+                            data-description="dynamiquement à l'API Google Sheets pour récupérer et afficher les résultats en temps réel. Ce projet a été une excellente occasion d'explorer l'interopérabilité entre les services Google, le développement web côté client, et l'automatisation de processus métier."
+                            data-tech="Google Sheets, Google Apps Script (GAS), JavaScript, HTML, CSS, API Google Sheets"
+                            data-drive-link="https://drive.google.com/drive/folders/1aXPQoZu6ZVLKaPpNFQsAJGHnI8vSY_jp?usp=sharing"
+                            data-github-link="https://github.com/M2M2005/Site-Web"
+                            data-web-link="https://cobescalade.cyprienbons.com/"
+                            data-images="img/Excel_Compétition.png,img/excel_competition_img2.png,img/excel_competition_img3.png">
+                        <ion-icon name="information-circle-outline" style="margin-right: 5px;" role="img" class="md hydrated" aria-label="information circle outline"></ion-icon>
+                        <span>Voir Détails</span>
+                    </button>
                 </div>
             </div>
             <div class="image-container">
@@ -171,6 +199,41 @@
         </div>
     </div>
 </div>
+
+<div class="modal-container" id="projectModalContainer">
+    <div class="overlay" id="overlay"></div>
+    <section class="project-modal" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+        <button class="modal-close-btn" id="closeModalBtn" aria-label="Fermer les détails du projet">
+            <ion-icon name="close-outline"></ion-icon>
+        </button>
+
+        <div class="modal-content">
+            <div class="modal-images-carousel">
+                <div class="modal-image-display" id="modalImageDisplay">
+                </div>
+                <div class="carousel-nav" id="carouselNav">
+                </div>
+                <button class="carousel-arrow prev" id="prevImageBtn">&#10094;</button>
+                <button class="carousel-arrow next" id="nextImageBtn">&#10095;</button>
+            </div>
+
+            <div class="modal-info">
+                <h3 class="h3 modal-title" id="modalProjectTitle"></h3>
+                <p class="project-modal-category" id="modalProjectCategory"></p>
+
+                <h4>Description</h4>
+                <p id="modalProjectDescription"></p>
+
+                <h4>Technologies Utilisées</h4>
+                <p id="modalProjectTech"></p>
+
+                <div class="modal-links-container" id="modalLinksContainer">
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
 </body>
 <footer>
     <div class="footer">
@@ -200,4 +263,5 @@
         </div>
     </div>
 </footer>
+<script src="js/script.js"></script>
 </html>

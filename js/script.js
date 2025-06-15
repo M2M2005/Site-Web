@@ -6,19 +6,16 @@ burgerMenu.addEventListener('click', () => {
     burgerMenu.classList.toggle('open');
 });
 
-// CV - Compétences
+// CV - Compétences et Page de contact
 document.addEventListener('DOMContentLoaded', function() {
 
-    // Animation des cercles de compétences
     const skillCircles = document.querySelectorAll('.skill-circle');
-
     skillCircles.forEach(circle => {
         const percent = parseInt(circle.dataset.percent);
-        const maskAngle = percent * 3.6; // Multiplier par 3.6 pour obtenir l'angle en degrés (100% = 360deg)
+        const maskAngle = percent * 3.6;
         circle.style.setProperty('--mask-angle', `${maskAngle}deg`);
     });
 
-    // Page de contact
     const form = document.querySelector("[data-form]");
     const formInputs = document.querySelectorAll("[data-form-input]");
     const formBtn = document.querySelector("[data-form-btn]");
@@ -63,7 +60,6 @@ document.addEventListener('DOMContentLoaded', function() {
             formStatus.style.color = "var(--light-gray)";
             formStatus.style.display = "block";
 
-
             const formData = new FormData(form);
             const formAction = form.getAttribute("action");
 
@@ -107,4 +103,144 @@ document.addEventListener('DOMContentLoaded', function() {
                 });
         });
     }
+
+    // Modal des projets
+    const projectModalContainer = document.getElementById('projectModalContainer');
+    const overlay = document.getElementById('overlay');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const openModalButtons = document.querySelectorAll('.open-project-modal');
+
+    const modalImageDisplay = document.getElementById('modalImageDisplay');
+    const carouselNav = document.getElementById('carouselNav');
+    const prevImageBtn = document.getElementById('prevImageBtn');
+    const nextImageBtn = document.getElementById('nextImageBtn');
+
+    const modalProjectTitle = document.getElementById('modalProjectTitle');
+    const modalProjectCategory = document.getElementById('modalProjectCategory');
+    const modalProjectDescription = document.getElementById('modalProjectDescription');
+    const modalProjectTech = document.getElementById('modalProjectTech');
+    const modalLinksContainer = document.getElementById('modalLinksContainer');
+
+    let currentImageIndex = 0;
+    let projectImages = [];
+
+    const updateCarousel = () => {
+        if (projectImages.length === 0) {
+            modalImageDisplay.innerHTML = '<p style="text-align:center; padding:20px; color:#666;">Aucune image disponible pour ce projet.</p>';
+            carouselNav.innerHTML = '';
+            prevImageBtn.style.display = 'none';
+            nextImageBtn.style.display = 'none';
+            return;
+        }
+
+        modalImageDisplay.innerHTML = '';
+        const img = document.createElement('img');
+        img.src = projectImages[currentImageIndex];
+        img.alt = modalProjectTitle.textContent + ' - Image ' + (currentImageIndex + 1);
+        modalImageDisplay.appendChild(img);
+
+        carouselNav.innerHTML = '';
+        if (projectImages.length > 1) {
+            projectImages.forEach((_, index) => {
+                const dot = document.createElement('span');
+                dot.classList.add('carousel-nav-dot');
+                if (index === currentImageIndex) {
+                    dot.classList.add('active');
+                }
+                dot.addEventListener('click', () => {
+                    currentImageIndex = index;
+                    updateCarousel();
+                });
+                carouselNav.appendChild(dot);
+            });
+            prevImageBtn.style.display = 'block';
+            nextImageBtn.style.display = 'block';
+        } else {
+            prevImageBtn.style.display = 'none';
+            nextImageBtn.style.display = 'none';
+        }
+    };
+
+    const goToNextImage = () => {
+        currentImageIndex = (currentImageIndex + 1) % projectImages.length;
+        updateCarousel();
+    };
+
+    const goToPrevImage = () => {
+        currentImageIndex = (currentImageIndex - 1 + projectImages.length) % projectImages.length;
+        updateCarousel();
+    };
+
+    const openModal = (e) => {
+        const button = e.currentTarget;
+
+        const title = button.dataset.title || 'Titre non disponible';
+        const category = button.dataset.category || 'Catégorie non spécifiée';
+        const description = button.dataset.description || 'Aucune description détaillée n\'est disponible pour ce projet.';
+        const tech = button.dataset.tech || 'Technologies non spécifiées.';
+        const githubLink = button.dataset.githubLink;
+        const driveLink = button.dataset.driveLink;
+        const webLink = button.dataset.webLink;
+        const imagesData = button.dataset.images;
+
+        projectImages = imagesData ? imagesData.split(',') : [];
+        currentImageIndex = 0;
+
+        modalProjectTitle.textContent = title;
+        modalProjectCategory.textContent = category;
+        modalProjectDescription.textContent = description;
+        modalProjectTech.textContent = tech;
+
+        updateCarousel();
+
+        modalLinksContainer.innerHTML = '';
+
+        if (githubLink) {
+            const githubBtn = document.createElement('a');
+            githubBtn.href = githubLink;
+            githubBtn.target = '_blank';
+            githubBtn.classList.add('form-btn', 'github');
+            githubBtn.innerHTML = '<ion-icon name="logo-github"></ion-icon><span>Voir sur GitHub</span>';
+            modalLinksContainer.appendChild(githubBtn);
+        }
+        if (driveLink) {
+            const driveBtn = document.createElement('a');
+            driveBtn.href = driveLink;
+            driveBtn.target = '_blank';
+            driveBtn.classList.add('form-btn', 'drive');
+            driveBtn.innerHTML = '<ion-icon name="folder-open"></ion-icon><span>Voir sur Drive</span>';
+            modalLinksContainer.appendChild(driveBtn);
+        }
+        if (webLink) {
+            const webBtn = document.createElement('a');
+            webBtn.href = webLink;
+            webBtn.target = '_blank';
+            webBtn.classList.add('form-btn', 'website');
+            webBtn.innerHTML = '<ion-icon name="globe-outline"></ion-icon><span>Voir le Site Web</span>';
+            modalLinksContainer.appendChild(webBtn);
+        }
+
+        projectModalContainer.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeModal = () => {
+        projectModalContainer.classList.remove('active');
+        document.body.style.overflow = 'auto';
+    };
+
+    openModalButtons.forEach(button => {
+        button.addEventListener('click', openModal);
+    });
+
+    closeModalBtn.addEventListener('click', closeModal);
+    overlay.addEventListener('click', closeModal);
+    prevImageBtn.addEventListener('click', goToPrevImage);
+    nextImageBtn.addEventListener('click', goToNextImage);
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && projectModalContainer.classList.contains('active')) {
+            closeModal();
+        }
+    });
 });
