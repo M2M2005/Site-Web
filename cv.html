@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/png" href="img/Logo_CB.png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 <header>
     <a href="index.html" class="header">
@@ -22,20 +24,17 @@
         <a href="projets.html">PROJETS</a>
         <a href="contact.html">CONTACT</a>
     </div>
-    <!-- Bouton burger -->
     <div class="burger-menu" id="burger-menu">
         <span></span>
         <span></span>
         <span></span>
     </div>
-    <!-- Menu déroulant pour le burger -->
     <nav class="burger-nav" id="burger-nav">
         <a href="index.html">À PROPOS DE MOI</a>
         <a href="cv.html" class="actuel">CV</a>
         <a href="projets.html">PROJETS</a>
         <a href="contact.html">CONTACT</a>
     </nav>
-    <script src="js/script.js"></script>
 </header>
 <body class="m-0">
 <div class="base">
@@ -44,7 +43,6 @@
             <div class="size-20x20 gradient-bg-right"></div>
             <p class="text-page-title"><strong>CV</strong></p>
         </div>
-        <!-- SECTION BIOGRAPHIE -->
         <div class="d-flex justify-content-between">
             <h1>Biographie</h1>
             <div class="px-20">
@@ -56,59 +54,67 @@
         <div class="section">
             <div class="sectioncv5">
                 <p>
-                    Depuis longtemps, j’ai toujours été <strong>passionné</strong> par l’<strong>informatique</strong>.
-                    C’est pour cela que j’ai choisi ce cursus afin de suivre le <strong>BUT Informatique</strong>,
-                    pour un métier que j’aime et dans lequel je serai heureux de m'investir</p>
+                    Depuis longtemps, j’ai toujours été passionné par l’informatique. C’est pour cela que j’ai choisi ce cursus afin de suivre le BUT Informatique, pour un métier que j’aime et dans lequel je serai heureux de m'investir.
+                </p>
                 <p>
-                    Au cours de ma formation, j’ai fait une multitude de projets qui m'ont permis de m'améliorer au niveau technique,
-                    mais aussi de perfectionner mes propres compétences. Lors de la majorité des projets, j’ai su <strong>organiser les tâches</strong>, prévoir les étapes,
-                    planifier, pour rendre le meilleur travail possible dans les temps et si possible en avance.
-                    <strong>Obtenir des résultats tangibles</strong> garantit l’efficacité des projets.</p>
+                    Au cours de ma formation, j’ai fait une multitude de projets qui m'ont permis de m'améliorer au niveau technique, mais aussi de perfectionner mes propres compétences. Lors de la majorité des projets, j’ai su organiser les tâches, prévoir les étapes, planifier, pour rendre le meilleur travail possible dans les temps et si possible en avance. Obtenir des résultats tangibles garantit l’efficacité des projets.
+                </p>
                 <p>
-                    Aussi, en dehors de mes études, je suis bénévole dans un club d’escalade. Je suis impliqué dans le club, et j’aide à l’organisation de la compétition annuelle.
-                    J'aide à établir le classement lors de la compétition annuelle du club grace a mes compétences, et cela m'a beaucoup enrichi.</p>
-                <p>
-                    De plus, je sais trouver des solutions lors de projets. J’excelle à <strong>trouver des solutions</strong> réalistes à des problèmes complexes.
-                    Lors de projets, j’ai souvent donné des idées, puis les ai créées ou mises en application. Je suis très bon pour cela.</p>
+                    Aussi, en dehors de mes études, je fais de l'escalade. Je suis impliqué dans le club, et j’aide à l’organisation de la compétition annuelle.
+                </p>
             </div>
         </div>
-        <!-- SECTION EXPÉRIENCE -->
         <div class="mt-50">
             <h1>Expérience</h1>
         </div>
-        <!-- Stage Orchestra -->
         <div class="section" id="stageOrchestra">
             <div class="sectioncv2">
                 <h3>Février 2025 - Mars 2025</h3>
-                <h2>Stage - Software Engineer</h2>
+                <h2>Stage - Développeur QA</h2>
                 <h2 class="font-normal">Orchestra - TravelSoft</h2>
                 <h2 class="font-normal">Paris, France</h2>
                 <h2 class="font-normal">8 semaines</h2>
-                <div  class="p-5-15">
-                    <a href="docs/Rapport_Stage_BONS_Orchestra_TravelSoft.pdf" class="button button-secondary button-size-sm" target="_blank">
-                        <p class="m-0">Rapport</p>
-                    </a>
-                </div>
-                <div class="d-flex justify-content-center">
-                    <img class="image-projet" src="img/orchestra-plateforme.jpg" alt="Orchestra - TravelSoft">
+                <div class="d-flex justify-content-center mt-20"><img class="image-projet"
+                                                                      src="img/orchestra-plateforme.jpg"
+                                                                      alt="Orchestra - TravelSoft">
                 </div>
             </div>
             <div class="sectioncv3">
                 <p>
-                    J'ai effectué un stage de 8 semaines chez Orchestra - TravelSoft en tant que Software Engineer.
-                    Intégré à l'équipe QA (Quality Assurance), j'ai pu appliquer mes compétences en développement et en automatisation des tests.
-                </p>
+                    Durant mon stage au sein d'Orchestra - TravelSoft, éditeur d'une solution SaaS de mise en relation
+                    entre Tour-Opérateurs et distributeurs (compagnies aériennes, hôtels, etc.), j'ai intégré l'équipe
+                    Assurance Qualité (QA) en tant que développeur QA.</p>
                 <p>
-                    Mon rôle consistait à concevoir et implémenter des tests automatisés avec Selenium en Java afin de valider l'intégration de nouvelles compagnies dans le logiciel de l'entreprise.
-                    Cette expérience m'a permis de renforcer mes compétences en assurance qualité et en développement orienté tests.
-                </p>
+                    Mon rôle principal consistait à concevoir et implémenter des tests automatisés en utilisant Selenium
+                    avec Java. L'objectif était de valider l'intégration de nouvelles compagnies partenaires au sein du
+                    logiciel de l'entreprise. Ce stage a été une opportunité précieuse pour renforcer mes compétences
+                    techniques et acquérir une expertise concrète en assurance qualité logicielle dans un environnement
+                    professionnel stimulant.</p>
+                <div class="bonton-container">
+                    <button class="button button-primary button-size-sm open-project-modal"
+                            data-title="Stage Développeur QA - Orchestra TravelSoft"
+                            data-category="Expérience Professionnelle | Stage"
+                            data-description="L'objectif du stage était d'implémenter des tests automatisés avec Selenium en Java afin de valider les informations affichées sur une page web lors de la réservation d'un vol. Ma tâche consistait à comparer les données récupérées depuis les fichiers XML envoyés par la compagnie aérienne avec celles affichées à l'écran. Ce processus était appliqué à plusieurs pages (vol, bagages, suppléments), et entièrement automatisé, ne nécessitant aucune intervention humaine pour les clics, les saisies ou la récupération des données."
+                            data-tech="Java, Selenium, XML, Allure, Jira"
+                            data-document-link="docs/Rapport_Stage_BONS_Orchestra_TravelSoft.pdf"
+                            data-youtube-link="https://www.youtube.com/watch?v=-nnQ908SqKk"
+                            data-images="img/button_voir_details/Orchestra/resultat_Carrefour_voyages.png,img/button_voir_details/Orchestra/données_rechercher.png,img/button_voir_details/Orchestra/allure.png"
+                            data-apports="
+                            Développement de tests automatisés ||
+                            Structuration générique des nouveaux tests ||
+                            Implémentation des tests sur Allure "
+                    >
+                        <ion-icon name="information-circle-outline" style="margin-right: 5px;" role="img"
+                                  class="md hydrated" aria-label="information circle outline"></ion-icon>
+                        <span>Voir Détails</span>
+                    </button>
+                </div>
             </div>
         </div>
-        <!-- SECTION FORMATION -->
         <div class="mt-50">
-             <h1>Formation</h1>
+            <h1>Formation</h1>
         </div>
-        <div class="section"> <!-- Formation IUT -->
+        <div class="section">
             <div class="sectioncv2">
                 <h3>2023 - Maintenant</h3>
                 <h2>Étudiant en Informatique</h2>
@@ -122,15 +128,17 @@
             </div>
             <div class="sectioncv3">
                 <p>
-                    Étudiant à l'IUT Montpellier-Sète depuis 2023, je suis actuellement en deuxième année de BUT Informatique.
-                    Passionné par l'informatique et les nouvelles technologies, j'ai choisi cette formation pour acquérir des compétences solides en développement et en gestion des systèmes informatiques.
+                    Étudiant à l'IUT Montpellier-Sète depuis 2023, je suis actuellement en deuxième année de BUT
+                    Informatique.
+                    Passionné par l'informatique et les nouvelles technologies, j'ai choisi cette formation pour
+                    acquérir des compétences solides en développement et en gestion des systèmes informatiques.
                 </p>
                 <p>
                     J'ai opté pour l'option DACS afin de me spécialiser en cybersécurité et en programmation avancée.
                 </p>
             </div>
         </div>
-        <div class="section"> <!-- Formation Bac -->
+        <div class="section">
             <div class="sectioncv2">
                 <h3>2020 - 2023</h3>
                 <h2>Baccalauréat technologique STI2D</h2>
@@ -145,17 +153,20 @@
             <div class="sectioncv3">
                 <p>
                     J'ai obtenu mon Baccalauréat STI2D avec mention Assez Bien.
-                    Ce parcours, axé sur les sciences et les technologies de l'industrie et du développement durable, m'a permis d'acquérir des compétences techniques en ingénierie et en conception.
+                    Ce parcours, axé sur les sciences et les technologies de l'industrie et du développement durable,
+                    m'a permis d'acquérir des compétences techniques en ingénierie et en conception.
                 </p>
                 <p>
-                    Grâce à cette formation, j'ai travaillé sur divers projets en équipe, notamment dans les domaines de l'automatisation et de la conception technique, renforçant ainsi mes capacités d'analyse et de résolution de problèmes.
+                    Grâce à cette formation, j'ai travaillé sur divers projets en équipe, notamment dans les domaines de
+                    l'automatisation et de la conception technique, renforçant ainsi mes capacités d'analyse et de
+                    résolution de problèmes.
                 </p>
                 <p>
-                    J'y ai également découvert les bases de l'électronique, de la mécanique et de l'automatisation, qui ont contribué à mon intérêt pour l'informatique et l'innovation technologique.
+                    J'y ai également découvert les bases de l'électronique, de la mécanique et de l'automatisation, qui
+                    ont contribué à mon intérêt pour l'informatique et l'innovation technologique.
                 </p>
             </div>
         </div>
-        <!-- SECTION COMPÉTENCES -->
         <div class="mt-50">
             <h1>Compétences</h1>
         </div>
@@ -279,7 +290,7 @@
                         </div>
                     </div>
                 </div>
-                <div> <!-- style="justify-content: left;" n'est pas une propriété CSS valide -->
+                <div>
                     <h1>Langues</h1>
                 </div>
                 <div class="d-flex justify-content-around">
@@ -304,15 +315,16 @@
                         </div>
                     </div>
                 </div>
-                <p>Vous pouvez consulter mon Portfolio d'apprentissage pour consulter le lien entre les compétences de ma troisième année de BUT et mes projets :</p>
-                <div  class="bonton-container">
-                    <a href="portfolio-apprentissage.html" class="button button-secondary button-size-sm" style="width: 300px; font-size: 14px"> <!-- Garde style pour width/font-size spécifique -->
+                <p>Vous pouvez consulter mon Portfolio d'apprentissage pour consulter le lien entre les compétences de
+                    ma troisième année de BUT et mes projets :</p>
+                <div class="bonton-container">
+                    <a href="portfolio-apprentissage.html" class="button button-secondary button-size-sm"
+                       style="width: 300px; font-size: 14px">
                         <p class="m-0">Voir mon Portfolio d’apprentissage</p>
                     </a>
                 </div>
             </div>
         </div>
-        <!-- SECTION LOISIR -->
         <div class="mt-50">
             <h1>Loisir</h1>
         </div>
@@ -322,18 +334,55 @@
                 <h2>Escalade</h2>
                 <p style="color: white">Niveau max : 7C</p>
                 <div class="d-flex justify-content-center">
-                    <img class="image-projet" src="img/COBE-Logo.png" alt="Orchestra - TravelSoft"> <!-- L'alt text ici est incorrect, devrait être lié à l'escalade -->
+                    <img class="image-projet" src="img/COBE-Logo.png" alt="Logo Club Escalade Bellegarde">
                 </div>
             </div>
             <div class="sectioncv3">
                 <p>
-                    J'ai commencé l'escalade en 2018 au club de Bellegarde. Ce sport m'a permis de me dépasser et de me surpasser.
-                    J'ai eu l'opportunité de participer à des compétitions et à des événements liés à l'escalade, ce qui m'a aidé à développer mon esprit d'équipe et mon sens de la compétition.
-                    Cette expérience m'a également permis de prendre conscience de mes responsabilités envers les autres.
+                    J'ai commencé l'escalade en 2018 au club de Bellegarde. Ce sport m'a permis de me dépasser et de me
+                    surpasser.
+                    J'ai eu l'opportunité de participer à des compétitions et à des événements liés à l'escalade, ce qui
+                    m'a aidé à développer mon esprit d'équipe et mon sens de la compétition.
+                    Cette expérience m'a également permis de prendre conscience de mes responsabilités envers les
+                    autres.
                 </p>
             </div>
         </div>
     </div>
+</div>
+<div class="modal-container" id="projectModalContainer">
+    <div class="overlay" id="overlay"></div>
+    <section class="project-modal" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+        <button class="modal-close-btn" id="closeModalBtn" aria-label="Fermer les détails du projet">
+            <ion-icon name="close-outline"></ion-icon>
+        </button>
+
+        <div class="modal-content">
+            <div class="modal-left-content">
+                <div class="modal-images-carousel">
+                    <div class="modal-image-display" id="modalImageDisplay"></div>
+                    <div class="carousel-nav" id="carouselNav"></div>
+                    <button class="carousel-arrow prev" id="prevImageBtn">&#10094;</button>
+                    <button class="carousel-arrow next" id="nextImageBtn">&#10095;</button>
+                </div>
+                <h4>Technologies Utilisées</h4>
+                <p id="modalProjectTech"></p>
+
+                <h4 id="apportsTitle" style="display: none;">Mes Apports Clés</h4>
+                <ul id="modalProjectApports" style="display: none;"></ul>
+            </div>
+
+            <div class="modal-info">
+                <h3 class="h3 modal-title" id="modalProjectTitle"></h3>
+                <p class="project-modal-category" id="modalProjectCategory"></p>
+
+                <h4>Description</h4>
+                <p id="modalProjectDescription"></p>
+
+                <div class="modal-links-container" id="modalLinksContainer"></div>
+            </div>
+        </div>
+    </section>
 </div>
 </body>
 <footer>
@@ -364,4 +413,5 @@
         </div>
     </div>
 </footer>
+<script src="js/script.js"></script>
 </html>

@@ -24,14 +24,21 @@ h3 {
     -webkit-text-fill-color: transparent;
 }
 
+h4 {
+    margin-bottom: 0.1em;
+}
+
 a {
     cursor: pointer;
     text-decoration: none;
     color: black;
-
 }
 
 p {
+    margin: 5px;
+}
+
+ul {
     margin: 5px;
 }
 
@@ -403,7 +410,7 @@ header {
 
 .sectioncv3 {
     padding: 20px;
-    width: 700px;
+    width: 900px;
     margin: 20px;
 }
 
@@ -461,7 +468,6 @@ header {
 }
 
 .skill-circle::before {
-    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -610,9 +616,7 @@ header {
     background-clip: padding-box, border-box;
 }
 
-/* Plus D'information */
-
-/* Plus D'information */
+/* Button Voir Détails */
 .modal-container {
     position: fixed;
     top: 0;
@@ -676,37 +680,44 @@ header {
     color: #333;
 }
 
-.modal-images-carousel {
+.modal-left-content {
     flex: 1.5;
     min-width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-images-carousel {
+    width: 100%;
     position: relative;
     height: 350px;
     overflow: hidden;
     border-radius: 8px;
     background-color: #f0f0f0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+    display: block;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .modal-image-display {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
+    position: relative;
     width: 100%;
     height: 100%;
-    align-items: center;
-    justify-content: center;
 }
 
-.modal-image-display img {
-    width: auto;
-    max-width: 100%;
-    height: auto;
-    max-height: 330px;
+.carousel-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
-    flex-shrink: 0;
+    opacity: 0;
     transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-image.active {
+    opacity: 1;
+    z-index: 2;
 }
 
 .carousel-arrow {
@@ -774,6 +785,22 @@ header {
     font-family: 'poppins-semibold', sans-serif;
 }
 
+#modalProjectDescription {
+    max-height: 450px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.modal-left-content h4 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.modal-info h4 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
 .modal-links-container {
     display: flex;
     flex-wrap: wrap;
@@ -796,6 +823,7 @@ header {
     background-color: #333;
     color: white;
 }
+
 .modal-links-container .form-btn.github:hover {
     background-color: #555;
 }
@@ -804,6 +832,7 @@ header {
     background-color: #1A73E8;
     color: white;
 }
+
 .modal-links-container .form-btn.drive:hover {
     background-color: #155DD6;
 }
@@ -812,8 +841,25 @@ header {
     background: linear-gradient(to right, #0050FF, #7f3bcf);
     color: white;
 }
+
 .modal-links-container .form-btn.website:hover {
     opacity: 0.9;
+}
+
+.modal-links-container .form-btn.document {
+    background-color: #8A2BE2;
+    color: white;
+}
+.modal-links-container .form-btn.document:hover {
+    background-color: #731acb;
+}
+
+.modal-links-container .form-btn.youtube {
+    background-color: #FF0000;
+    color: white;
+}
+.modal-links-container .form-btn.youtube:hover {
+    background-color: #CC0000;
 }
 
 @media (max-width: 992px) {
@@ -821,15 +867,13 @@ header {
         flex-direction: column;
     }
 
-    .modal-images-carousel, .modal-info {
+    .modal-left-content, .modal-info {
         min-width: unset;
         width: 100%;
     }
+
     .modal-images-carousel {
         height: 300px;
-    }
-    .modal-image-display img {
-        max-height: 280px;
     }
 }
 
@@ -839,16 +883,16 @@ header {
         width: 95%;
         margin: 0 10px;
     }
+
     .modal-images-carousel {
         height: 250px;
     }
-    .modal-image-display img {
-        max-height: 230px;
-    }
+
     .carousel-arrow {
         padding: 8px 12px;
         font-size: 18px;
     }
+
     .modal-links-container .form-btn {
         font-size: 13px;
         padding: 8px 12px;
@@ -1156,16 +1200,16 @@ header {
     }
 
     .contact-form .form-group-line .form-group {
-         margin-bottom: 1.5rem;
+        margin-bottom: 1.5rem;
     }
 
-     .contact-form .form-group:last-child {
-         margin-bottom: 1.5rem;
-     }
+    .contact-form .form-group:last-child {
+        margin-bottom: 1.5rem;
+    }
 
-     .contact-form .form-group-line:last-of-type .form-group:last-child {
-         margin-bottom: 1.5rem;
-     }
+    .contact-form .form-group-line:last-of-type .form-group:last-child {
+        margin-bottom: 1.5rem;
+    }
 
     .contact-form input,
     .contact-form textarea {
@@ -1290,27 +1334,29 @@ header {
         width: 100%;
         max-width: 250px;
     }
-    
+
     .contact-container {
         width: 90%;
-        padding: 1rem; 
+        padding: 1rem;
         margin: 1rem auto;
-        box-shadow: 5px 5px rgba(0, 0, 0, 0.1); 
+        box-shadow: 5px 5px rgba(0, 0, 0, 0.1);
     }
 
     .contact-form .form-group {
-        margin-bottom: 1rem; 
+        margin-bottom: 1rem;
     }
 
     .contact-form .form-group-line .form-group {
         margin-bottom: 1rem;
     }
-     .contact-form .form-group:last-child {
-         margin-bottom: 1rem;
-     }
-     .contact-form .form-group-line:last-of-type .form-group:last-child {
-         margin-bottom: 1rem;
-     }
+
+    .contact-form .form-group:last-child {
+        margin-bottom: 1rem;
+    }
+
+    .contact-form .form-group-line:last-of-type .form-group:last-child {
+        margin-bottom: 1rem;
+    }
 
     .contact-form button {
         width: 100%;
