@@ -4,7 +4,7 @@
 Ce projet a été réalisé dans le cadre de ma recherche de stage afin d'améliorer ma visibilité professionnelle et de mettre en avant mon savoir-faire en développement web.  
 
 ## Technologies utilisées
-- **Langages principaux** : HTML, CSS  
+- **Langages principaux** : HTML, CSS, JS  
 
 ## Expérience personnelle
 La création de ce site m'a permis de :  
