@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const button = event.currentTarget;
         const title = button.dataset.title;
         const category = button.dataset.category;
-        const description = button.dataset.description;
+        const descriptionRaw = button.dataset.description;
         const tech = button.dataset.tech;
         const images = button.dataset.images ? button.dataset.images.split(',') : [];
         const githubLink = button.dataset.githubLink;
@@ -42,9 +42,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const youtubeLink = button.dataset.youtubeLink;
         const contributions = button.dataset.apports ? button.dataset.apports.split('||').map(item => item.trim()) : [];
 
+        const formattedDescription = descriptionRaw ? descriptionRaw.split('||').map(p => `<p>${p.trim()}</p>`).join('') : '';
+
         modalTitle.textContent = title;
         modalCategory.textContent = category;
-        modalDescription.textContent = description;
+        modalDescription.innerHTML = formattedDescription;
         modalTechnologies.textContent = tech;
 
         projectContributionsList.innerHTML = '';
