@@ -5,11 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cyprien Bons - CV</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cv-timeline.css">
     <link rel="icon" type="image/png" href="img/Logo_CB.png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
+<body class="m-0">
+
+<!-- Header -->
 <header>
     <a href="index.html" class="header">
         <div class="d-flex align-items-center">
@@ -36,338 +40,390 @@
         <a href="contact.html">CONTACT</a>
     </nav>
 </header>
-<body class="m-0">
+
+<!-- Main Content -->
 <div class="base">
-    <div class="resWidth">
-        <div class="d-flex align-items-center justify-content-center">
-            <div class="size-20x20 gradient-bg-right"></div>
-            <p class="text-page-title"><strong>CV</strong></p>
+    <div class="cv-container">
+
+        <!-- Page Title -->
+        <div class="cv-header">
+            <div class="cv-title-section">
+                <h1 class="cv-main-title">CV</h1>
+            </div>
+            <a href="docs/CV_BONS.pdf" class="button button-primary button-size-md" target="_blank">
+                TÉLÉCHARGER CV
+            </a>
         </div>
-        <div class="d-flex justify-content-between">
-            <h1>Expérience</h1>
-            <div class="px-20">
-                <a href="docs/CV_BONS.pdf" class="button button-primary button-size-md" target="_blank">
-                    TÉLÉCHARGER CV
-                </a>
+
+        <!-- Expérience Section with Timeline -->
+        <section class="cv-section" id="experience-section">
+            <div class="section-title">
+                <h1>Expérience</h1>
             </div>
-        </div>
-        <div class="section" id="stageITESOFT">
-            <div class="sectioncv2">
-                <h3>Septembre 2025 - Maintenant</h3>
-                <h2>Alternance - Assistant Ingénieur QA</h2>
-                <h2 class="font-normal">ITESOFT</h2>
-                <h2 class="font-normal">Aimargues, France</h2>
-                <div class="d-flex justify-content-center mt-20">
-                    <img class="image-projet" src="img/button_voir_details/ITESOFT/itesoft-logo.png" alt="Logo ITESOFT">
-                </div>
-            </div>
-            <div class="sectioncv3">
-                <p>
-                    Durant mon alternance chez ITESOFT, éditeur d'une solution de facturation, j'ai intégré l'équipe
-                    Assurance Qualité (QA) en tant qu'Assistant Ingénieur QA.
-                </p>
-                <div class="bonton-container">
-                    <button class="button button-primary button-size-sm open-project-modal"
-                            data-title="Alternance Assistant Ingénieur QA - ITESOFT"
-                            data-category="Expérience Professionnelle | Alternance"
-                            data-description="L'objectif de mon alternance est de contribuer à l'amélioration continue des processus de test et de qualité logicielle au sein de l'entreprise."
-                            data-tech="Java, Docker, Cypress, n8n, git"
-                    >
-                        <ion-icon name="information-circle-outline" style="margin-right: 5px;" role="img"
-                                  class="md hydrated" aria-label="information circle outline"></ion-icon>
-                        <span>Voir Détails</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="section" id="stageOrchestra">
-            <div class="sectioncv2">
-                <h3>Février 2025 - Mars 2025</h3>
-                <h2>Stage - Développeur QA</h2>
-                <h2 class="font-normal">Orchestra - TravelSoft</h2>
-                <h2 class="font-normal">Paris, France</h2>
-                <h2 class="font-normal">8 semaines</h2>
-                <div class="d-flex justify-content-center mt-20">
-                    <img class="image-projet" src="img/button_voir_details/Orchestra/orchestra-plateforme.jpg" alt="Orchestra - TravelSoft">
-                </div>
-            </div>
-            <div class="sectioncv3">
-                <p>
-                    Durant mon stage au sein d'Orchestra - TravelSoft, éditeur d'une solution SaaS de mise en relation
-                    entre Tour-Opérateurs et distributeurs (compagnies aériennes, hôtels, etc.), j'ai intégré l'équipe
-                    Assurance Qualité (QA) en tant que développeur QA.
-                </p>
-                <p>
-                    Mon rôle consistait à concevoir et implémenter des tests automatisés en utilisant Selenium en Java.
-                    L'objectif était de valider l'intégration de nouvelles compagnies au sein du
-                    logiciel de l'entreprise. Ce stage a été une opportunité précieuse pour renforcer mes compétences
-                    techniques et acquérir une expertise concrète en QA dans un environnement professionnel.
-                </p>
-                <div class="bonton-container">
-                    <button class="button button-primary button-size-sm open-project-modal"
-                            data-title="Stage Développeur QA - Orchestra TravelSoft"
-                            data-category="Expérience Professionnelle | Stage"
-                            data-description="L'objectif du stage était d'implémenter des tests automatisés avec Selenium en Java afin de valider les informations affichées sur une page web lors de la réservation d'un vol. Ma tâche consistait à comparer les données récupérées depuis les fichiers XML envoyés par la compagnie aérienne avec celles affichées à l'écran. Ce processus était appliqué à plusieurs pages (vol, bagages, suppléments), et entièrement automatisé, ne nécessitant aucune intervention humaine pour les clics, les saisies ou la récupération des données."
-                            data-tech="Java, Selenium, XML, Allure, Jira"
-                            data-document-link="docs/Rapport_Stage_BONS_Orchestra_TravelSoft.pdf"
-                            data-youtube-link="https://www.youtube.com/watch?v=-nnQ908SqKk"
-                            data-images="img/button_voir_details/Orchestra/resultat_Carrefour_voyages.png,img/button_voir_details/Orchestra/données_rechercher.png,img/button_voir_details/Orchestra/allure.png"
-                            data-apports="
-                            Développement de tests automatisés ||
-                            Structuration générique des nouveaux tests ||
-                            Implémentation des tests sur Allure"
-                    >
-                        <ion-icon name="information-circle-outline" style="margin-right: 5px;" role="img"
-                                  class="md hydrated" aria-label="information circle outline"></ion-icon>
-                        <span>Voir Détails</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <div class="mt-50">
-            <h1>Formation</h1>
-        </div>
-        <div class="section">
-            <div class="sectioncv2">
-                <h3>2023 - Maintenant</h3>
-                <h2>Étudiant en Informatique</h2>
-                <h2 class="font-normal">IUT Montpellier-Sète</h2>
-                <h2 class="font-normal">Montpellier, France</h2>
-                <br>
-                <div class="d-flex justify-content-center">
-                    <img class="image-projet" src="img/iut-Montpellier-cete.jpeg" alt="IUT - Montpellier - Cète">
-                </div>
-            </div>
-            <div class="sectioncv3">
-                <p>
-                    Étudiant à l'IUT Montpellier-Sète depuis 2023, je suis actuellement en troisième année de BUT
-                    Informatique.
-                    Passionné par l'informatique et les nouvelles technologies, j'ai choisi cette formation pour
-                    acquérir des compétences solides en développement.
-                </p>
-                <p>
-                    J'ai opté pour l'option DACS afin de me spécialiser en cybersécurité et en réseau avancée.
-                </p>
-            </div>
-        </div>
-        <div class="section">
-            <div class="sectioncv2">
-                <h3>2020 - 2023</h3>
-                <h2>Baccalauréat technologique STI2D</h2>
-                <h2 class="font-normal">Lycée Emmanuel d’Alzon</h2>
-                <h2 class="font-normal">Nîmes, France</h2>
-                <h2 class="font-normal">Admis avec Mention Assez Bien</h2>
-                <br>
-                <div class="d-flex justify-content-center">
-                    <img class="image-projet" src="img/d'alzon.png" alt="D'Alzon Logo">
-                </div>
-            </div>
-            <div class="sectioncv3">
-                <p>
-                    J'ai obtenu mon Baccalauréat STI2D avec mention Assez Bien.
-                    Ce parcours, axé sur les sciences et les technologies de l'industrie et du développement durable,
-                    m'a permis d'acquérir des compétences techniques en ingénierie et en conception.
-                </p>
-                <p>
-                    Grâce à cette formation, j'ai découvert les bases de l'électronique, de la mécanique et du development, qui
-                    ont contribué à mon intérêt pour l'informatique et l'innovation technologique.
-                </p>
-            </div>
-        </div>
-        <div class="mt-50">
-            <h1>Compétences</h1>
-        </div>
-        <div class="section">
-            <div class="sectioncv4">
-                <div>
-                    <h1>Langage de programmation</h1>
-                </div>
-                <div class="d-flex justify-content-around">
-                    <div class="competencecv2">
-                        <div class="competencecv">
-                            <div class="skill-circle" data-percent="100">
-                                <div class="skill-circle-inner">
-                                    <span class="skill-percent">100%</span>
+
+            <div class="timeline">
+
+                <!-- Alternance ITESOFT -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="section" id="stageITESOFT">
+                            <div class="sectioncv2">
+                                <h3>Septembre 2025 - Maintenant</h3>
+                                <h2>Alternance - Assistant Ingénieur QA</h2>
+                                <h2 class="font-normal">ITESOFT</h2>
+                                <h2 class="font-normal">Aimargues, France</h2>
+                                <div class="d-flex justify-content-center mt-20">
+                                    <img class="image-projet" src="img/button_voir_details/ITESOFT/itesoft-logo.png" alt="Logo ITESOFT">
                                 </div>
                             </div>
-                            <h2 class="font-normal">HTML/CSS</h2>
-                        </div>
-                        <div class="competencecv">
-                            <div class="skill-circle" data-percent="70">
-                                <div class="skill-circle-inner">
-                                    <span class="skill-percent">70%</span>
+                            <div class="sectioncv3">
+                                <p>
+                                    Durant mon alternance chez ITESOFT, éditeur d'une solution de facturation, j'ai intégré l'équipe
+                                    Assurance Qualité (QA) en tant qu'Assistant Ingénieur QA.
+                                </p>
+                                <div class="bonton-container">
+                                    <button class="button button-primary button-size-sm open-project-modal"
+                                            data-title="Alternance Assistant Ingénieur QA - ITESOFT"
+                                            data-category="Expérience Professionnelle | Alternance"
+                                            data-description="L'objectif de mon alternance est de contribuer à l'amélioration continue des processus de test et de qualité logicielle au sein de l'entreprise."
+                                            data-tech="Java, Docker, Cypress, n8n, git"
+                                    >
+                                        <ion-icon name="information-circle-outline" style="margin-right: 5px;" role="img"
+                                                  class="md hydrated" aria-label="information circle outline"></ion-icon>
+                                        <span>Voir Détails</span>
+                                    </button>
                                 </div>
                             </div>
-                            <h2 class="font-normal">JS</h2>
-                        </div>
-                        <div class="competencecv">
-                            <div class="skill-circle" data-percent="45">
-                                <div class="skill-circle-inner">
-                                    <span class="skill-percent">45%</span>
-                                </div>
-                            </div>
-                            <h2 class="font-normal">Google Apps Script</h2>
-                        </div>
-                    </div>
-                    <div class="competencecv2">
-                        <div class="competencecv">
-                            <div class="skill-circle" data-percent="100">
-                                <div class="skill-circle-inner">
-                                    <span class="skill-percent">100%</span>
-                                </div>
-                            </div>
-                            <h2 class="font-normal">Java / JavaFX</h2>
-                        </div>
-                        <div class="competencecv">
-                            <div class="skill-circle" data-percent="75">
-                                <div class="skill-circle-inner">
-                                    <span class="skill-percent">75%</span>
-                                </div>
-                            </div>
-                            <h2 class="font-normal">PHP</h2>
-                        </div>
-                    </div>
-                    <div class="competencecv2">
-                        <div class="competencecv">
-                            <div class="skill-circle" data-percent="90">
-                                <div class="skill-circle-inner">
-                                    <span class="skill-percent">90%</span>
-                                </div>
-                            </div>
-                            <h2 class="font-normal">SQL / PL SQL</h2>
-                        </div>
-                        <div class="competencecv">
-                            <div class="skill-circle" data-percent="60">
-                                <div class="skill-circle-inner">
-                                    <span class="skill-percent">60%</span>
-                                </div>
-                            </div>
-                            <h2 class="font-normal">C</h2>
                         </div>
                     </div>
                 </div>
-                <div>
-                    <h1>Outils</h1>
-                </div>
-                <div class="d-flex justify-content-around">
-                    <div class="competencecv2">
-                        <div class="competencecv">
-                            <div class="skill-circle" data-percent="100">
-                                <div class="skill-circle-inner">
-                                    <span class="skill-percent">100%</span>
+
+                <!-- Stage Orchestra -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="section" id="stageOrchestra">
+                            <div class="sectioncv2">
+                                <h3>Février 2025 - Mars 2025</h3>
+                                <h2>Stage - Développeur QA</h2>
+                                <h2 class="font-normal">Orchestra - TravelSoft</h2>
+                                <h2 class="font-normal">Paris, France</h2>
+                                <h2 class="font-normal">8 semaines</h2>
+                                <div class="d-flex justify-content-center mt-20">
+                                    <img class="image-projet" src="img/button_voir_details/Orchestra/orchestra-plateforme.jpg" alt="Orchestra - TravelSoft">
                                 </div>
                             </div>
-                            <h2 class="font-normal">Suite Google</h2>
-                        </div>
-                        <div class="competencecv">
-                            <div class="skill-circle" data-percent="100">
-                                <div class="skill-circle-inner">
-                                    <span class="skill-percent">100%</span>
+                            <div class="sectioncv3">
+                                <p>
+                                    Durant mon stage au sein d'Orchestra - TravelSoft, éditeur d'une solution SaaS de mise en relation
+                                    entre Tour-Opérateurs et distributeurs (compagnies aériennes, hôtels, etc.), j'ai intégré l'équipe
+                                    Assurance Qualité (QA) en tant que développeur QA.
+                                </p>
+                                <p>
+                                    Mon rôle consistait à concevoir et implémenter des tests automatisés en utilisant Selenium en Java.
+                                    L'objectif était de valider l'intégration de nouvelles compagnies au sein du
+                                    logiciel de l'entreprise. Ce stage a été une opportunité précieuse pour renforcer mes compétences
+                                    techniques et acquérir une expertise concrète en QA dans un environnement professionnel.
+                                </p>
+                                <div class="bonton-container">
+                                    <button class="button button-primary button-size-sm open-project-modal"
+                                            data-title="Stage Développeur QA - Orchestra TravelSoft"
+                                            data-category="Expérience Professionnelle | Stage"
+                                            data-description="L'objectif du stage était d'implémenter des tests automatisés avec Selenium en Java afin de valider les informations affichées sur une page web lors de la réservation d'un vol. Ma tâche consistait à comparer les données récupérées depuis les fichiers XML envoyés par la compagnie aérienne avec celles affichées à l'écran. Ce processus était appliqué à plusieurs pages (vol, bagages, suppléments), et entièrement automatisé, ne nécessitant aucune intervention humaine pour les clics, les saisies ou la récupération des données."
+                                            data-tech="Java, Selenium, XML, Allure, Jira"
+                                            data-document-link="docs/Rapport_Stage_BONS_Orchestra_TravelSoft.pdf"
+                                            data-youtube-link="https://www.youtube.com/watch?v=-nnQ908SqKk"
+                                            data-images="img/button_voir_details/Orchestra/resultat_Carrefour_voyages.png,img/button_voir_details/Orchestra/données_rechercher.png,img/button_voir_details/Orchestra/allure.png"
+                                            data-apports="
+                                            Développement de tests automatisés ||
+                                            Structuration générique des nouveaux tests ||
+                                            Implémentation des tests sur Allure"
+                                    >
+                                        <ion-icon name="information-circle-outline" style="margin-right: 5px;" role="img"
+                                                  class="md hydrated" aria-label="information circle outline"></ion-icon>
+                                        <span>Voir Détails</span>
+                                    </button>
                                 </div>
                             </div>
-                            <h2 class="font-normal">Jet Brain</h2>
-                        </div>
-                    </div>
-                    <div class="competencecv2">
-                        <div class="competencecv">
-                            <div class="skill-circle" data-percent="100">
-                                <div class="skill-circle-inner">
-                                    <span class="skill-percent">100%</span>
-                                </div>
-                            </div>
-                            <h2 class="font-normal">GitHub</h2>
-                        </div>
-                        <div class="competencecv">
-                            <div class="skill-circle" data-percent="95">
-                                <div class="skill-circle-inner">
-                                    <span class="skill-percent">95%</span>
-                                </div>
-                            </div>
-                            <h2 class="font-normal">Linux</h2>
-                        </div>
-                    </div>
-                    <div class="competencecv2">
-                        <div class="competencecv">
-                            <div class="skill-circle" data-percent="80">
-                                <div class="skill-circle-inner">
-                                    <span class="skill-percent">80%</span>
-                                </div>
-                            </div>
-                            <h2 class="font-normal">Jira</h2>
-                        </div>
-                        <div class="competencecv">
-                            <div class="skill-circle" data-percent="95">
-                                <div class="skill-circle-inner">
-                                    <span class="skill-percent">95%</span>
-                                </div>
-                            </div>
-                            <h2 class="font-normal">Excel</h2>
                         </div>
                     </div>
                 </div>
-                <div>
-                    <h1>Langues</h1>
-                </div>
-                <div class="d-flex justify-content-around">
-                    <div class="competencecv2">
-                        <div class="competencecv">
-                            <div class="skill-circle" data-percent="100">
-                                <div class="skill-circle-inner">
-                                    <span class="skill-percent">100%</span>
+
+            </div>
+        </section>
+
+        <!-- Formation Section with Timeline -->
+        <section class="cv-section" id="formation-section">
+            <div class="section-title">
+                <h1>Formation</h1>
+            </div>
+
+            <div class="timeline">
+
+                <!-- IUT Montpellier -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="section">
+                            <div class="sectioncv2">
+                                <h3>2023 - Maintenant</h3>
+                                <h2>Étudiant en Informatique</h2>
+                                <h2 class="font-normal">IUT Montpellier-Sète</h2>
+                                <h2 class="font-normal">Montpellier, France</h2>
+                                <br>
+                                <div class="d-flex justify-content-center">
+                                    <img class="image-projet" src="img/iut-Montpellier-cete.jpeg" alt="IUT - Montpellier - Cète">
                                 </div>
                             </div>
-                            <h2 class="font-normal">Francais</h2>
-                        </div>
-                    </div>
-                    <div class="competencecv2">
-                        <div class="competencecv">
-                            <div class="skill-circle" data-percent="35">
-                                <div class="skill-circle-inner">
-                                    <span class="skill-percent">35%</span>
-                                </div>
+                            <div class="sectioncv3">
+                                <p>
+                                    Étudiant à l'IUT Montpellier-Sète depuis 2023, je suis actuellement en troisième année de BUT
+                                    Informatique.
+                                    Passionné par l'informatique et les nouvelles technologies, j'ai choisi cette formation pour
+                                    acquérir des compétences solides en développement.
+                                </p>
+                                <p>
+                                    J'ai opté pour l'option DACS afin de me spécialiser en cybersécurité et en réseau avancée.
+                                </p>
                             </div>
-                            <h2 class="font-normal">Anglais : B2</h2>
                         </div>
                     </div>
                 </div>
-                <p>Vous pouvez consulter mon Portfolio d'apprentissage pour consulter le lien entre les compétences de
-                    ma troisième année de BUT et mes projets :</p>
-                <div class="bonton-container">
-                    <a href="portfolio-apprentissage.html" class="button button-secondary button-size-sm"
-                       style="width: 300px; font-size: 14px">
-                        <p class="m-0">Voir mon Portfolio d’apprentissage</p>
-                    </a>
+
+                <!-- Bac STI2D -->
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="section">
+                            <div class="sectioncv2">
+                                <h3>2020 - 2023</h3>
+                                <h2>Baccalauréat technologique STI2D</h2>
+                                <h2 class="font-normal">Lycée Emmanuel d'Alzon</h2>
+                                <h2 class="font-normal">Nîmes, France</h2>
+                                <h2 class="font-normal">Admis avec Mention Assez Bien</h2>
+                                <br>
+                                <div class="d-flex justify-content-center">
+                                    <img class="image-projet" src="img/d'alzon.png" alt="D'Alzon Logo">
+                                </div>
+                            </div>
+                            <div class="sectioncv3">
+                                <p>
+                                    J'ai obtenu mon Baccalauréat STI2D avec mention Assez Bien.
+                                    Ce parcours, axé sur les sciences et les technologies de l'industrie et du développement durable,
+                                    m'a permis d'acquérir des compétences techniques en ingénierie et en conception.
+                                </p>
+                                <p>
+                                    Grâce à cette formation, j'ai découvert les bases de l'électronique, de la mécanique et du development, qui
+                                    ont contribué à mon intérêt pour l'informatique et l'innovation technologique.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Compétences Section -->
+        <section class="cv-section" id="competences-section">
+            <div class="section-title">
+                <h1>Compétences</h1>
+            </div>
+
+            <div class="section">
+                <div class="sectioncv5">
+
+                    <!-- Langages de programmation -->
+                    <div class="competences-block">
+                        <h2 class="competences-subtitle">Langage de programmation</h2>
+                        <div class="skills-row">
+                            <div class="competencecv">
+                                <div class="skill-circle" data-percent="100">
+                                    <div class="skill-circle-inner">
+                                        <span class="skill-percent">100%</span>
+                                    </div>
+                                </div>
+                                <h2 class="font-normal">HTML/CSS</h2>
+                            </div>
+                            <div class="competencecv">
+                                <div class="skill-circle" data-percent="100">
+                                    <div class="skill-circle-inner">
+                                        <span class="skill-percent">100%</span>
+                                    </div>
+                                </div>
+                                <h2 class="font-normal">Java / JavaFX</h2>
+                            </div>
+                            <div class="competencecv">
+                                <div class="skill-circle" data-percent="90">
+                                    <div class="skill-circle-inner">
+                                        <span class="skill-percent">90%</span>
+                                    </div>
+                                </div>
+                                <h2 class="font-normal">SQL / PL SQL</h2>
+                            </div>
+                            <div class="competencecv">
+                                <div class="skill-circle" data-percent="75">
+                                    <div class="skill-circle-inner">
+                                        <span class="skill-percent">75%</span>
+                                    </div>
+                                </div>
+                                <h2 class="font-normal">PHP</h2>
+                            </div>
+                            <div class="competencecv">
+                                <div class="skill-circle" data-percent="70">
+                                    <div class="skill-circle-inner">
+                                        <span class="skill-percent">70%</span>
+                                    </div>
+                                </div>
+                                <h2 class="font-normal">JS</h2>
+                            </div>
+                            <div class="competencecv">
+                                <div class="skill-circle" data-percent="60">
+                                    <div class="skill-circle-inner">
+                                        <span class="skill-percent">60%</span>
+                                    </div>
+                                </div>
+                                <h2 class="font-normal">C</h2>
+                            </div>
+                            <div class="competencecv">
+                                <div class="skill-circle" data-percent="45">
+                                    <div class="skill-circle-inner">
+                                        <span class="skill-percent">45%</span>
+                                    </div>
+                                </div>
+                                <h2 class="font-normal">Google Apps Script</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Outils -->
+                    <div class="competences-block">
+                        <h2 class="competences-subtitle">Outils</h2>
+                        <div class="skills-row">
+                            <div class="competencecv">
+                                <div class="skill-circle" data-percent="100">
+                                    <div class="skill-circle-inner">
+                                        <span class="skill-percent">100%</span>
+                                    </div>
+                                </div>
+                                <h2 class="font-normal">Suite Google</h2>
+                            </div>
+                            <div class="competencecv">
+                                <div class="skill-circle" data-percent="100">
+                                    <div class="skill-circle-inner">
+                                        <span class="skill-percent">100%</span>
+                                    </div>
+                                </div>
+                                <h2 class="font-normal">Jet Brain</h2>
+                            </div>
+                            <div class="competencecv">
+                                <div class="skill-circle" data-percent="100">
+                                    <div class="skill-circle-inner">
+                                        <span class="skill-percent">100%</span>
+                                    </div>
+                                </div>
+                                <h2 class="font-normal">GitHub</h2>
+                            </div>
+                            <div class="competencecv">
+                                <div class="skill-circle" data-percent="95">
+                                    <div class="skill-circle-inner">
+                                        <span class="skill-percent">95%</span>
+                                    </div>
+                                </div>
+                                <h2 class="font-normal">Linux</h2>
+                            </div>
+                            <div class="competencecv">
+                                <div class="skill-circle" data-percent="95">
+                                    <div class="skill-circle-inner">
+                                        <span class="skill-percent">95%</span>
+                                    </div>
+                                </div>
+                                <h2 class="font-normal">Excel</h2>
+                            </div>
+                            <div class="competencecv">
+                                <div class="skill-circle" data-percent="80">
+                                    <div class="skill-circle-inner">
+                                        <span class="skill-percent">80%</span>
+                                    </div>
+                                </div>
+                                <h2 class="font-normal">Jira</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Langues -->
+                    <div class="competences-block">
+                        <h2 class="competences-subtitle">Langues</h2>
+                        <div class="skills-row">
+                            <div class="competencecv">
+                                <div class="skill-circle" data-percent="100">
+                                    <div class="skill-circle-inner">
+                                        <span class="skill-percent">100%</span>
+                                    </div>
+                                </div>
+                                <h2 class="font-normal">Francais</h2>
+                            </div>
+                            <div class="competencecv">
+                                <div class="skill-circle" data-percent="35">
+                                    <div class="skill-circle-inner">
+                                        <span class="skill-percent">35%</span>
+                                    </div>
+                                </div>
+                                <h2 class="font-normal">Anglais : B2</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Portfolio d'apprentissage -->
+                    <div class="portfolio-link-section">
+                        <p>Vous pouvez consulter mon Portfolio d'apprentissage pour consulter le lien entre les compétences de
+                            ma troisième année de BUT et mes projets :</p>
+                        <div class="bonton-container">
+                            <a href="portfolio-apprentissage.html" class="button button-secondary button-size-md">
+                                Voir
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="mt-50">
-            <h1>Loisir</h1>
-        </div>
-        <div class="section">
-            <div class="sectioncv2">
-                <h3>2018 - Maintenant</h3>
-                <h2>Escalade</h2>
-                <div class="d-flex justify-content-center">
-                    <img class="image-projet" src="img/COBE-Logo.png" alt="Logo Club Escalade Bellegarde">
+        </section>
+
+        <!-- Loisir Section -->
+        <section class="cv-section" id="loisir-section">
+            <div class="section-title">
+                <h1>Loisir</h1>
+            </div>
+
+            <div class="section">
+                <div class="sectioncv2">
+                    <h3>2018 - Maintenant</h3>
+                    <h2>Escalade</h2>
+                    <div class="d-flex justify-content-center">
+                        <img class="image-projet" src="img/COBE-Logo.png" alt="Logo Club Escalade Bellegarde">
+                    </div>
+                </div>
+                <div class="sectioncv3">
+                    <p>
+                        J'ai commencé l'escalade en 2018 au club de Bellegarde. Ce sport m'a permis de me dépasser et de me
+                        surpasser.
+                    </p>
+                    <p>
+                        J'ai eu l'opportunité de participer à des compétitions et à des événements liés à l'escalade, ce qui
+                        m'a aidé à développer mon esprit d'équipe et mon sens de la compétition.
+                    </p>
+                    <p>
+                        Ce sport m'a permis de prendre conscience de mes responsabilités envers les autres.
+                    </p>
+                    <p style="color: white">Niveau max : 7C</p>
                 </div>
             </div>
-            <div class="sectioncv3">
-                <p>
-                    J'ai commencé l'escalade en 2018 au club de Bellegarde. Ce sport m'a permis de me dépasser et de me
-                    surpasser.
-                </p>
-                <p>
-                    J'ai eu l'opportunité de participer à des compétitions et à des événements liés à l'escalade, ce qui
-                    m'a aidé à développer mon esprit d'équipe et mon sens de la compétition.
-                </p>
-                <p>
-                    Ce sport m'a permis de prendre conscience de mes responsabilités envers les autres.
-                </p>
-                <p style="color: white">Niveau max : 7C</p>
-            </div>
-        </div>
+        </section>
+
     </div>
 </div>
+
+<!-- Modal -->
 <div class="modal-container" id="projectModalContainer">
     <div class="overlay" id="overlay"></div>
     <section class="project-modal" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
@@ -402,7 +458,8 @@
         </div>
     </section>
 </div>
-</body>
+
+<!-- Footer -->
 <footer>
     <div class="footer">
         <div>
@@ -431,5 +488,7 @@
         </div>
     </div>
 </footer>
+
 <script src="js/script.js"></script>
+</body>
 </html>

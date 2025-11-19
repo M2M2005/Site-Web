@@ -1,0 +1,289 @@
+/* ===== Timeline CV Styles ===== */
+
+/* Container principal du CV */
+.cv-container {
+    width: 90%;
+    max-width: 1300px;
+}
+
+/* Header du CV avec titre et bouton téléchargement */
+.cv-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+    padding-bottom: 30px;
+    border-bottom: 3px solid transparent;
+    border-image: linear-gradient(to right, #0050FF, #7f3bcf) 1;
+}
+
+.cv-title-section {
+    flex: 1;
+}
+
+.cv-main-title {
+    font-size: 45px;
+    font-family: 'poppins-semibold', sans-serif;
+    background: linear-gradient(to right, #0050FF, #7f3bcf) border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.cv-subtitle {
+    font-size: 18px;
+    color: #666;
+    margin: 10px 0 0 0;
+    font-family: 'poppins', sans-serif;
+}
+
+/* Sections principales */
+.cv-section {
+    margin-top: 50px;
+}
+
+.section-title {
+    margin-bottom: 30px;
+}
+
+/* ===== Timeline Styles ===== */
+.timeline {
+    position: relative;
+    padding-left: 0;
+}
+
+/* Ligne verticale de la timeline */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 30px;
+    bottom: 30px;
+    width: 4px;
+    background: linear-gradient(to bottom, #0050FF, #7f3bcf);
+    border-radius: 2px;
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 40px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Marqueur circulaire sur la timeline */
+.timeline-marker {
+    position: absolute;
+    left: -8px;
+    top: 30px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0050FF, #7f3bcf);
+    box-shadow: 0 0 0 4px #F4ECE6, 0 0 0 6px rgba(0, 80, 255, 0.2);
+    z-index: 2;
+}
+
+/* Contenu de chaque élément de la timeline */
+.timeline-content {
+    position: relative;
+}
+
+/* ===== Amélioration de la section Compétences ===== */
+.competences-block {
+    margin-bottom: 35px;
+}
+
+.competences-block:last-of-type {
+    margin-bottom: 0;
+}
+
+.competences-subtitle {
+    font-size: 22px;
+    font-family: 'poppins-semibold', sans-serif;
+    background: linear-gradient(to right, #0050FF, #7f3bcf) border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0 0 20px 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(0, 80, 255, 0.1);
+}
+
+.skills-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: flex-start;
+}
+
+.competencecv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    min-width: 120px;
+}
+
+.portfolio-link-section {
+    margin-top: 40px;
+    text-align: center;
+    padding: 25px;
+    background: linear-gradient(135deg, rgba(0, 80, 255, 0.03), rgba(127, 59, 207, 0.03));
+    border-radius: 10px;
+    border: 1px solid rgba(0, 80, 255, 0.1);
+}
+
+.portfolio-link-section p {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+/* ===== Responsive pour Timeline ===== */
+@media (max-width: 1024px) {
+    .cv-container {
+        width: 95%;
+    }
+
+    .timeline::before {
+        left: 0;
+    }
+
+    .timeline-item {
+        padding-left: 35px;
+    }
+
+    .timeline-marker {
+        left: -8px;
+    }
+
+    .skills-row {
+        gap: 20px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .cv-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        padding-bottom: 20px;
+    }
+
+    .cv-title-section {
+        width: 100%;
+        text-align: center;
+    }
+
+    .cv-main-title {
+        font-size: 35px;
+    }
+
+    .cv-subtitle {
+        font-size: 16px;
+    }
+
+    .cv-header .button {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .timeline::before {
+        left: 0;
+        top: 20px;
+        bottom: 20px;
+    }
+
+    .timeline-item {
+        padding-left: 30px;
+        margin-bottom: 30px;
+    }
+
+    .timeline-marker {
+        left: -8px;
+        top: 20px;
+        width: 16px;
+        height: 16px;
+        box-shadow: 0 0 0 3px #F4ECE6, 0 0 0 5px rgba(0, 80, 255, 0.2);
+    }
+
+    .competences-subtitle {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .skills-row {
+        justify-content: center;
+        gap: 18px;
+    }
+
+    .competencecv {
+        min-width: 100px;
+    }
+
+    .portfolio-link-section {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cv-main-title {
+        font-size: 28px;
+    }
+
+    .cv-subtitle {
+        font-size: 14px;
+    }
+
+    .timeline::before {
+        width: 3px;
+    }
+
+    .timeline-item {
+        padding-left: 25px;
+    }
+
+    .timeline-marker {
+        left: -7.5px;
+        width: 15px;
+        height: 15px;
+    }
+
+    .competences-subtitle {
+        font-size: 18px;
+    }
+
+    .skills-row {
+        gap: 15px;
+    }
+
+    .competencecv {
+        min-width: 90px;
+    }
+}
+
+/* Animation d'apparition au scroll (optionnel) */
+@media (prefers-reduced-motion: no-preference) {
+    .timeline-item {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.6s ease forwards;
+    }
+
+    .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+    .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+    .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+    .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+}
