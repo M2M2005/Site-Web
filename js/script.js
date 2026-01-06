@@ -166,19 +166,26 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', openProjectModal);
     });
 
-    modalCloseButton.addEventListener('click', () => {
-        modalContainer.classList.remove('active');
-    });
-
-    document.getElementById('overlay').addEventListener('click', () => {
-        modalContainer.classList.remove('active');
-    });
-
-    document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape' && modalContainer.classList.contains('active')) {
+    if (modalCloseButton) {
+        modalCloseButton.addEventListener('click', () => {
             modalContainer.classList.remove('active');
-        }
-    });
+        });
+    }
+
+    const overlay = document.getElementById('overlay');
+    if (overlay) {
+        overlay.addEventListener('click', () => {
+            modalContainer.classList.remove('active');
+        });
+    }
+
+    if (modalContainer) {
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && modalContainer.classList.contains('active')) {
+                modalContainer.classList.remove('active');
+            }
+        });
+    }
 
     const burgerMenu = document.getElementById('burger-menu');
     const burgerNav = document.getElementById('burger-nav');
