@@ -166,19 +166,26 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', openProjectModal);
     });
 
-    modalCloseButton.addEventListener('click', () => {
-        modalContainer.classList.remove('active');
-    });
-
-    document.getElementById('overlay').addEventListener('click', () => {
-        modalContainer.classList.remove('active');
-    });
-
-    document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape' && modalContainer.classList.contains('active')) {
+    if (modalCloseButton) {
+        modalCloseButton.addEventListener('click', () => {
             modalContainer.classList.remove('active');
-        }
-    });
+        });
+    }
+
+    const overlay = document.getElementById('overlay');
+    if (overlay) {
+        overlay.addEventListener('click', () => {
+            modalContainer.classList.remove('active');
+        });
+    }
+
+    if (modalContainer) {
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && modalContainer.classList.contains('active')) {
+                modalContainer.classList.remove('active');
+            }
+        });
+    }
 
     const burgerMenu = document.getElementById('burger-menu');
     const burgerNav = document.getElementById('burger-nav');
@@ -225,5 +232,71 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (skillCircles.length > 0) {
         animateSkillCircles();
+    }
+
+    // Gestion du formulaire de contact
+    const contactForm = document.querySelector('[data-form]');
+    if (contactForm) {
+        const formInputs = contactForm.querySelectorAll('[data-form-input]');
+        const submitButton = contactForm.querySelector('[data-form-btn]');
+        const formStatus = contactForm.querySelector('.form-status');
+
+        // Fonction pour vérifier si tous les champs sont valides
+        function checkFormValidity() {
+            let allValid = true;
+            formInputs.forEach(input => {
+                if (!input.value.trim() || (input.type === 'email' && !input.validity.valid)) {
+                    allValid = false;
+                }
+            });
+            submitButton.disabled = !allValid;
+        }
+
+        // Écouter les changements sur chaque champ
+        formInputs.forEach(input => {
+            input.addEventListener('input', checkFormValidity);
+            input.addEventListener('blur', checkFormValidity);
+        });
+
+        // Gérer la soumission du formulaire
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            submitButton.disabled = true;
+            submitButton.textContent = 'Envoi en cours...';
+
+            const formData = new FormData(contactForm);
+
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    formStatus.textContent = 'Message envoyé avec succès !';
+                    formStatus.style.color = '#28a745';
+                    formStatus.style.display = 'block';
+                    contactForm.reset();
+                    submitButton.disabled = true;
+                    submitButton.textContent = 'Envoyer';
+                } else {
+                    formStatus.textContent = 'Une erreur est survenue. Veuillez réessayer.';
+                    formStatus.style.color = '#dc3545';
+                    formStatus.style.display = 'block';
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Envoyer';
+                }
+            } catch (error) {
+                formStatus.textContent = 'Erreur de connexion. Veuillez réessayer.';
+                formStatus.style.color = '#dc3545';
+                formStatus.style.display = 'block';
+                submitButton.disabled = false;
+                submitButton.textContent = 'Envoyer';
+            }
+        });
     }
 });
