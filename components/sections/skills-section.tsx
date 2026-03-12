@@ -1,14 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
-import { useRef } from "react";
 import Link from "next/link";
 
 interface Skill {
     name: string;
-    level: number;
-    label?: string;
 }
 
 interface SkillCategory {
@@ -20,63 +16,54 @@ const skillsData: SkillCategory[] = [
     {
         title: "Langages de programmation",
         skills: [
-            { name: "HTML/CSS", level: 100 },
-            { name: "Java / JavaFX", level: 100 },
-            { name: "SQL / PL SQL", level: 90 },
-            { name: "PHP", level: 75 },
-            { name: "JavaScript", level: 70 },
-            { name: "C", level: 60 },
-            { name: "Google Apps Script", level: 45 },
+            { name: "HTML/CSS" },
+            { name: "Java / JavaFX" },
+            { name: "SQL / PL SQL" },
+            { name: "PHP" },
+            { name: "JavaScript" },
+            { name: "TypeScript" },
+            { name: "C" },
+            { name: "Google Apps Script" },
         ],
     },
     {
         title: "Outils",
         skills: [
-            { name: "Suite Google", level: 100 },
-            { name: "Jet Brain", level: 100 },
-            { name: "GitHub", level: 100 },
-            { name: "Linux", level: 95 },
-            { name: "Excel", level: 95 },
-            { name: "Jira", level: 80 },
+            { name: "Selenium" },
+            { name: "Cypress" },
+            { name: "Docker" },
+            { name: "GitLab" },
+            { name: "GitHub" },
+            { name: "CI/CD" },
+            { name: "Node.js" },
+            { name: "Jet Brain" },
+            { name: "Jira" },
+            { name: "n8n" },
+            { name: "Bash" },
+            { name: "Linux" },
+            { name: "Excel" },
         ],
     },
     {
         title: "Langues",
         skills: [
-            { name: "Français", level: 100, label: "Natif" },
-            { name: "Anglais", level: 35, label: "B2" },
+            { name: "Français (Natif)" },
+            { name: "Anglais (B2)" },
         ],
     },
 ];
 
-function SkillBar({ skill, index }: { skill: Skill; index: number }) {
-    const ref = useRef(null);
-    const isInView = useInView(ref, { once: true, margin: "-100px" });
-
+function SkillBadge({ skill, index }: { skill: Skill; index: number }) {
     return (
         <motion.div
-            ref={ref}
-            initial={{ opacity: 0, x: -20 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="mb-6"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.3, delay: index * 0.05 }}
+            whileHover={{ scale: 1.05, y: -2 }}
+            className="px-4 py-2 bg-neutral-100 dark:bg-neutral-900 text-neutral-950 dark:text-white rounded-full text-sm font-medium hover:bg-neutral-950 hover:text-white dark:hover:bg-white dark:hover:text-neutral-950 transition-colors duration-200 cursor-default"
         >
-            <div className="flex justify-between items-center mb-2">
-                <span className="text-sm font-semibold text-neutral-950 dark:text-white">
-                    {skill.name}
-                </span>
-                <span className="text-sm text-neutral-600 dark:text-white/60">
-                    {skill.label || `${skill.level}%`}
-                </span>
-            </div>
-            <div className="h-2 bg-neutral-200 dark:bg-neutral-800 rounded-full overflow-hidden">
-                <motion.div
-                    initial={{ width: 0 }}
-                    animate={isInView ? { width: `${skill.level}%` } : {}}
-                    transition={{ duration: 1, delay: index * 0.1 + 0.2, ease: "easeOut" }}
-                    className="h-full bg-gradient-to-r from-neutral-950 to-neutral-700 dark:from-white dark:to-white/80 rounded-full"
-                />
-            </div>
+            {skill.name}
         </motion.div>
     );
 }
@@ -110,17 +97,16 @@ export function SkillsSection() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: categoryIndex * 0.2 }}
-                            className="space-y-6"
                         >
                             {/* Category Title */}
-                            <h3 className="text-2xl font-bold text-neutral-950 dark:text-white mb-8 pb-3 border-b border-neutral-950/10 dark:border-white/10">
+                            <h3 className="text-2xl font-bold text-neutral-950 dark:text-white mb-6 pb-3 border-b border-neutral-950/10 dark:border-white/10">
                                 {category.title}
                             </h3>
 
-                            {/* Skills */}
-                            <div>
+                            {/* Skills Badges */}
+                            <div className="flex flex-wrap gap-3">
                                 {category.skills.map((skill, index) => (
-                                    <SkillBar key={skill.name} skill={skill} index={index} />
+                                    <SkillBadge key={skill.name} skill={skill} index={index} />
                                 ))}
                             </div>
                         </motion.div>
