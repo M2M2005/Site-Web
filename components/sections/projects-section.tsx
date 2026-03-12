@@ -12,6 +12,55 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 
+function getYouTubeId(url: string): string | null {
+    const match = url.match(/[?&]v=([^&]+)/);
+    return match ? match[1] : null;
+}
+
+function ModalCarousel({ images, title }: { images: string[]; title: string }) {
+    const [current, setCurrent] = useState(0);
+    const prev = () => setCurrent((c) => (c - 1 + images.length) % images.length);
+    const next = () => setCurrent((c) => (c + 1) % images.length);
+
+    return (
+        <div className="relative w-full h-80 md:h-96 rounded-lg overflow-hidden shadow-2xl">
+            <Image
+                src={images[current]}
+                alt={`${title} ${current + 1}`}
+                fill
+                className="object-cover transition-opacity duration-300"
+            />
+            {images.length > 1 && (
+                <>
+                    <button
+                        onClick={prev}
+                        className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/50 text-white flex items-center justify-center hover:bg-black/70 transition-colors z-10"
+                    >
+                        ←
+                    </button>
+                    <button
+                        onClick={next}
+                        className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/50 text-white flex items-center justify-center hover:bg-black/70 transition-colors z-10"
+                    >
+                        →
+                    </button>
+                    <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                        {images.map((_, i) => (
+                            <button
+                                key={i}
+                                onClick={() => setCurrent(i)}
+                                className={`w-2 h-2 rounded-full transition-colors ${
+                                    i === current ? "bg-white" : "bg-white/40"
+                                }`}
+                            />
+                        ))}
+                    </div>
+                </>
+            )}
+        </div>
+    );
+}
+
 interface Project {
     id: string;
     title: string;
@@ -224,6 +273,7 @@ const projects: Project[] = [
 
 export function ProjectsSection() {
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+    const [zoomedImage, setZoomedImage] = useState<string | null>(null);
 
     return (
         <section
@@ -348,16 +398,42 @@ export function ProjectsSection() {
                             </DialogHeader>
 
                             <div className="space-y-8 mt-6">
-                                {/* Main Image - Plus grande */}
-                                <div className="relative w-full h-80 md:h-96 rounded-lg overflow-hidden shadow-2xl group">
-                                    <Image
-                                        src={selectedProject.mainImage}
-                                        alt={selectedProject.title}
-                                        fill
-                                        className="object-cover group-hover:scale-105 transition-transform duration-500"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                                </div>
+                                {/* Main Visual - Vidéo ou Carousel */}
+                                {(() => {
+                                    const youtubeLink = selectedProject.links?.find(
+                                        (l) => getYouTubeId(l.url)
+                                    );
+                                    const videoId = youtubeLink ? getYouTubeId(youtubeLink.url) : null;
+
+                                    if (videoId) {
+                                        return (
+                                            <div className="w-full rounded-lg overflow-hidden shadow-2xl aspect-video">
+                                                <iframe
+                                                    src={`https://www.youtube.com/embed/${videoId}`}
+                                                    title={selectedProject.title}
+                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                    allowFullScreen
+                                                    className="w-full h-full"
+                                                />
+                                            </div>
+                                        );
+                                    }
+
+                                    if (selectedProject.images && selectedProject.images.length > 0) {
+                                        return <ModalCarousel images={selectedProject.images} title={selectedProject.title} />;
+                                    }
+
+                                    return (
+                                        <div className="relative w-full h-80 md:h-96 rounded-lg overflow-hidden shadow-2xl group">
+                                            <Image
+                                                src={selectedProject.mainImage}
+                                                alt={selectedProject.title}
+                                                fill
+                                                className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                            />
+                                        </div>
+                                    );
+                                })()}
 
                                 {/* Technologies en haut - Plus visibles */}
                                 <div className="bg-neutral-50 dark:bg-white/5 rounded-lg p-6 border border-neutral-200 dark:border-white/10">
@@ -410,18 +486,20 @@ export function ProjectsSection() {
                                     </div>
                                 )}
 
-                                {/* Galerie d'images améliorée */}
-                                {selectedProject.images && selectedProject.images.length > 1 && (
+                                {/* Galerie - uniquement si le projet a une vidéo (le carousel remplace sinon) */}
+                                {selectedProject.images && selectedProject.images.length > 1 &&
+                                 selectedProject.links?.some((l) => getYouTubeId(l.url)) && (
                                     <div>
                                         <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
                                             <span className="w-1 h-6 bg-neutral-950 dark:bg-white rounded-full"></span>
                                             Galerie
                                         </h3>
                                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                            {selectedProject.images.slice(1).map((img, i) => (
+                                            {selectedProject.images.map((img, i) => (
                                                 <div
                                                     key={i}
-                                                    className="relative h-56 md:h-64 rounded-lg overflow-hidden shadow-lg group cursor-pointer border border-neutral-200 dark:border-white/10"
+                                                    onClick={() => setZoomedImage(img)}
+                                                    className="relative h-56 md:h-64 rounded-lg overflow-hidden shadow-lg group cursor-zoom-in border border-neutral-200 dark:border-white/10"
                                                 >
                                                     <Image
                                                         src={img}
@@ -487,6 +565,29 @@ export function ProjectsSection() {
                         </>
                     )}
                     </div>
+
+                    {/* Lightbox - à l'intérieur du DialogContent pour éviter que Radix ferme le dialog */}
+                    {zoomedImage && (
+                        <div
+                            className="fixed inset-0 z-[9999] bg-black/90 flex items-center justify-center p-4 cursor-zoom-out"
+                            onClick={() => setZoomedImage(null)}
+                        >
+                            <div className="relative max-w-5xl max-h-full w-full h-full">
+                                <Image
+                                    src={zoomedImage}
+                                    alt="Zoom"
+                                    fill
+                                    className="object-contain"
+                                />
+                            </div>
+                            <button
+                                className="absolute top-4 right-4 text-white text-3xl leading-none hover:text-white/70 transition-colors"
+                                onClick={(e) => { e.stopPropagation(); setZoomedImage(null); }}
+                            >
+                                ✕
+                            </button>
+                        </div>
+                    )}
                 </DialogContent>
             </Dialog>
         </section>
