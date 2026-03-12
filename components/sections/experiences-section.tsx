@@ -255,14 +255,14 @@ export function ExperiencesSection() {
 
                                         {/* Links */}
                                         {exp.links && exp.links.length > 0 && (
-                                            <div className="mt-4">
+                                            <div className="mt-4 flex flex-wrap gap-2">
                                                 {exp.links.map((link) => (
                                                     <a
                                                         key={link.url}
                                                         href={link.url}
                                                         target="_blank"
                                                         rel="noopener noreferrer"
-                                                        className="inline-flex items-center gap-2 text-neutral-950 dark:text-white hover:underline"
+                                                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neutral-950/30 dark:border-white/30 text-sm font-medium text-neutral-950 dark:text-white hover:bg-neutral-950 hover:text-white dark:hover:bg-white dark:hover:text-neutral-950 transition-colors duration-200"
                                                     >
                                                         {link.label} →
                                                     </a>
