@@ -77,7 +77,7 @@ const experiences: Experience[] = [
         location: "Montpellier, France",
         image: "/img/iut-Montpellier-cete.jpeg",
         description: [
-            "Étudiant à l'IUT Montpellier-Sète depuis 2023, je suis actuellement en troisième année de BUT Informatique.",
+            "Étudiant à l'IUT Montpellier-Sète, en troisième année de BUT Informatique.",
             "Passionné par l'informatique et les nouvelles technologies, j'ai choisi cette formation pour acquérir des compétences solides en développement.",
             "J'ai opté pour l'option DACS afin de me spécialiser en cybersécurité et en réseau avancée.",
         ],
