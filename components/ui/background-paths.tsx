@@ -148,6 +148,16 @@ export function BackgroundPaths({
                     </motion.div>
                 </motion.div>
             </div>
+
+            {/* Scroll indicator */}
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 hero-fade-in hero-delay-4">
+                <span className="text-xs text-white/60 dark:text-neutral-700/60">
+                    Défiler pour découvrir
+                </span>
+                <div className="w-5 h-8 border-2 border-white/60 dark:border-neutral-700/60 rounded-full flex justify-center pt-1 hero-scroll-bounce">
+                    <div className="w-1 h-2 bg-white/60 dark:bg-neutral-700/60 rounded-full"></div>
+                </div>
+            </div>
         </div>
     );
 }
