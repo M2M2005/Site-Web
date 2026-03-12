@@ -94,27 +94,55 @@ export function Navigation() {
                         </button>
 
                         {/* Desktop Navigation */}
-                        <div className="hidden md:flex items-center gap-1">
-                            {navItems.map((item) => {
-                                const isActive = activeSection === item.href.substring(1);
-                                return (
-                                    <button
-                                        key={item.name}
-                                        onClick={() => scrollToSection(item.href)}
-                                        className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-                                            isActive
-                                                ? useLightText
-                                                    ? "bg-white dark:bg-neutral-950 text-neutral-950 dark:text-white"
-                                                    : "bg-neutral-950 dark:bg-white text-white dark:text-neutral-950"
-                                                : useLightText
-                                                ? "text-white/60 dark:text-neutral-950/60 hover:text-white dark:hover:text-neutral-950 hover:bg-white/10 dark:hover:bg-neutral-950/10"
-                                                : "text-neutral-600 dark:text-white/60 hover:text-neutral-950 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-white/10"
-                                        }`}
-                                    >
-                                        {item.name}
-                                    </button>
-                                );
-                            })}
+                        <div className="hidden md:flex items-center gap-3">
+                            <div className="flex items-center gap-1">
+                                {navItems.map((item) => {
+                                    const isActive = activeSection === item.href.substring(1);
+                                    return (
+                                        <button
+                                            key={item.name}
+                                            onClick={() => scrollToSection(item.href)}
+                                            className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                                                isActive
+                                                    ? useLightText
+                                                        ? "bg-white dark:bg-neutral-950 text-neutral-950 dark:text-white"
+                                                        : "bg-neutral-950 dark:bg-white text-white dark:text-neutral-950"
+                                                    : useLightText
+                                                    ? "text-white/60 dark:text-neutral-950/60 hover:text-white dark:hover:text-neutral-950 hover:bg-white/10 dark:hover:bg-neutral-950/10"
+                                                    : "text-neutral-600 dark:text-white/60 hover:text-neutral-950 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-white/10"
+                                            }`}
+                                        >
+                                            {item.name}
+                                        </button>
+                                    );
+                                })}
+                            </div>
+
+                            {/* CV Download Button */}
+                            <a
+                                href="/docs/CV_BONS.pdf"
+                                download="CV_Cyprien_BONS.pdf"
+                                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 flex items-center gap-2 ${
+                                    useLightText
+                                        ? "bg-white dark:bg-neutral-950 text-neutral-950 dark:text-white hover:bg-white/90 dark:hover:bg-neutral-900"
+                                        : "bg-neutral-950 dark:bg-white text-white dark:text-neutral-950 hover:bg-neutral-800 dark:hover:bg-neutral-100"
+                                }`}
+                            >
+                                <svg
+                                    className="w-4 h-4"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={2}
+                                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                                    />
+                                </svg>
+                                CV
+                            </a>
                         </div>
 
                         {/* Mobile Menu Button */}
@@ -174,6 +202,28 @@ export function Navigation() {
                                     {item.name}
                                 </button>
                             ))}
+
+                            {/* CV Download Button - Mobile */}
+                            <a
+                                href="/docs/CV_BONS.pdf"
+                                download="CV_Cyprien_BONS.pdf"
+                                className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 bg-neutral-950 dark:bg-white text-white dark:text-neutral-950 hover:bg-neutral-800 dark:hover:bg-neutral-100"
+                            >
+                                <svg
+                                    className="w-4 h-4"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={2}
+                                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                                    />
+                                </svg>
+                                Télécharger CV
+                            </a>
                         </div>
                     </motion.div>
                 )}
