@@ -17,6 +17,7 @@ interface Experience {
     keyPoints?: string[];
     links?: { label: string; url: string }[];
     images?: string[];
+    videoCaption?: string;
     mention?: string;
     type: "work" | "education";
 }
@@ -68,6 +69,7 @@ const experiences: Experience[] = [
                 url: "/docs/Rapport_Stage_BONS_Orchestra_TravelSoft.pdf",
             },
         ],
+        videoCaption: "Cette vidéo montre l'exécution d'un test Selenium : connexion à la plateforme, récupération des données affichées, puis comparaison automatique avec le fichier XML de la compagnie aérienne.",
         type: "work",
     },
     {
@@ -304,36 +306,72 @@ export function ExperiencesSection() {
                                     </div>
                                 </div>
 
-                                {/* Right side (or left on odd items) - Image/Logo */}
+                                {/* Right side (or left on odd items) - Video / Image / Logo */}
                                 <div
                                     className={`${
                                         index % 2 === 0 ? "md:order-2" : ""
                                     } flex justify-center`}
                                 >
-                                    {exp.logo && (
-                                        <div className="w-48 h-48 bg-white dark:bg-neutral-900 rounded-2xl p-6 border border-neutral-950/10 dark:border-white/10 flex items-center justify-center shadow-lg">
-                                            <div className="relative w-full h-full">
-                                                <Image
-                                                    src={exp.logo}
-                                                    alt={`${exp.company} logo`}
-                                                    width={192}
-                                                    height={192}
-                                                    className="object-contain w-full h-full"
-                                                />
-                                            </div>
-                                        </div>
-                                    )}
-                                    {exp.image && !exp.logo && (
-                                        <div className="w-full max-w-md">
-                                            <Image
-                                                src={exp.image}
-                                                alt={exp.company}
-                                                width={400}
-                                                height={300}
-                                                className="object-cover rounded-2xl border border-neutral-950/10 dark:border-white/10 shadow-lg w-full"
-                                            />
-                                        </div>
-                                    )}
+                                    {(() => {
+                                        const youtubeLink = exp.links?.find(l => {
+                                            const m = l.url.match(/[?&]v=([^&]+)/);
+                                            return !!m;
+                                        });
+                                        const videoId = youtubeLink?.url.match(/[?&]v=([^&]+)/)?.[1];
+
+                                        if (videoId) {
+                                            return (
+                                                <div className="w-full max-w-md">
+                                                    <div className="rounded-2xl overflow-hidden border border-neutral-950/10 dark:border-white/10 shadow-lg aspect-video">
+                                                        <iframe
+                                                            src={`https://www.youtube.com/embed/${videoId}`}
+                                                            title={exp.company}
+                                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                            allowFullScreen
+                                                            className="w-full h-full"
+                                                        />
+                                                    </div>
+                                                    {exp.videoCaption && (
+                                                        <p className="mt-2 text-sm text-neutral-500 dark:text-white/50 italic">
+                                                            {exp.videoCaption}
+                                                        </p>
+                                                    )}
+                                                </div>
+                                            );
+                                        }
+
+                                        if (exp.logo) {
+                                            return (
+                                                <div className="w-48 h-48 bg-white dark:bg-neutral-900 rounded-2xl p-6 border border-neutral-950/10 dark:border-white/10 flex items-center justify-center shadow-lg">
+                                                    <div className="relative w-full h-full">
+                                                        <Image
+                                                            src={exp.logo}
+                                                            alt={`${exp.company} logo`}
+                                                            width={192}
+                                                            height={192}
+                                                            className="object-contain w-full h-full"
+                                                        />
+                                                    </div>
+                                                </div>
+                                            );
+                                        }
+
+                                        if (exp.image) {
+                                            return (
+                                                <div className="w-full max-w-md">
+                                                    <Image
+                                                        src={exp.image}
+                                                        alt={exp.company}
+                                                        width={400}
+                                                        height={300}
+                                                        className="object-cover rounded-2xl border border-neutral-950/10 dark:border-white/10 shadow-lg w-full"
+                                                    />
+                                                </div>
+                                            );
+                                        }
+
+                                        return null;
+                                    })()}
                                 </div>
 
                                 {/* Timeline dot */}

@@ -32,13 +32,13 @@
   "escalade": [
     { "src": "competition_Escalade1.png", "caption": "Site résultat" },
     { "src": "competition_Escalade2.png", "caption": "Excel page information" },
-    { "src": "competition_Escalade3.png", "caption": "Excel " },
-    { "src": "competition_Escalade4.png", "caption": "" },
-    { "src": "competition_Escalade5.png", "caption": "" }
+    { "src": "competition_Escalade3.png", "caption": "Excel résultat" },
+    { "src": "competition_Escalade4.png", "caption": "Site résultat" },
+    { "src": "competition_Escalade5.png", "caption": "Excel insertion données" }
   ],
   "legendsbuster": [
-    { "src": "legendsbuster3.png", "caption": "" },
-    { "src": "legendsbuster2.png", "caption": "" },
-    { "src": "legendsbuster1.png", "caption": "" }
+    { "src": "legendsbuster3.png", "caption": "Menu du jeu" },
+    { "src": "legendsbuster2.png", "caption": "Boss du jeu" },
+    { "src": "legendsbuster1.png", "caption": "Point de spawn" }
   ]
 }

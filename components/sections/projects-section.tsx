@@ -74,6 +74,7 @@ interface Project {
     keyPoints: string[];
     links?: { label: string; url: string }[];
     images?: ProjectImage[];
+    videoCaption?: string;
     colSpan?: number;
     rowSpan?: number;
 }
@@ -100,11 +101,12 @@ const projects: Project[] = [
             { label: "GitHub", url: "https://github.com/M2M2005/shop-Cypress" },
             { label: "Vidéo démo", url: "https://www.youtube.com/watch?v=2esbW89tLiw" },
         ],
+        videoCaption: "Cette vidéo présente l'exécution automatisée des tests Cypress couvrant l'ensemble du parcours utilisateur : connexion, ajout au panier, passage de commande et validation côté administrateur.",
         images: [
-            { src: "/img/button_voir_details/shop-cypress/shop-cypress1.png", caption: "Page d'accueil du site e-commerce ciblé par les tests" },
-            { src: "/img/button_voir_details/shop-cypress/shop-cypress2.png", caption: "Interface d'administration — gestion des produits testée automatiquement" },
-            { src: "/img/button_voir_details/shop-cypress/shop-cypress3.png", caption: "Rapport d'exécution Cypress — couverture complète du parcours utilisateur" },
-            { src: "/img/button_voir_details/shop-cypress/shop-cypress4.png", caption: "Tableau de bord des commandes — validé par les scénarios E2E" },
+            { src: "/img/button_voir_details/shop-cypress/shop-cypress1.png", caption: "Page accueil" },
+            { src: "/img/button_voir_details/shop-cypress/shop-cypress2.png", caption: "Page connexion" },
+            { src: "/img/button_voir_details/shop-cypress/shop-cypress3.png", caption: "Page Dashbord Administrateur - gestion produit" },
+            { src: "/img/button_voir_details/shop-cypress/shop-cypress4.png", caption: "Page achat produit" },
         ],
         colSpan: 2,
         rowSpan: 2,
@@ -134,12 +136,13 @@ const projects: Project[] = [
             { label: "GitHub", url: "https://github.com/killianrms/Referendum" },
             { label: "Vidéo démo", url: "https://www.youtube.com/watch?v=F3I_4daMcuk" },
         ],
+        videoCaption: "Cette vidéo montre les tests automatisés TestFX en action : connexion client et admin, création d'un référendum, vote et vérification des résultats décryptés.",
         images: [
-            { src: "/img/button_voir_details/Referendum/referendum1.png", caption: "Interface de vote — parcours utilisateur automatisé avec TestFX" },
-            { src: "/img/button_voir_details/Referendum/referendum4.png", caption: "Résultats du référendum décryptés avec l'algorithme Elgamal" },
-            { src: "/img/button_voir_details/Referendum/referendum2.png", caption: "Interface administrateur — création et gestion des référendums" },
-            { src: "/img/button_voir_details/Referendum/referendum3.png", caption: "Écran de connexion — testé pour les rôles admin et client" },
-            { src: "/img/button_voir_details/Referendum/referendum5.png", caption: "Tests paramétrés couvrant les scénarios Oui / Non / Égalité" },
+            { src: "/img/button_voir_details/Referendum/referendum1.png", caption: "Page connexion" },
+            { src: "/img/button_voir_details/Referendum/referendum4.png", caption: "Page admin création référendum" },
+            { src: "/img/button_voir_details/Referendum/referendum2.png", caption: "Page scrutateur" },
+            { src: "/img/button_voir_details/Referendum/referendum3.png", caption: "Page connexion scrutateur" },
+            { src: "/img/button_voir_details/Referendum/referendum5.png", caption: "Page vote référendum" },
         ],
         colSpan: 1,
     },
@@ -164,11 +167,11 @@ const projects: Project[] = [
             { label: "GitHub", url: "https://github.com/M2M2005/E-Commerce" },
         ],
         images: [
-            { src: "/img/button_voir_details/E-Commerce/E-Commerce0.png", caption: "Page d'accueil du site de parfums — rendu dynamique PHP" },
-            { src: "/img/button_voir_details/E-Commerce/E-Commerce2.png", caption: "Catalogue produits avec gestion des stocks en base MySQL" },
-            { src: "/img/button_voir_details/E-Commerce/E-Commerce1.png", caption: "Page produit — architecture MVC, contrôleur PHP dédié" },
-            { src: "/img/button_voir_details/E-Commerce/E-Commerce3.png", caption: "Panier d'achat — gestion des sessions utilisateur côté serveur" },
-            { src: "/img/button_voir_details/E-Commerce/E-Commerce4.png", caption: "Interface d'administration — gestion des commandes et des utilisateurs" },
+            { src: "/img/button_voir_details/E-Commerce/E-Commerce0.png", caption: "Page accueil" },
+            { src: "/img/button_voir_details/E-Commerce/E-Commerce2.png", caption: "Page information profil" },
+            { src: "/img/button_voir_details/E-Commerce/E-Commerce1.png", caption: "Page admin modification produit" },
+            { src: "/img/button_voir_details/E-Commerce/E-Commerce3.png", caption: "Page panier utilisateur" },
+            { src: "/img/button_voir_details/E-Commerce/E-Commerce4.png", caption: "Page modification information utilisateur" },
         ],
         colSpan: 1,
     },
@@ -190,10 +193,9 @@ const projects: Project[] = [
             { label: "GitHub", url: "https://github.com/M2M2005/ProjetMediatheque" },
         ],
         images: [
-            { src: "/img/button_voir_details/Projet_Mediatheque/projet_mediatheque1.png", caption: "Interface principale — affichage dynamique des ressources en JavaScript" },
-            { src: "/img/button_voir_details/Projet_Mediatheque/projet_mediatheque2.png", caption: "Gestion des emprunts — mise à jour en temps réel sans rechargement" },
-            { src: "/img/button_voir_details/Projet_Mediatheque/projet_mediatheque3.png", caption: "Formulaire de retour — validation et traitement côté client" },
-            { src: "/img/button_voir_details/Projet_Mediatheque/projet_mediatheque4.png", caption: "Liste des utilisateurs — gestion des comptes et des droits d'accès" },
+            { src: "/img/button_voir_details/Projet_Mediatheque/projet_mediatheque1.png", caption: "Page accueil" },
+            { src: "/img/button_voir_details/Projet_Mediatheque/projet_mediatheque2.png", caption: "Information des livres empruntés par un utilisateur" },
+            { src: "/img/button_voir_details/Projet_Mediatheque/projet_mediatheque3.png", caption: "Information sur le livre emprunté" },
         ],
         colSpan: 1,
     },
@@ -215,8 +217,8 @@ const projects: Project[] = [
             { label: "GitHub", url: "https://github.com/M2M2005/Clicker-Game" },
         ],
         images: [
-            { src: "/img/button_voir_details/clicker-game/clicker-game1.png", caption: "Écran de jeu — système de clic et compteur de points en Angular/TypeScript" },
-            { src: "/img/button_voir_details/clicker-game/clicker-game2.png", caption: "Boutique d'améliorations — réactivité Angular avec sauvegarde de progression" },
+            { src: "/img/button_voir_details/clicker-game/clicker-game1.png", caption: "Page accueil" },
+            { src: "/img/button_voir_details/clicker-game/clicker-game2.png", caption: "Page de jeu" },
         ],
         colSpan: 1,
     },
@@ -239,11 +241,11 @@ const projects: Project[] = [
             { label: "Site web", url: "https://cobescalade.cyprienbons.com/" },
         ],
         images: [
-            { src: "/img/button_voir_details/Competition_Escalade/competition_Escalade2.png", caption: "Tableau de scores en temps réel affiché sur la page web via l'API Google Sheets" },
-            { src: "/img/button_voir_details/Competition_Escalade/competition_Escalade5.png", caption: "Feuille Google Sheets avec formules automatiques de calcul des scores" },
-            { src: "/img/button_voir_details/Competition_Escalade/competition_Escalade3.png", caption: "Boutons Google Apps Script pour automatiser la création de catégories" },
-            { src: "/img/button_voir_details/Competition_Escalade/competition_Escalade1.png", caption: "Export PDF automatisé des résultats par catégorie" },
-            { src: "/img/button_voir_details/Competition_Escalade/competition_Escalade4.png", caption: "Classement final — système utilisé en production lors d'une vraie compétition" },
+            { src: "/img/button_voir_details/Competition_Escalade/competition_Escalade1.png", caption: "Site résultat" },
+            { src: "/img/button_voir_details/Competition_Escalade/competition_Escalade2.png", caption: "Excel page information" },
+            { src: "/img/button_voir_details/Competition_Escalade/competition_Escalade3.png", caption: "Excel résultat" },
+            { src: "/img/button_voir_details/Competition_Escalade/competition_Escalade4.png", caption: "Site résultat" },
+            { src: "/img/button_voir_details/Competition_Escalade/competition_Escalade5.png", caption: "Excel insertion données" },
         ],
         colSpan: 1,
     },
@@ -264,10 +266,11 @@ const projects: Project[] = [
             { label: "Google Drive", url: "https://drive.google.com/drive/folders/1kk-ehaBQmD1dpbDoX3wrNLLrJnqQw2BI?usp=drive_link" },
             { label: "Vidéo démo", url: "https://www.youtube.com/watch?v=Es5DpToufog" },
         ],
+        videoCaption: "Cette vidéo présente le gameplay de LegendsBuster, jeu platformer die and retry développé en équipe en 48h lors de la Code Game Jam 2024 avec Unity.",
         images: [
-            { src: "/img/button_voir_details/LegendsBuster/legendsbuster3.png", caption: "Niveau principal du jeu — plateformer die and retry développé avec Unity" },
-            { src: "/img/button_voir_details/LegendsBuster/legendsbuster2.png", caption: "Mécanique de jeu — gestion des checkpoints et respawn en C#" },
-            { src: "/img/button_voir_details/LegendsBuster/legendsbuster1.png", caption: "Menu principal — réalisé en équipe en 48h lors de la Code Game Jam 2024" },
+            { src: "/img/button_voir_details/LegendsBuster/legendsbuster3.png", caption: "Menu du jeu" },
+            { src: "/img/button_voir_details/LegendsBuster/legendsbuster2.png", caption: "Boss du jeu" },
+            { src: "/img/button_voir_details/LegendsBuster/legendsbuster1.png", caption: "Point de spawn" },
         ],
         colSpan: 1,
     },
@@ -409,14 +412,21 @@ export function ProjectsSection() {
 
                                     if (videoId) {
                                         return (
-                                            <div className="w-full rounded-lg overflow-hidden shadow-2xl aspect-video">
-                                                <iframe
-                                                    src={`https://www.youtube.com/embed/${videoId}`}
-                                                    title={selectedProject.title}
-                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                                    allowFullScreen
-                                                    className="w-full h-full"
-                                                />
+                                            <div>
+                                                <div className="w-full rounded-lg overflow-hidden shadow-2xl aspect-video">
+                                                    <iframe
+                                                        src={`https://www.youtube.com/embed/${videoId}`}
+                                                        title={selectedProject.title}
+                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                        allowFullScreen
+                                                        className="w-full h-full"
+                                                    />
+                                                </div>
+                                                {selectedProject.videoCaption && (
+                                                    <p className="mt-3 text-sm text-neutral-500 dark:text-white/50 italic">
+                                                        {selectedProject.videoCaption}
+                                                    </p>
+                                                )}
                                             </div>
                                         );
                                     }
