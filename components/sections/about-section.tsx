@@ -56,25 +56,19 @@ export function AboutSection() {
                         className="space-y-6"
                     >
                         <p className="text-lg text-white/90 dark:text-neutral-950/90 leading-relaxed">
-                            Étudiant en troisième année de BUT Informatique parcours DACS (Réseau & CyberSécurité),
-                            actuellement en alternance chez ITESOFT en tant qu'Assistant Ingénieur QA.
-                        </p>
-
-                        <p className="text-lg text-white/90 dark:text-neutral-950/90 leading-relaxed">
-                            Je suis actuellement étudiant en BUT Informatique à l'IUT de Montpellier, en filière DACS
+                            Actuellement étudiant en BUT Informatique à l'IUT de Montpellier, en filière DACS
                             (Réseau & CyberSécurité).
                         </p>
 
                         <p className="text-lg text-white/90 dark:text-neutral-950/90 leading-relaxed">
-                            Je suis en alternance chez ITESOFT en tant que développeur dans l'équipe QA (Quality Assurance).
+                            En alternance chez ITESOFT en tant que développeur dans l'équipe QA (Quality Assurance).
                             Mon rôle consiste à développer et améliorer les processus de tests automatisés, contribuant ainsi
                             à l'amélioration continue de la qualité logicielle.
                         </p>
 
                         <p className="text-lg text-white/90 dark:text-neutral-950/90 leading-relaxed">
                             J'ai pour objectif de me spécialiser dans le domaine de la QA. Je souhaite donc continuer mes
-                            études en école d'ingénieur ou en Master dans cet objectif, mais je n'ai pas encore défini la
-                            formation précise.
+                            études en Master dans cet objectif.
                         </p>
 
                         {/* Contact info */}
