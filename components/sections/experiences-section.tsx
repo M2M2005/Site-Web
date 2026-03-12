@@ -62,6 +62,10 @@ const experiences: Experience[] = [
                 label: "Vidéo démo",
                 url: "https://www.youtube.com/watch?v=-nnQ908SqKk",
             },
+            {
+                label: "Rapport de stage",
+                url: "/docs/Rapport_Stage_BONS_Orchestra_TravelSoft.pdf",
+            },
         ],
         type: "work",
     },
