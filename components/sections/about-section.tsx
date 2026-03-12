@@ -56,19 +56,25 @@ export function AboutSection() {
                         className="space-y-6"
                     >
                         <p className="text-lg text-white/90 dark:text-neutral-950/90 leading-relaxed">
-                            Actuellement étudiant en BUT Informatique à l'IUT de Montpellier, en filière DACS
-                            (Réseau & CyberSécurité).
+                            Étudiant en BUT Informatique à l'IUT de Montpellier, spécialité DACS (Réseaux & Cybersécurité),
+                            je me distingue par un esprit analytique et un sens aigu du détail. Ces qualités m'ont conduit à
+                            développer une approche rigoureuse du développement et des tests, me permettant d'identifier des
+                            problèmes complexes et d'y apporter des solutions créatives.
                         </p>
 
                         <p className="text-lg text-white/90 dark:text-neutral-950/90 leading-relaxed">
-                            En alternance chez ITESOFT en tant que développeur dans l'équipe QA (Quality Assurance).
-                            Mon rôle consiste à développer et améliorer les processus de tests automatisés, contribuant ainsi
-                            à l'amélioration continue de la qualité logicielle.
+                            Actuellement en alternance chez ITESOFT au sein de l'équipe QA (Quality Assurance), je conçois
+                            et améliore des processus de tests automatisés, contribuant directement à la qualité et à la
+                            fiabilité des produits livrés. La QA s'impose naturellement comme mon domaine de prédilection :
+                            elle allie exigence technique et impact concret, où chaque test automatisé représente une garantie
+                            supplémentaire pour l'utilisateur final.
                         </p>
 
                         <p className="text-lg text-white/90 dark:text-neutral-950/90 leading-relaxed">
-                            J'ai pour objectif de me spécialiser dans le domaine de la QA. Je souhaite donc continuer mes
-                            études en Master dans cet objectif.
+                            Dans la continuité de ce parcours, je souhaite intégrer le Master Informatique — parcours
+                            Développement et Validation du Logiciel (DVL) — à l'Université de Franche-Comté (SUP-FC) à
+                            Besançon. Cette formation me permettra d'approfondir mon expertise en validation
+                            logicielle et en automatisation de tests, avec pour ambition de devenir ingénieur test.
                         </p>
 
                         {/* Contact info */}
