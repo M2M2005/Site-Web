@@ -290,6 +290,39 @@ export function ContactSection() {
                                 </div>
                             </div>
 
+                            {/* Location */}
+                            <div className="flex items-start gap-4">
+                                <div className="w-12 h-12 rounded-full bg-white/10 dark:bg-neutral-950/10 flex items-center justify-center flex-shrink-0">
+                                    <svg
+                                        className="w-6 h-6 text-white dark:text-neutral-950"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth={2}
+                                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                                        />
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth={2}
+                                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                                        />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p className="text-sm font-semibold text-white/60 dark:text-neutral-950/60 mb-1">
+                                        Localisation
+                                    </p>
+                                    <p className="text-white dark:text-neutral-950">
+                                        Montpellier, France
+                                    </p>
+                                </div>
+                            </div>
+
                             {/* Social Links */}
                             <div className="pt-6 border-t border-white/10 dark:border-neutral-950/10">
                                 <p className="text-sm font-semibold text-white/60 dark:text-neutral-950/60 mb-4">

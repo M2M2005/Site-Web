@@ -1,6 +1,6 @@
 # Évaluation Portfolio - Cyprien Bons
 
-> Note estimée globale : **44 / 60** *(+7 depuis la dernière évaluation)*
+> Note estimée globale : **48 / 60** *(+11 depuis la première évaluation)*
 > *(basée sur une lecture du code source et du contenu rédigé)*
 
 ---
@@ -17,18 +17,17 @@
 
 ---
 
-## 2. Présentation de soi — 4 / 7 *(inchangé)*
+## 2. Présentation de soi — 6 / 7 *(était 4)*
 
 **Ce qui est bien :**
 - Photo, paragraphes sur le cursus, l'alternance, et l'objectif de Master en QA.
 - Contact email et téléphone visibles.
+- ✅ **Traits de personnalité ajoutés** : esprit analytique, sens du détail, créativité, persévérance, curiosité.
+- ✅ **Projet post-BUT détaillé** : Master Informatique parcours DVL à Besançon (SUP-FC), collaboration internationale (Genève, Luxembourg, Franche-Comté), objectif ingénieur test/chef de projet QA.
+- ✅ **Motivation QA développée** : alliance exigence technique et impact concret sur la qualité.
 
-**Ce qui manque :**
-- **Les traits de personnalité sont absents.** Les paragraphes sont 100% factuels. Il faut ajouter : curiosité, rigueur, esprit d'équipe, passion pour les tests, etc.
-- **Le projet post-BUT est trop bref.** Une phrase sur le Master QA ne suffit pas — développer : quel type de Master, dans quel domaine précis, pourquoi ce choix.
-
-**Exemple d'ajout :**
-> *"Rigoureux et curieux, j'aime comprendre les systèmes en profondeur avant de les tester. Le QA me correspond car il allie logique, méthode et communication avec les équipes de développement."*
+**Point mineur restant :**
+- La présentation pourrait encore être enrichie avec des réalisations concrètes chiffrées (nombre de tests automatisés, projets gérés, etc.).
 
 ---
 
@@ -44,14 +43,15 @@
 
 ---
 
-## 4. Page Contact — 4 / 5 *(inchangé)*
+## 4. Page Contact — 4.5 / 5 *(était 4)*
 
 **Ce qui est bien :**
 - Email, téléphone, formulaire de contact fonctionnel (Formspree).
 - LinkedIn et GitHub présents.
+- ✅ **Localisation géographique ajoutée** : "Montpellier, France" avec icône de localisation.
 
-**Ce qui manque :**
-- Pas de localisation géographique (ex: "Basé à Nîmes / Montpellier").
+**Point mineur restant :**
+- Aucune amélioration majeure nécessaire.
 
 ---
 
@@ -61,12 +61,11 @@
 - ✅ Page `/experience` avec analyse détaillée en 4 blocs pour chaque expérience : contexte/missions, difficultés, compétences, bilan.
 - ✅ Orchestra : contexte entreprise, missions Selenium, difficultés (Paris, solution complexe), bilan orientation QA.
 - ✅ ITESOFT : missions Cypress + n8n, gestion Azure DevOps, apprentissages clés.
-- Page Apprentissage Critique structurée avec liens vers les projets.
+- ✅ Page Apprentissage Critique structurée avec liens vers les projets et style professionnel.
 - Rapport de stage PDF accessible.
 
 **Ce qui manque :**
 - Les descriptions de projets dans le modal restent assez courtes — pas de section "difficultés rencontrées" par projet.
-- Les analyses dans `/apprentissage` ont un style parfois trop familier (voir critère 8).
 
 ---
 
@@ -83,39 +82,60 @@
 
 ---
 
-## 7. Ergonomie — 4.5 / 5 *(était 4.5)*
+## 7. Ergonomie — 5 / 5 *(était 4.5)*
 
 **Ce qui est bien :**
 - Navigation fixe avec scroll-spy, menu mobile, transitions fluides.
 - Design cohérent dark/light, animations Framer Motion.
 - ✅ Bouton prominent "Analyse des expériences" dans la section Parcours.
+- ✅ **Grand bouton "Apprentissage Critique"** ajouté dans la section Compétences avec badge "Portfolio Académique" et description des compétences.
 - Bouton CV accessible partout (nav, À propos, Contact).
-
-**Point mineur restant :**
-- La page `/apprentissage` n'est pas dans la navigation principale — difficile à trouver pour la prof.
+- Scroll optimisé : la navbar ne masque plus le contenu lors des transitions entre sections.
 
 ---
 
-## 8. Qualité rédactionnelle — 4 / 6 *(inchangé)*
+## 8. Qualité rédactionnelle — 5 / 6 *(était 4)*
 
 **Ce qui est bien :**
 - Orthographe globalement correcte.
 - ✅ Page `/experience` bien rédigée, style professionnel.
+- ✅ **Page `/apprentissage` corrigée** : langage familier éliminé ("algos" → "algorithmes", "Ça m'a beaucoup appris" → formulations professionnelles).
+- ✅ **Répétitions supprimées** : variété des formulations ("Cette expérience m'a permis...", "Cette mise en pratique...", "Cette démarche m'a conduit...").
+- ✅ Section À propos enrichie avec un style plus élaboré et professionnel.
 
-**Problèmes restants :**
-- **Langage trop familier** dans `/apprentissage` : *"Ça m'a beaucoup appris"*, *"tout le monde était sur la même longueur d'onde"*.
-- **Répétitions** : "J'ai appris à..." répété en début de phrases dans apprentissage.
-- La section About reste très sobre en termes de style.
+**Point mineur restant :**
+- Quelques tournures pourraient encore être optimisées pour un style encore plus soutenu.
 
 ---
 
-## Résumé des priorités restantes
+## Résumé des améliorations réalisées
+
+| Priorité | Action | Impact réel | Statut |
+|----------|--------|--------|--------|
+| 🟠 Important | Ajouter traits de personnalité + projet post-BUT dans À propos | +2 pts (critère 2) | ✅ Complété |
+| 🟠 Important | Corriger le style rédactionnel dans `/apprentissage` | +1 pt (critère 8) | ✅ Complété |
+| 🟡 Moyen | Ajouter la page `/apprentissage` dans la navigation | +0.5 pt (critère 7) | ✅ Complété |
+| 🟢 Mineur | Localisation dans Contact | +0.5 pt (critère 4) | ✅ Complété |
+
+> **Gain total obtenu : +4 pts → 48 / 60** ✅
+
+---
+
+## Améliorations supplémentaires réalisées
+
+- ✅ Navigation optimisée : scroll ajusté pour éviter que la navbar masque le contenu
+- ✅ Section Compétences réorganisée : 4 colonnes (Langages, Tests & Qualité, DevOps, Langues)
+- ✅ Badges de compétences : style bouton avec ombre portée et effet 3D
+- ✅ .gitignore nettoyé : fichiers IDE (.idea) et configuration locale (.claude) exclus du versioning
+
+---
+
+## Pistes d'amélioration futures (optionnelles)
 
 | Priorité | Action | Impact estimé |
 |----------|--------|--------|
-| 🟠 Important | Ajouter traits de personnalité + projet post-BUT dans À propos | +2 pts (critère 2) |
-| 🟠 Important | Corriger le style rédactionnel dans `/apprentissage` | +1 pt (critère 8) |
-| 🟡 Moyen | Ajouter la page `/apprentissage` dans la navigation | +0.5 pt (critère 7) |
-| 🟢 Mineur | Localisation dans Contact | +0.5 pt (critère 4) |
+| 🟡 Moyen | Ajouter section "difficultés rencontrées" dans les modals de projets | +1-2 pts (critère 5) |
+| 🟢 Mineur | Expliciter le lien entre `/experience` et la fiche PPP dans le titre | +0.5 pt (critère 1) |
+| 🟢 Mineur | Ajouter réalisations chiffrées dans À propos | +0.5 pt (critère 2) |
 
-> Gain potentiel restant : **+4 pts → ~48 / 60**
+> Gain potentiel supplémentaire : **+2-3 pts → ~50-51 / 60**
