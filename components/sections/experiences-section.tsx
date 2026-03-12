@@ -31,7 +31,6 @@ const experiences: Experience[] = [
         description: [
             "Actuellement en alternance chez ITESOFT, éditeur d'une solution de facturation, j'occupe le poste d'Assistant Ingénieur QA.",
             "Ma mission consiste à la réalisation de tests avec Cypress pour garantir la non-régression du logiciel, tout en réalisant des tests manuels sur les fonctionnalités les plus complexes.",
-            "Actuellement, je travaille sur la conception et la réalisation de tests automatisés avec Cypress. Ces tests ont pour but de vérifier les anciennes et nouvelles fonctionnalités afin d'éviter les régressions et de garantir le bon fonctionnement du produit.",
             "J'effectue également des tests manuels sur la solution pour éprouver les fonctionnalités les plus complexes.",
         ],
         technologies: ["Cypress", "n8n", "gitLab", "Docker"],
@@ -51,25 +50,18 @@ const experiences: Experience[] = [
         description: [
             "Durant mon stage chez Orchestra - TravelSoft, éditeur d'une solution SaaS pour le secteur du tourisme, j'ai intégré l'équipe QA en tant que développeur.",
             "Ma mission : concevoir et implémenter des tests automatisés avec Selenium en Java pour valider l'intégration de nouvelles compagnies dans le logiciel.",
-            "Développement de tests automatisés avec Selenium en Java pour valider les informations affichées lors de la réservation d'un vol.",
             "Comparaison automatisée des données XML des compagnies aériennes avec l'affichage web (vols, bagages, suppléments), sans intervention humaine.",
         ],
         technologies: ["Java", "Selenium", "XML", "Allure", "Jira"],
         keyPoints: [
             "Développement de tests automatisés",
             "Structuration générique des nouveaux tests",
-            "Implémentation des tests sur Allure",
         ],
         links: [
             {
                 label: "Vidéo démo",
                 url: "https://www.youtube.com/watch?v=-nnQ908SqKk",
             },
-        ],
-        images: [
-            "/img/button_voir_details/Orchestra/resultat_Carrefour_voyages.png",
-            "/img/button_voir_details/Orchestra/données_rechercher.png",
-            "/img/button_voir_details/Orchestra/allure.png",
         ],
         type: "work",
     },
