@@ -26,6 +26,12 @@ export function Navigation() {
 
             // Only detect active section on home page
             if (pathname === "/") {
+                // Si on est tout en haut de la page, forcer la section hero comme active
+                if (window.scrollY < 100) {
+                    setActiveSection("hero");
+                    return;
+                }
+
                 const sections = navItems.map((item) =>
                     document.querySelector(item.href === "#hero" ? "#hero" : item.href)
                 );
