@@ -25,25 +25,25 @@ const learningData: LearningSection[] = [
         items: [
             {
                 title: "Choisir des structures de données complexes adaptées au problème",
-                content: "J'ai choisi une base de données relationnelle pour gérer efficacement les produits, utilisateurs et commandes, car elle permettait de bien lier ces éléments. J'ai appris à évaluer les besoins d'un projet pour choisir la bonne structure de données.",
+                content: "J'ai choisi une base de données relationnelle pour gérer efficacement les produits, utilisateurs et commandes, car elle permettait de bien lier ces éléments. Cette expérience m'a permis d'acquérir une méthodologie d'évaluation des besoins pour choisir la structure de données la plus adaptée.",
                 projectLink: "#ecommerce",
                 projectName: "projet e-commerce",
             },
             {
                 title: "Utiliser des techniques algorithmiques adaptées pour des problèmes complexes",
-                content: "J'ai utilisé Elgamal pour chiffrer les votes envoyés au serveur. J'ai appris à appliquer des algos de cryptographie pour sécuriser les infos sensibles, ce qui m'a montré l'importance de la sécurité en développement.",
+                content: "J'ai utilisé Elgamal pour chiffrer les votes envoyés au serveur. Cette mise en pratique m'a permis de maîtriser l'application d'algorithmes de cryptographie pour sécuriser les informations sensibles, révélant ainsi l'importance fondamentale de la sécurité en développement.",
                 projectLink: "#referendum",
                 projectName: "projet référendum",
             },
             {
                 title: "Comprendre les enjeux et moyens de sécurisation des données et du code",
-                content: "La sécurité des données était cruciale. J'ai appris à trouver les failles et à utiliser des mesures de sécurité comme le chiffrement et la validation contre les injections SQL. C'est en faisant face à ces obligations et en appliquant ces solutions que j'ai compris l'importance de la sécurisation.",
+                content: "La sécurité des données était cruciale. Ce projet m'a permis de développer ma capacité à identifier les vulnérabilités et à mettre en œuvre des mesures de protection adaptées : chiffrement, validation des entrées, prévention des injections SQL. C'est en affrontant ces enjeux concrets que j'ai pleinement intégré l'importance de la sécurisation.",
                 projectLink: "#ecommerce",
                 projectName: "projet e-commerce",
             },
             {
                 title: "Évaluer l'impact environnemental et sociétal des solutions proposées",
-                content: "Dans mes projets, j'ai réalisé l'impact environnemental de l'informatique. Par exemple, pour le jeu LegendsBuster, on devait faire un jeu éco-responsable : code propre et optimisé, faible consommation et petite taille pour toucher plus de monde.",
+                content: "Dans mes projets, j'ai pris conscience de l'impact environnemental de l'informatique. Le développement de LegendsBuster illustre cette démarche éco-responsable : code optimisé, consommation énergétique réduite et taille minimale pour garantir une accessibilité maximale.",
                 projectLink: "#legendsbuster",
                 projectName: "LegendsBuster",
             },
@@ -84,7 +84,7 @@ const learningData: LearningSection[] = [
             },
             {
                 title: "Manipuler des données hétérogènes",
-                content: "Pendant mon stage chez Orchestra - Travelsoft, j'ai récupéré des données au format IATA (aérien) et je les ai comparées avec des données internes de l'entreprise. Ça m'a beaucoup appris sur la gestion de données variées.",
+                content: "Pendant mon stage chez Orchestra - Travelsoft, j'ai récupéré des données au format IATA (aérien) et je les ai comparées avec des données internes de l'entreprise. Cette expérience m'a permis de développer mes compétences en gestion et harmonisation de données hétérogènes provenant de sources multiples.",
                 projectLink: "#orchestra",
                 projectName: "Orchestra - Travelsoft",
             },
@@ -113,19 +113,19 @@ const learningData: LearningSection[] = [
             },
             {
                 title: "Formaliser les besoins du client et de l'utilisateur",
-                content: "Nous devions communiquer avec le client pour bien comprendre ses besoins et s'assurer que le système de vote répondait à ses attentes. J'ai appris à poser les bonnes questions et à reformuler pour m'assurer que tout le monde était sur la même longueur d'onde.",
+                content: "Nous devions communiquer avec le client pour bien comprendre ses besoins et s'assurer que le système de vote répondait à ses attentes. Cette collaboration m'a permis de développer mes compétences en communication : poser les questions pertinentes, reformuler pour valider la compréhension mutuelle et garantir l'alignement entre tous les acteurs du projet.",
                 projectLink: "#referendum",
                 projectName: "projet référendum",
             },
             {
                 title: "Identifier les critères de faisabilité d'un projet informatique",
-                content: "J'ai dû évaluer la faisabilité technique et économique du projet. J'ai appris à analyser les ressources nécessaires, le temps et le budget pour m'assurer que le projet était réalisable.",
+                content: "J'ai dû évaluer la faisabilité technique et économique du projet. Cette démarche m'a conduit à développer une approche structurée d'analyse des ressources nécessaires, des contraintes temporelles et budgétaires, afin de valider la viabilité du projet.",
                 projectLink: "#ecommerce",
                 projectName: "projet e-commerce",
             },
             {
                 title: "Définir et mettre en œuvre une démarche de suivi de projet",
-                content: "J'ai utilisé l'outil sur GitHub pour suivre l'avancement du projet. En créant des issues et en assignant des tâches, j'ai appris à gérer le temps et les ressources de manière efficace.",
+                content: "J'ai utilisé l'outil de gestion de projet sur GitHub pour suivre l'avancement du projet. La création d'issues et l'assignation de tâches m'ont permis de mettre en pratique une gestion rigoureuse du temps et des ressources, garantissant ainsi le respect des objectifs et des délais.",
                 projectLink: "#ecommerce",
                 projectName: "projet e-commerce",
             },

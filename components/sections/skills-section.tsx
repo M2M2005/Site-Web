@@ -14,7 +14,7 @@ interface SkillCategory {
 
 const skillsData: SkillCategory[] = [
     {
-        title: "Langages de programmation",
+        title: "Langages",
         skills: [
             { name: "HTML/CSS" },
             { name: "Java / JavaFX" },
@@ -24,24 +24,29 @@ const skillsData: SkillCategory[] = [
             { name: "TypeScript" },
             { name: "C" },
             { name: "Google Apps Script" },
+            { name: "Bash" },
         ],
     },
     {
-        title: "Outils",
+        title: "Tests & Qualité",
         skills: [
             { name: "Selenium" },
             { name: "Cypress" },
+            { name: "Jira" },
+            { name: "n8n" },
+            { name: "Azure DevOps" },
+        ],
+    },
+    {
+        title: "DevOps",
+        skills: [
             { name: "Docker" },
             { name: "GitLab" },
             { name: "GitHub" },
             { name: "CI/CD" },
             { name: "Node.js" },
-            { name: "Jet Brain" },
-            { name: "Jira" },
-            { name: "n8n" },
-            { name: "Bash" },
+            { name: "JetBrains" },
             { name: "Linux" },
-            { name: "Excel" },
         ],
     },
     {
@@ -56,12 +61,12 @@ const skillsData: SkillCategory[] = [
 function SkillBadge({ skill, index }: { skill: Skill; index: number }) {
     return (
         <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.3, delay: index * 0.05 }}
-            whileHover={{ scale: 1.05, y: -2 }}
-            className="px-4 py-2 bg-neutral-100 dark:bg-neutral-900 text-neutral-950 dark:text-white rounded-full text-sm font-medium hover:bg-neutral-950 hover:text-white dark:hover:bg-white dark:hover:text-neutral-950 transition-colors duration-200 cursor-default"
+            whileHover={{ y: -4, scale: 1.02 }}
+            className="w-full px-5 py-2.5 bg-white dark:bg-neutral-900 text-neutral-950 dark:text-white rounded-xl text-base font-semibold hover:bg-neutral-950 hover:text-white dark:hover:bg-white dark:hover:text-neutral-950 transition-all duration-300 cursor-default shadow-md hover:shadow-xl border border-neutral-200 dark:border-neutral-800 hover:border-neutral-950 dark:hover:border-white"
         >
             {skill.name}
         </motion.div>
@@ -89,7 +94,7 @@ export function SkillsSection() {
                 </motion.div>
 
                 {/* Skills Grid */}
-                <div className="grid md:grid-cols-3 gap-12">
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
                     {skillsData.map((category, categoryIndex) => (
                         <motion.div
                             key={category.title}
@@ -99,12 +104,12 @@ export function SkillsSection() {
                             transition={{ duration: 0.6, delay: categoryIndex * 0.2 }}
                         >
                             {/* Category Title */}
-                            <h3 className="text-2xl font-bold text-neutral-950 dark:text-white mb-6 pb-3 border-b border-neutral-950/10 dark:border-white/10">
+                            <h3 className="text-2xl font-bold text-neutral-950 dark:text-white mb-8 pb-4 border-b-2 border-neutral-950/20 dark:border-white/20">
                                 {category.title}
                             </h3>
 
                             {/* Skills Badges */}
-                            <div className="flex flex-wrap gap-3">
+                            <div className="flex flex-col gap-3">
                                 {category.skills.map((skill, index) => (
                                     <SkillBadge key={skill.name} skill={skill} index={index} />
                                 ))}
@@ -119,17 +124,26 @@ export function SkillsSection() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.4 }}
-                    className="mt-16 text-center"
+                    className="mt-20"
                 >
-                    <p className="text-neutral-700 dark:text-white/80 mb-4">
-                        Le portfolio d'apprentissage détaille le lien entre les compétences de la troisième année de BUT et les projets réalisés.
-                    </p>
                     <Link
                         href="/apprentissage"
-                        className="inline-flex items-center gap-2 px-6 py-3 bg-neutral-950 dark:bg-white text-white dark:text-neutral-950 rounded-full font-semibold hover:bg-neutral-800 dark:hover:bg-white/90 transition-colors"
+                        className="group flex items-center justify-between w-full p-6 rounded-2xl border border-neutral-950/15 dark:border-white/15 hover:border-neutral-950/30 dark:hover:border-white/30 hover:bg-neutral-950/5 dark:hover:bg-white/5 transition-all duration-300"
                     >
-                        Voir le portfolio d'apprentissage
-                        <span>→</span>
+                        <div>
+                            <p className="text-xs font-semibold uppercase tracking-wider text-neutral-500 dark:text-white/50 mb-1">
+                                Portfolio Académique
+                            </p>
+                            <p className="text-xl font-bold text-neutral-950 dark:text-white">
+                                Apprentissage Critique
+                            </p>
+                            <p className="text-sm text-neutral-600 dark:text-white/60 mt-1">
+                                Optimiser, Gérer, Conduire — compétences acquises et projets analysés
+                            </p>
+                        </div>
+                        <span className="flex-shrink-0 w-10 h-10 rounded-full bg-neutral-950 dark:bg-white text-white dark:text-neutral-950 flex items-center justify-center text-lg group-hover:scale-110 transition-transform duration-200">
+                            →
+                        </span>
                     </Link>
                 </motion.div>
             </div>
