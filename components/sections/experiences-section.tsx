@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 interface Experience {
     id: string;
@@ -121,6 +122,35 @@ export function ExperiencesSection() {
                         Parcours
                     </h2>
                     <div className="w-20 h-1 bg-neutral-950/20 dark:bg-white/20"></div>
+                </motion.div>
+
+                {/* Bouton analyse expériences */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    className="mb-16"
+                >
+                    <Link
+                        href="/experience"
+                        className="group flex items-center justify-between w-full p-6 rounded-2xl border border-neutral-950/15 dark:border-white/15 hover:border-neutral-950/30 dark:hover:border-white/30 hover:bg-neutral-950/5 dark:hover:bg-white/5 transition-all duration-300"
+                    >
+                        <div>
+                            <p className="text-xs font-semibold uppercase tracking-wider text-neutral-500 dark:text-white/50 mb-1">
+                                Stage · Alternance
+                            </p>
+                            <p className="text-xl font-bold text-neutral-950 dark:text-white">
+                                Analyse de mes expériences professionnelles
+                            </p>
+                            <p className="text-sm text-neutral-600 dark:text-white/60 mt-1">
+                                Orchestra - TravelSoft &amp; ITESOFT — contexte, missions, compétences, bilan
+                            </p>
+                        </div>
+                        <span className="flex-shrink-0 w-10 h-10 rounded-full bg-neutral-950 dark:bg-white text-white dark:text-neutral-950 flex items-center justify-center text-lg group-hover:scale-110 transition-transform duration-200">
+                            →
+                        </span>
+                    </Link>
                 </motion.div>
 
                 <div className="relative">
@@ -256,17 +286,19 @@ export function ExperiencesSection() {
                                         {/* Links */}
                                         {exp.links && exp.links.length > 0 && (
                                             <div className="mt-4 flex flex-wrap gap-2">
-                                                {exp.links.map((link) => (
-                                                    <a
-                                                        key={link.url}
-                                                        href={link.url}
-                                                        target="_blank"
-                                                        rel="noopener noreferrer"
-                                                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neutral-950/30 dark:border-white/30 text-sm font-medium text-neutral-950 dark:text-white hover:bg-neutral-950 hover:text-white dark:hover:bg-white dark:hover:text-neutral-950 transition-colors duration-200"
-                                                    >
-                                                        {link.label} →
-                                                    </a>
-                                                ))}
+                                                {exp.links.map((link) => {
+                                                    const isInternal = link.url.startsWith("/");
+                                                    return (
+                                                        <a
+                                                            key={link.url}
+                                                            href={link.url}
+                                                            {...(!isInternal && { target: "_blank", rel: "noopener noreferrer" })}
+                                                            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neutral-950/30 dark:border-white/30 text-sm font-medium text-neutral-950 dark:text-white hover:bg-neutral-950 hover:text-white dark:hover:bg-white dark:hover:text-neutral-950 transition-colors duration-200"
+                                                        >
+                                                            {link.label} →
+                                                        </a>
+                                                    );
+                                                })}
                                             </div>
                                         )}
                                     </div>
