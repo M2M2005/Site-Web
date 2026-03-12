@@ -65,7 +65,14 @@ export function Navigation() {
         const targetId = href === "#hero" ? "hero" : href.substring(1);
         const element = document.getElementById(targetId);
         if (element) {
-            element.scrollIntoView({ behavior: "smooth" });
+            const navbarHeight = 80; // Height of the navbar
+            const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+            const offsetPosition = elementPosition - navbarHeight;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+            });
         }
         setIsMobileMenuOpen(false);
     };
