@@ -1,0 +1,44 @@
+{
+  "cypress-ecommerce": [
+    { "src": "shop-cypress1.png", "caption": "Page accueil" },
+    { "src": "shop-cypress2.png", "caption": "Page connexion" },
+    { "src": "shop-cypress3.png", "caption": "Page Dashbord Administrateur -gestion produit" },
+    { "src": "shop-cypress4.png", "caption": "Page achat produit" }
+  ],
+  "referendum": [
+    { "src": "referendum1.png", "caption": "Page connexion" },
+    { "src": "referendum4.png", "caption": "Page admin création référendum" },
+    { "src": "referendum2.png", "caption": "Page scrutateur" },
+    { "src": "referendum3.png", "caption": "Page connexion scrutateur" },
+    { "src": "referendum5.png", "caption": "Page vote référendum" }
+  ],
+  "ecommerce": [
+    { "src": "E-Commerce0.png", "caption": "Page accueil" },
+    { "src": "E-Commerce2.png", "caption": "Page information profil" },
+    { "src": "E-Commerce1.png", "caption": "Page admin modification produit" },
+    { "src": "E-Commerce3.png", "caption": "Page panier utilisateur" },
+    { "src": "E-Commerce4.png", "caption": "Page modification information utilisateur" }
+  ],
+  "mediatheque": [
+    { "src": "projet_mediatheque1.png", "caption": "Page accueil" },
+    { "src": "projet_mediatheque2.png", "caption": "Information des livre emprunté par un utilisateur" },
+    { "src": "projet_mediatheque3.png", "caption": "information sur le livre emprunté" },
+    { "src": "projet_mediatheque4.png", "caption": "A suprimer car en doublon" }
+  ],
+  "clicker": [
+    { "src": "clicker-game1.png", "caption": "Page accueil" },
+    { "src": "clicker-game2.png", "caption": "Page de jeu" }
+  ],
+  "escalade": [
+    { "src": "competition_Escalade1.png", "caption": "Site résultat" },
+    { "src": "competition_Escalade2.png", "caption": "Excel page information" },
+    { "src": "competition_Escalade3.png", "caption": "Excel " },
+    { "src": "competition_Escalade4.png", "caption": "" },
+    { "src": "competition_Escalade5.png", "caption": "" }
+  ],
+  "legendsbuster": [
+    { "src": "legendsbuster3.png", "caption": "" },
+    { "src": "legendsbuster2.png", "caption": "" },
+    { "src": "legendsbuster1.png", "caption": "" }
+  ]
+}
