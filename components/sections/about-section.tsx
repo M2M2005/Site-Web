@@ -2,8 +2,37 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { projects } from "@/components/sections/projects-section";
+
+// Calcul automatique de l'âge
+function calculateAge(birthDate: Date): number {
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDiff = today.getMonth() - birthDate.getMonth();
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+    return age;
+}
+
+// Calcul automatique de l'expérience en mois
+function calculateExperienceMonths(startDate: Date): number {
+    const today = new Date();
+    const months = (today.getFullYear() - startDate.getFullYear()) * 12 + (today.getMonth() - startDate.getMonth());
+    return months;
+}
 
 export function AboutSection() {
+    const age = calculateAge(new Date(2005, 8, 17)); // 17/09/2005 (mois en JS: 0=janvier, 8=septembre)
+    const experienceMonths = calculateExperienceMonths(new Date(2025, 8, 1)) + 2; // 01/09/2025 (ITESOFT) + 2 mois de stage (Orchestra)
+    const projectsCount = projects.length; // Compte automatiquement les projets
+
+    const stats = [
+        { label: "Ans", value: age },
+        { label: "Projets", value: projectsCount },
+        { label: "Mois d'expérience", value: experienceMonths },
+    ];
+
     return (
         <section
             id="about"
@@ -76,6 +105,24 @@ export function AboutSection() {
                             Besançon. Cette formation me permettra d'approfondir mon expertise en validation
                             logicielle et en automatisation de tests, avec pour ambition de devenir ingénieur test.
                         </p>
+
+                        {/* Stats */}
+                        <div className="grid grid-cols-3 gap-4 pt-6">
+                            {stats.map((stat, index) => (
+                                <div
+                                    key={index}
+                                    className="bg-white/5 dark:bg-neutral-950/5 backdrop-blur-sm rounded-lg p-4 border border-white/10 dark:border-neutral-950/10 text-center hover:border-white/20 dark:hover:border-neutral-950/20 transition-all duration-300"
+                                >
+                                    <div className="text-3xl font-bold text-white dark:text-neutral-950 mb-1">
+                                        {typeof stat.value === 'number' ? stat.value : stat.value}
+                                        {stat.label === "Mois d'expérience" && <span className="text-xl ml-1">mois</span>}
+                                    </div>
+                                    <div className="text-sm text-white/60 dark:text-neutral-950/60 font-medium">
+                                        {stat.label === "Mois d'expérience" ? "Expérience" : stat.label}
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
 
                         {/* Contact info */}
                         <div className="pt-6 space-y-3 border-t border-white/10 dark:border-neutral-950/10">

@@ -72,6 +72,7 @@ interface Project {
     description: string[];
     technologies: string[];
     keyPoints: string[];
+    challenges?: string[];
     links?: { label: string; url: string }[];
     images?: ProjectImage[];
     videoCaption?: string;
@@ -79,7 +80,7 @@ interface Project {
     rowSpan?: number;
 }
 
-const projects: Project[] = [
+export const projects: Project[] = [
     {
         id: "cypress-ecommerce",
         title: "Cypress E-Commerce",
@@ -96,6 +97,11 @@ const projects: Project[] = [
             "Maîtrise des tests end-to-end avec Cypress",
             "Écriture de commandes Cypress personnalisées et réutilisables",
             "Automatisation de scénarios de tests complets",
+        ],
+        challenges: [
+            "Gestion de l'asynchronisme dans Cypress : comprendre et maîtriser les mécanismes de retry et d'attente automatique pour des tests stables.",
+            "Structuration des tests pour éviter les duplications : création de commandes personnalisées réutilisables pour maintenir un code de test maintenable.",
+            "Gestion des états de l'application : réinitialiser la base de données entre chaque test pour garantir l'indépendance et la reproductibilité des scénarios.",
         ],
         links: [
             { label: "GitHub", url: "https://github.com/M2M2005/shop-Cypress" },
@@ -132,6 +138,12 @@ const projects: Project[] = [
             "Automatisation des parcours utilisateur : connexion, vote, gestion admin",
             "Tests paramétrés couvrant plusieurs scénarios de vote (Voir vidéo)",
         ],
+        challenges: [
+            "Implémentation de l'algorithme Elgamal : première approche de la cryptographie asymétrique, comprendre le chiffrement et le déchiffrement de données sensibles.",
+            "Coordination en méthode Agile : apprentissage de la gestion de projet en sprints, communication régulière avec le client (Product Owner) et ajustements itératifs.",
+            "Tests automatisés avec TestFX : découverte du framework, simulation des interactions utilisateur sur JavaFX et gestion des délais d'attente pour les éléments d'interface.",
+            "Synchronisation client-serveur : gérer les communications réseau et assurer la cohérence des données entre les différentes instances de l'application.",
+        ],
         links: [
             { label: "GitHub", url: "https://github.com/killianrms/Referendum" },
             { label: "Vidéo démo", url: "https://www.youtube.com/watch?v=F3I_4daMcuk" },
@@ -163,6 +175,11 @@ const projects: Project[] = [
             "Développement PHP (utilisateurs, produits, ventes)",
             "Conception et connexion à la base de données",
         ],
+        challenges: [
+            "Architecture MVC en PHP : première application du pattern Modèle-Vue-Contrôleur, séparation des responsabilités et organisation du code.",
+            "Sécurisation de l'application : prévention des injections SQL avec requêtes préparées, hashage des mots de passe et gestion sécurisée des sessions.",
+            "Gestion du panier et des commandes : maintenir la cohérence entre le panier en session et les données en base de données lors du processus d'achat.",
+        ],
         links: [
             { label: "GitHub", url: "https://github.com/M2M2005/E-Commerce" },
         ],
@@ -189,6 +206,11 @@ const projects: Project[] = [
         ],
         technologies: ["HTML", "CSS", "JS"],
         keyPoints: [],
+        challenges: [
+            "JavaScript réactif : mise à jour automatique de l'interface en temps réel lors des modifications de données sans rechargement de page.",
+            "Gestion de l'état applicatif : synchroniser les données entre le DOM et la logique JavaScript pour refléter instantanément les emprunts et retours.",
+            "Structure de données optimale : choisir et manipuler efficacement les structures JavaScript pour gérer les relations entre livres, utilisateurs et emprunts.",
+        ],
         links: [
             { label: "GitHub", url: "https://github.com/M2M2005/ProjetMediatheque" },
         ],
@@ -212,6 +234,11 @@ const projects: Project[] = [
         ],
         technologies: ["Angular", "TypeScript", "HTML", "CSS"],
         keyPoints: [],
+        challenges: [
+            "Découverte d'Angular : apprentissage du framework, des composants, des services et du data binding pour créer une application réactive.",
+            "Gestion de la persistence des données : implémenter un système de sauvegarde/chargement avec le LocalStorage pour conserver la progression du joueur.",
+            "Optimisation des performances : gérer les mises à jour fréquentes de l'interface (compteurs, animations) sans impacter la fluidité de l'application.",
+        ],
         links: [
             { label: "Site web", url: "https://clicker-game.cyprienbons.com/" },
             { label: "GitHub", url: "https://github.com/M2M2005/Clicker-Game" },
@@ -235,6 +262,12 @@ const projects: Project[] = [
         ],
         technologies: ["Sheets", "Google Apps Script", "API Google Sheets", "JavaScript"],
         keyPoints: [],
+        challenges: [
+            "Intégration API Google Sheets : comprendre l'authentification OAuth et la manipulation de données via l'API pour l'affichage temps réel sur le web.",
+            "Google Apps Script : apprentissage du langage et de ses spécificités pour automatiser les tâches répétitives (création catégories, génération PDF).",
+            "Fiabilité en production : gérer les cas limites et les erreurs potentielles car le système est utilisé lors de vraies compétitions d'escalade avec contraintes de temps.",
+            "Formules dynamiques dans Sheets : créer des formules qui s'adaptent automatiquement aux nouvelles catégories et participants sans intervention manuelle.",
+        ],
         links: [
             { label: "Google Drive", url: "https://drive.google.com/drive/folders/1aXPQoZu6ZVLKaPpNFQsAJGHnI8vSY_jp?usp=sharing" },
             { label: "GitHub", url: "https://github.com/M2M2005/Site-Web" },
@@ -262,6 +295,12 @@ const projects: Project[] = [
         ],
         technologies: ["Unity"],
         keyPoints: [],
+        challenges: [
+            "Découverte de Unity : première expérience avec le moteur de jeu, apprentissage des concepts de GameObjects, Components et Prefabs en temps limité.",
+            "Gestion du temps de la Game Jam : développer un jeu complet en 48h, prioriser les fonctionnalités essentielles et accepter de couper certaines idées.",
+            "Travail d'équipe sous pression : coordonner les tâches, communiquer efficacement et intégrer le travail de chacun malgré les contraintes de temps.",
+            "Mécaniques \"die and retry\" : équilibrer la difficulté pour rendre le jeu challengeant mais pas frustrant, tester et ajuster les niveaux.",
+        ],
         links: [
             { label: "Google Drive", url: "https://drive.google.com/drive/folders/1kk-ehaBQmD1dpbDoX3wrNLLrJnqQw2BI?usp=drive_link" },
             { label: "Vidéo démo", url: "https://www.youtube.com/watch?v=Es5DpToufog" },
@@ -478,6 +517,25 @@ export function ProjectsSection() {
                                         ))}
                                     </div>
                                 </div>
+
+                                {/* Challenges */}
+                                {selectedProject.challenges && selectedProject.challenges.length > 0 && (
+                                    <div className="bg-neutral-50 dark:bg-white/5 rounded-lg p-6 border border-neutral-200 dark:border-white/10">
+                                        <h3 className="text-xl font-bold mb-4">Difficultés rencontrées</h3>
+                                        <ul className="space-y-3">
+                                            {selectedProject.challenges.map((challenge, i) => (
+                                                <li key={i} className="flex items-start gap-3">
+                                                    <span className="flex-shrink-0 w-6 h-6 rounded-full bg-neutral-950 dark:bg-white text-white dark:text-neutral-950 flex items-center justify-center text-xs font-bold mt-0.5">
+                                                        •
+                                                    </span>
+                                                    <span className="text-neutral-700 dark:text-white/80 leading-relaxed">
+                                                        {challenge}
+                                                    </span>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                )}
 
                                 {/* Key Points */}
                                 {selectedProject.keyPoints.length > 0 && (
