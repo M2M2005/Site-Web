@@ -47,7 +47,7 @@ const experiences: Experience[] = [
         position: "Stage - Développeur QA",
         company: "Orchestra - TravelSoft",
         location: "Paris, France",
-        image: "/img/button_voir_details/Orchestra/orchestra-plateforme.jpg",
+        logo: "/img/button_voir_details/Orchestra/orchestra-plateforme.jpg",
         description: [
             "Durant mon stage chez Orchestra - TravelSoft, éditeur de solution SaaS pour le secteur du tourisme, j'ai intégré l'équipe QA en tant que développeur.",
             "Mission : concevoir des tests automatisés avec Selenium (Java) pour valider l'intégration de nouvelles compagnies aériennes. Les tests comparaient automatiquement les données XML (vols, bagages, suppléments) avec l'affichage web, sans intervention humaine.",
@@ -302,13 +302,29 @@ export function ExperiencesSection() {
                                     </div>
                                 </div>
 
-                                {/* Right side (or left on odd items) - Video / Image / Logo */}
+                                {/* Right side (or left on odd items) - Logo / Video / Image */}
                                 <div
                                     className={`${
                                         index % 2 === 0 ? "md:order-2" : ""
                                     } flex justify-center`}
                                 >
                                     {(() => {
+                                        if (exp.logo) {
+                                            return (
+                                                <div className="w-64 h-64 bg-white dark:bg-neutral-900 rounded-2xl p-8 border border-neutral-950/10 dark:border-white/10 flex items-center justify-center shadow-lg">
+                                                    <div className="relative w-full h-full">
+                                                        <Image
+                                                            src={exp.logo}
+                                                            alt={`${exp.company} logo`}
+                                                            width={256}
+                                                            height={256}
+                                                            className="object-contain w-full h-full"
+                                                        />
+                                                    </div>
+                                                </div>
+                                            );
+                                        }
+
                                         const youtubeLink = exp.links?.find(l => {
                                             const m = l.url.match(/[?&]v=([^&]+)/);
                                             return !!m;
@@ -332,22 +348,6 @@ export function ExperiencesSection() {
                                                             {exp.videoCaption}
                                                         </p>
                                                     )}
-                                                </div>
-                                            );
-                                        }
-
-                                        if (exp.logo) {
-                                            return (
-                                                <div className="w-48 h-48 bg-white dark:bg-neutral-900 rounded-2xl p-6 border border-neutral-950/10 dark:border-white/10 flex items-center justify-center shadow-lg">
-                                                    <div className="relative w-full h-full">
-                                                        <Image
-                                                            src={exp.logo}
-                                                            alt={`${exp.company} logo`}
-                                                            width={192}
-                                                            height={192}
-                                                            className="object-contain w-full h-full"
-                                                        />
-                                                    </div>
                                                 </div>
                                             );
                                         }
