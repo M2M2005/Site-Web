@@ -10,7 +10,6 @@ interface Experience {
     position: string;
     company: string;
     location: string;
-    logo?: string;
     image?: string;
     description: string[];
     technologies?: string[];
@@ -29,7 +28,7 @@ const experiences: Experience[] = [
         position: "Alternance - Assistant Ingénieur QA",
         company: "ITESOFT",
         location: "Aimargues, France",
-        logo: "/img/button_voir_details/ITESOFT/itesoft-logo.png",
+        image: "/img/button_voir_details/ITESOFT/itesoft-logo.png",
         description: [
             "Actuellement en alternance chez ITESOFT, éditeur d'une solution de facturation électronique, j'occupe le poste d'Assistant Ingénieur QA.",
             "Ma mission : développer des tests automatisés avec Cypress pour garantir la non-régression du logiciel à chaque version. Je réalise également des tests manuels sur les fonctionnalités complexes nécessitant une validation humaine.",
@@ -47,7 +46,7 @@ const experiences: Experience[] = [
         position: "Stage - Développeur QA",
         company: "Orchestra - TravelSoft",
         location: "Paris, France",
-        logo: "/img/button_voir_details/Orchestra/orchestra-plateforme.jpg",
+        image: "/img/button_voir_details/Orchestra/orchestra-plateforme.jpg",
         description: [
             "Durant mon stage chez Orchestra - TravelSoft, éditeur de solution SaaS pour le secteur du tourisme, j'ai intégré l'équipe QA en tant que développeur.",
             "Mission : concevoir des tests automatisés avec Selenium (Java) pour valider l'intégration de nouvelles compagnies aériennes. Les tests comparaient automatiquement les données XML (vols, bagages, suppléments) avec l'affichage web, sans intervention humaine.",
@@ -302,57 +301,31 @@ export function ExperiencesSection() {
                                     </div>
                                 </div>
 
-                                {/* Right side (or left on odd items) - Logo / Video / Image */}
+                                {/* Right side (or left on odd items) - Image */}
                                 <div
                                     className={`${
                                         index % 2 === 0 ? "md:order-2" : ""
                                     } flex justify-center`}
                                 >
                                     {(() => {
-                                        if (exp.logo) {
-                                            return (
-                                                <div className="w-64 h-64 bg-white dark:bg-neutral-900 rounded-2xl p-8 border border-neutral-950/10 dark:border-white/10 flex items-center justify-center shadow-lg">
-                                                    <div className="relative w-full h-full">
-                                                        <Image
-                                                            src={exp.logo}
-                                                            alt={`${exp.company} logo`}
-                                                            width={256}
-                                                            height={256}
-                                                            className="object-contain w-full h-full"
-                                                        />
-                                                    </div>
-                                                </div>
-                                            );
-                                        }
-
-                                        const youtubeLink = exp.links?.find(l => {
-                                            const m = l.url.match(/[?&]v=([^&]+)/);
-                                            return !!m;
-                                        });
-                                        const videoId = youtubeLink?.url.match(/[?&]v=([^&]+)/)?.[1];
-
-                                        if (videoId) {
-                                            return (
-                                                <div className="w-full max-w-md">
-                                                    <div className="rounded-2xl overflow-hidden border border-neutral-950/10 dark:border-white/10 shadow-lg aspect-video">
-                                                        <iframe
-                                                            src={`https://www.youtube.com/embed/${videoId}`}
-                                                            title={exp.company}
-                                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                                            allowFullScreen
-                                                            className="w-full h-full"
-                                                        />
-                                                    </div>
-                                                    {exp.videoCaption && (
-                                                        <p className="mt-2 text-sm text-neutral-500 dark:text-white/50 italic">
-                                                            {exp.videoCaption}
-                                                        </p>
-                                                    )}
-                                                </div>
-                                            );
-                                        }
-
                                         if (exp.image) {
+                                            // Affichage en carré avec fond blanc pour les expériences professionnelles (logos)
+                                            if (exp.type === "work") {
+                                                return (
+                                                    <div className="w-64 h-64 bg-white dark:bg-neutral-900 rounded-2xl p-8 border border-neutral-950/10 dark:border-white/10 flex items-center justify-center shadow-lg">
+                                                        <div className="relative w-full h-full">
+                                                            <Image
+                                                                src={exp.image}
+                                                                alt={`${exp.company} logo`}
+                                                                width={256}
+                                                                height={256}
+                                                                className="object-contain w-full h-full"
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                );
+                                            }
+                                            // Affichage normal pour les formations (photos de bâtiments)
                                             return (
                                                 <div className="w-full max-w-md">
                                                     <Image
