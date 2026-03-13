@@ -88,9 +88,9 @@ export const projects: Project[] = [
         date: "Novembre 2025",
         mainImage: "/img/button_voir_details/shop-cypress/shop-cypress1.png",
         description: [
-            "Projet de tests E2E avec Cypress pour tester un site web personnel de e-commerce.",
-            "Tests couvrant le cycle complet : gestion des produits, authentification, panier, commandes et administration.",
-            "Les tests couvrent l'ensemble du parcours utilisateur : création de produits par l'administrateur, inscription et connexion des utilisateurs, ajout au panier, passage de commande, suivi des statuts de commande et gestion des utilisateurs côté admin.",
+            "Suite de tests E2E avec Cypress pour valider un site web de e-commerce développé en parallèle.",
+            "Couverture complète du cycle utilisateur : création de produits (admin), inscription, connexion, gestion du panier, passage de commande et suivi des statuts.",
+            "Chaque scénario teste une fonctionnalité critique, garantissant la fiabilité de l'application à chaque déploiement.",
         ],
         technologies: ["Cypress", "JavaScript", "Node.js"],
         keyPoints: [
@@ -124,11 +124,9 @@ export const projects: Project[] = [
         date: "Mai 2024",
         mainImage: "/img/button_voir_details/Referendum/referendum1.png",
         description: [
-            "Système de référendums sécurisés permettant de gérer des votes cryptés et confidentiels avec l'algorithme Elgamal.",
-            "J'ai également développé une suite de tests automatisés avec TestFX pour valider l'ensemble des parcours utilisateur.",
-            "Ce projet s'articulait autour de deux axes majeurs : la cryptographie et la méthode agile.",
-            "Nous avons sécurisé les référendums à l'aide de l'algorithme Elgamal. Parallèlement, afin d'assurer une bonne communication avec le client et de répondre au mieux à ses attentes, nous utilisions la méthode agile. Le projet était ainsi organisé en sprints de quatre semaines, et l'équipe se composait d'un Product Owner, d'un Scrum Master et de deux développeurs.",
-            "J'ai conçu et développé seul une suite complète de tests automatisés avec TestFX. Ces tests simulent les interactions utilisateur sur l'interface JavaFX : connexion client et admin, création et suppression de référendums, parcours de vote complet, et vérification des résultats. Les tests sont paramétrés pour couvrir plusieurs scénarios de vote (Oui/Non/Égalité).",
+            "Système de référendums sécurisés avec cryptographie Elgamal, développé en méthode Agile.",
+            "Le projet alliait deux enjeux majeurs : sécuriser les votes via le chiffrement asymétrique et collaborer efficacement avec le client (Product Owner) à travers des sprints de quatre semaines.",
+            "J'ai conçu une suite complète de tests automatisés avec TestFX, simulant les interactions utilisateur (connexion, vote, gestion admin) et couvrant plusieurs scénarios paramétrés (Oui/Non/Égalité). Cette démarche garantissait la fiabilité de l'application à chaque itération.",
         ],
         technologies: ["Java", "Cryptographie", "JavaFX", "TestFX"],
         keyPoints: [
@@ -166,9 +164,8 @@ export const projects: Project[] = [
         mainImage: "/img/button_voir_details/E-Commerce/E-Commerce0.png",
         description: [
             "Site e-commerce de vente de parfums développé en PHP avec architecture MVC et base de données MySQL.",
-            "Gestion complète des utilisateurs, produits, paniers et commandes avec interface administrateur.",
-            "Site permettant aux utilisateurs de parcourir une sélection de parfums, les ajouter au panier et passer commande.",
-            "Interface utilisateur intuitive et panneau d'administration pour gérer produits et commandes. Architecture MVC (Modèle-Vue-Contrôleur).",
+            "Fonctionnalités complètes : parcours de produits, gestion du panier, passage de commande (utilisateur) et administration des produits et commandes (admin).",
+            "Première mise en pratique de l'architecture MVC, de la sécurisation des données (requêtes préparées, hashage) et de la gestion des sessions.",
         ],
         technologies: ["PHP", "MySQL", "HTML", "CSS"],
         keyPoints: [
@@ -200,9 +197,8 @@ export const projects: Project[] = [
         mainImage: "/img/button_voir_details/Projet_Mediatheque/projet_mediatheque1.png",
         description: [
             "Application web de gestion de médiathèque développée en JavaScript réactif.",
-            "Gestion complète des emprunts, utilisateurs et retours de livres en temps réel.",
-            "Application web pour gérer une médiathèque avec JavaScript réactif.",
-            "Système complet de gestion des emprunts, utilisateurs et retours de livres avec interface dynamique et mise à jour en temps réel.",
+            "Fonctionnalités : gestion des emprunts, suivi des utilisateurs et retours de livres, le tout avec mise à jour dynamique de l'interface en temps réel sans rechargement de page.",
+            "Ce projet m'a permis de découvrir la programmation réactive et la synchronisation automatique entre les données et le DOM.",
         ],
         technologies: ["HTML", "CSS", "JS"],
         keyPoints: [],
@@ -228,9 +224,9 @@ export const projects: Project[] = [
         date: "Juillet 2025",
         mainImage: "/img/button_voir_details/clicker-game/clicker-game2.png",
         description: [
-            "Jeu de type \"clicker\" développé avec Angular où le joueur gagne des points et achète des améliorations progressives.",
-            "Jeu développé en Angular avec interface réactive et animations immersives.",
-            "Le joueur clique pour gagner des points puis achète des améliorations pour automatiser et accélérer les gains. Système de sauvegarde/chargement pour conserver la progression.",
+            "Jeu de type \"clicker\" développé avec Angular : le joueur clique pour gagner des points, puis achète des améliorations pour automatiser et accélérer les gains.",
+            "Interface réactive avec animations immersives et système de sauvegarde/chargement (LocalStorage) pour conserver la progression entre les sessions.",
+            "Ce projet m'a permis de découvrir Angular, ses composants, services et data binding tout en gérant les performances liées aux mises à jour fréquentes.",
         ],
         technologies: ["Angular", "TypeScript", "HTML", "CSS"],
         keyPoints: [],
@@ -256,9 +252,9 @@ export const projects: Project[] = [
         date: "Actuellement",
         mainImage: "/img/button_voir_details/Competition_Escalade/competition_Escalade2.png",
         description: [
-            "Système de calcul et affichage en temps réel des scores d'une compétition d'escalade sur page web.",
-            "Calcul automatique des scores puis affichage temps réel sur page web via l'API Google Sheets (JavaScript).",
-            "Boutons automatisés dans Sheets (Google Apps Script) pour créer des catégories, mettre à jour les formules et exporter les résultats en PDF. Système fonctionnel et utilisé en production.",
+            "Système de calcul et affichage en temps réel des scores d'une compétition d'escalade, développé pour être utilisé en production lors de vraies compétitions.",
+            "Calcul automatique des scores via Google Sheets (formules dynamiques) puis affichage temps réel sur page web via l'API Google Sheets (JavaScript).",
+            "Boutons automatisés (Google Apps Script) pour créer les catégories, mettre à jour les formules et exporter les résultats en PDF, réduisant considérablement le temps de gestion manuel.",
         ],
         technologies: ["Sheets", "Google Apps Script", "API Google Sheets", "JavaScript"],
         keyPoints: [],
@@ -290,8 +286,8 @@ export const projects: Project[] = [
         mainImage: "/img/button_voir_details/LegendsBuster/legendsbuster3.png",
         description: [
             "Jeu vidéo de type plateformer \"die and retry\" développé en équipe lors de la Code Game Jam 2024 avec Unity.",
-            "Première expérience avec Unity lors d'une game jam. Apprentissage des bases du développement de jeux vidéo.",
-            "Conception complète des mécaniques de jeu et travail d'équipe pour relever les défis techniques dans un temps limité.",
+            "Première expérience avec Unity : découverte des GameObjects, Components et Prefabs en 48h, avec conception complète des mécaniques de jeu.",
+            "Challenge principal : développer un jeu complet en temps limité tout en coordonnant les tâches de l'équipe et en équilibrant la difficulté pour rendre le jeu challengeant sans être frustrant.",
         ],
         technologies: ["Unity"],
         keyPoints: [],

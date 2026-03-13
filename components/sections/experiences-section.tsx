@@ -31,9 +31,8 @@ const experiences: Experience[] = [
         location: "Aimargues, France",
         logo: "/img/button_voir_details/ITESOFT/itesoft-logo.png",
         description: [
-            "Actuellement en alternance chez ITESOFT, éditeur d'une solution de facturation, j'occupe le poste d'Assistant Ingénieur QA.",
-            "Ma mission consiste à la réalisation de tests avec Cypress pour garantir la non-régression du logiciel, tout en réalisant des tests manuels sur les fonctionnalités les plus complexes.",
-            "J'effectue également des tests manuels sur la solution pour éprouver les fonctionnalités les plus complexes.",
+            "Actuellement en alternance chez ITESOFT, éditeur d'une solution de facturation électronique, j'occupe le poste d'Assistant Ingénieur QA.",
+            "Ma mission : développer des tests automatisés avec Cypress pour garantir la non-régression du logiciel à chaque version. Je réalise également des tests manuels sur les fonctionnalités complexes nécessitant une validation humaine.",
         ],
         technologies: ["Cypress", "n8n", "gitLab", "Docker"],
         keyPoints: [
@@ -50,9 +49,8 @@ const experiences: Experience[] = [
         location: "Paris, France",
         image: "/img/button_voir_details/Orchestra/orchestra-plateforme.jpg",
         description: [
-            "Durant mon stage chez Orchestra - TravelSoft, éditeur d'une solution SaaS pour le secteur du tourisme, j'ai intégré l'équipe QA en tant que développeur.",
-            "Ma mission : concevoir et implémenter des tests automatisés avec Selenium en Java pour valider l'intégration de nouvelles compagnies dans le logiciel.",
-            "Comparaison automatisée des données XML des compagnies aériennes avec l'affichage web (vols, bagages, suppléments), sans intervention humaine.",
+            "Durant mon stage chez Orchestra - TravelSoft, éditeur de solution SaaS pour le secteur du tourisme, j'ai intégré l'équipe QA en tant que développeur.",
+            "Mission : concevoir des tests automatisés avec Selenium (Java) pour valider l'intégration de nouvelles compagnies aériennes. Les tests comparaient automatiquement les données XML (vols, bagages, suppléments) avec l'affichage web, sans intervention humaine.",
         ],
         technologies: ["Java", "Selenium", "XML", "Allure", "Jira"],
         keyPoints: [
@@ -80,9 +78,8 @@ const experiences: Experience[] = [
         location: "Montpellier, France",
         image: "/img/iut-Montpellier-cete.jpeg",
         description: [
-            "Étudiant à l'IUT Montpellier-Sète, en troisième année de BUT Informatique.",
-            "Passionné par l'informatique et les nouvelles technologies, j'ai choisi cette formation pour acquérir des compétences solides en développement.",
-            "J'ai opté pour l'option DACS afin de me spécialiser en cybersécurité et en réseau avancée.",
+            "Étudiant en troisième année de BUT Informatique à l'IUT Montpellier-Sète.",
+            "Spécialisation DACS (Développement d'Applications Communicantes et Sécurisées) pour acquérir une expertise en cybersécurité et réseaux avancés, tout en consolidant mes compétences en développement.",
         ],
         keyPoints: [
             "Spécialité : DACS (Réseau & CyberSécurité)",
@@ -98,9 +95,8 @@ const experiences: Experience[] = [
         mention: "Mention Assez Bien",
         image: "/img/d'alzon.png",
         description: [
-            "J'ai obtenu mon Baccalauréat STI2D avec mention Assez Bien.",
-            "Ce parcours, axé sur les sciences et les technologies de l'industrie et du développement durable, m'a permis d'acquérir des compétences techniques en ingénierie et en conception.",
-            "Grâce à cette formation, j'ai découvert les bases de l'électronique, de la mécanique et du development, qui ont contribué à mon intérêt pour l'informatique et l'innovation technologique.",
+            "Baccalauréat STI2D obtenu avec mention Assez Bien au Lycée Emmanuel d'Alzon.",
+            "Ce parcours axé sur les sciences et technologies de l'industrie m'a permis de découvrir l'électronique, la mécanique et le développement, éveillant mon intérêt pour l'informatique et l'innovation technologique.",
         ],
         type: "education",
     },
