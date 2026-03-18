@@ -85,7 +85,7 @@ export function AboutSection() {
                         className="space-y-6"
                     >
                         <p className="text-lg text-white/90 dark:text-neutral-950/90 leading-relaxed">
-                            Étudiant en BUT Informatique à l'IUT de Montpellier, spécialité DACS (Réseaux & Cybersécurité),
+                            Étudiant en BUT Informatique à l'IUT de Montpellier, spécialité Réseau & CyberSécurité,
                             je développe un esprit analytique et un sens aigu du détail. Cette rigueur me permet
                             d'identifier rapidement les problèmes complexes et d'y apporter des solutions créatives.
                         </p>

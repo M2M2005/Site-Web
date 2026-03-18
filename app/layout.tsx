@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Cyprien Bons | Portfolio - Étudiant en Informatique & Quality Assurance",
-  description: "Portfolio de Cyprien Bons, étudiant en BUT Informatique parcours DACS (Réseau & CyberSécurité), actuellement en alternance chez ITESOFT en tant qu'Assistant Ingénieur Quality Assurance.",
-  keywords: ["Cyprien Bons", "Portfolio", "Développeur", "Quality Assurance", "Quality Assurance", "BUT Informatique", "DACS", "Cypress", "Selenium", "Java", "PHP"],
+  description: "Portfolio de Cyprien Bons, étudiant en BUT Informatique parcours Réseau & CyberSécurité, actuellement en alternance chez ITESOFT en tant qu'Assistant Ingénieur Quality Assurance.",
+  keywords: ["Cyprien Bons", "Portfolio", "Développeur", "Quality Assurance", "Quality Assurance", "BUT Informatique", "Réseau & CyberSécurité", "Cypress", "Selenium", "Java", "PHP"],
   authors: [{ name: "Cyprien Bons" }],
   creator: "Cyprien Bons",
   openGraph: {

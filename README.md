@@ -4,7 +4,7 @@ Portfolio personnel moderne et interactif présentant mon parcours, mes projets 
 
 ## 🎯 Contexte
 
-Ce portfolio a été réalisé pour améliorer ma visibilité professionnelle et mettre en avant mon savoir-faire en développement web. Il présente mon parcours en tant qu'alternant Quality Assurance chez ITESOFT et étudiant en BUT Informatique parcours DACS (Réseau & CyberSécurité).
+Ce portfolio a été réalisé pour améliorer ma visibilité professionnelle et mettre en avant mon savoir-faire en développement web. Il présente mon parcours en tant qu'alternant Quality Assurance chez ITESOFT et étudiant en BUT Informatique parcours Réseau & CyberSécurité.
 
 ## ✨ Fonctionnalités
 

@@ -78,10 +78,10 @@ const experiences: Experience[] = [
         image: "/img/iut-Montpellier-cete.jpeg",
         description: [
             "Étudiant en troisième année de BUT Informatique à l'IUT Montpellier-Sète.",
-            "Spécialisation DACS (Développement d'Applications Communicantes et Sécurisées) pour acquérir une expertise en cybersécurité et réseaux avancés, tout en consolidant mes compétences en développement.",
+            "Spécialisation Réseau & CyberSécurité pour acquérir une expertise en cybersécurité et réseaux avancés, tout en consolidant mes compétences en développement.",
         ],
         keyPoints: [
-            "Spécialité : DACS (Réseau & CyberSécurité)",
+            "Spécialité : Réseau & CyberSécurité",
         ],
         type: "education",
     },
