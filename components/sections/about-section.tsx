@@ -147,7 +147,8 @@ export function AboutSection() {
                         <div className="pt-6">
                             <a
                                 href="/docs/CV_BONS.pdf"
-                                download
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="inline-flex items-center gap-2 px-6 py-3 bg-white dark:bg-neutral-950 text-neutral-950 dark:text-white rounded-lg font-semibold hover:bg-white/90 dark:hover:bg-neutral-950/90 transition-all duration-300 shadow-lg hover:shadow-xl"
                             >
                                 <svg

@@ -134,7 +134,8 @@ export function Navigation() {
                             {/* CV Download Button */}
                             <a
                                 href="/docs/CV_BONS.pdf"
-                                download="CV_Cyprien_BONS.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 flex items-center gap-2 ${
                                     useLightText
                                         ? "bg-white dark:bg-neutral-950 text-neutral-950 dark:text-white hover:bg-white/90 dark:hover:bg-neutral-900"
@@ -219,7 +220,8 @@ export function Navigation() {
                             {/* CV Download Button - Mobile */}
                             <a
                                 href="/docs/CV_BONS.pdf"
-                                download="CV_Cyprien_BONS.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 bg-neutral-950 dark:bg-white text-white dark:text-neutral-950 hover:bg-neutral-800 dark:hover:bg-neutral-100"
                             >
                                 <svg
