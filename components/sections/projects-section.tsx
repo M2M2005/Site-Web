@@ -67,6 +67,10 @@ interface Project {
     id: string;
     title: string;
     category: string;
+    typeProjet: string;
+    nombrePersonnes: number;
+    tempsRealisation: string;
+    collaborateurs?: string[];
     date: string;
     mainImage: string;
     description: string[];
@@ -85,6 +89,9 @@ export const projects: Project[] = [
         id: "cypress-ecommerce",
         title: "Cypress E-Commerce",
         category: "Tests E2E | Projet Personnel",
+        typeProjet: "Personnel",
+        nombrePersonnes: 1,
+        tempsRealisation: "1 Mois",
         date: "Novembre 2025",
         mainImage: "/img/button_voir_details/shop-cypress/shop-cypress1.png",
         description: [
@@ -121,6 +128,10 @@ export const projects: Project[] = [
         id: "referendum",
         title: "Système de Référendums Sécurisés",
         category: "Développement d'Application | Universitaire",
+        typeProjet: "Académique",
+        nombrePersonnes: 4,
+        tempsRealisation: "6 Mois",
+        collaborateurs: ["Raphaël RIVAS", "Maël NICOLAS", "Killian RAMUS"],
         date: "Mai 2024",
         mainImage: "/img/button_voir_details/Referendum/referendum1.png",
         description: [
@@ -160,6 +171,10 @@ export const projects: Project[] = [
         id: "ecommerce",
         title: "Site E-Commerce de Parfums",
         category: "Développement Web | Projet Universitaire",
+        typeProjet: "Académique",
+        nombrePersonnes: 2,
+        tempsRealisation: "1 Mois",
+        collaborateurs: ["Killian RAMUS"],
         date: "Novembre 2024",
         mainImage: "/img/button_voir_details/E-Commerce/E-Commerce0.png",
         description: [
@@ -193,6 +208,10 @@ export const projects: Project[] = [
         id: "mediatheque",
         title: "Projet Médiathèque",
         category: "Développement Web | Projet Universitaire",
+        typeProjet: "Académique",
+        nombrePersonnes: 2,
+        tempsRealisation: "1 Semaine",
+        collaborateurs: ["Killian RAMUS"],
         date: "Mai 2025",
         mainImage: "/img/button_voir_details/Projet_Mediatheque/projet_mediatheque1.png",
         description: [
@@ -221,6 +240,9 @@ export const projects: Project[] = [
         id: "clicker",
         title: "Clicker Game",
         category: "Jeu Vidéo | Projet Personnel",
+        typeProjet: "Personnel",
+        nombrePersonnes: 1,
+        tempsRealisation: "2 Semaine",
         date: "Juillet 2025",
         mainImage: "/img/button_voir_details/clicker-game/clicker-game2.png",
         description: [
@@ -249,6 +271,9 @@ export const projects: Project[] = [
         id: "escalade",
         title: "Système de Scoring pour Compétition d'Escalade",
         category: "Sheets & Dev Web | Projet Personnel",
+        typeProjet: "Personnel",
+        nombrePersonnes: 1,
+        tempsRealisation: "2 Mois",
         date: "Actuellement",
         mainImage: "/img/button_voir_details/Competition_Escalade/competition_Escalade2.png",
         description: [
@@ -282,6 +307,10 @@ export const projects: Project[] = [
         id: "legendsbuster",
         title: "LegendsBuster",
         category: "Jeu Vidéo | Code Game Jam 2024",
+        typeProjet: "Code Game Jam",
+        nombrePersonnes: 5,
+        tempsRealisation: "1 Jours",
+        collaborateurs: ["Raphaël RIVAS", "Maël NICOLAS", "Killian RAMUS", "Vincent CALATRABA"],
         date: "Janvier 2024",
         mainImage: "/img/button_voir_details/LegendsBuster/legendsbuster3.png",
         description: [
@@ -427,11 +456,15 @@ export function ProjectsSection() {
                                             {selectedProject.title}
                                         </DialogTitle>
                                         <DialogDescription className="text-base text-neutral-600 dark:text-white/60 flex flex-wrap items-center gap-2">
-                                            <span className="px-3 py-1 bg-neutral-100 dark:bg-white/10 rounded-full text-sm">
+                                            <span className="px-3 py-1 bg-neutral-100 dark:bg-white/10 rounded-full text-sm font-medium">
                                                 {selectedProject.category.split("|")[0].trim()}
                                             </span>
                                             <span>•</span>
-                                            <span>{selectedProject.date}</span>
+                                            <span className="px-3 py-1 bg-neutral-100 dark:bg-white/10 rounded-full text-sm font-medium">
+                                                {selectedProject.typeProjet}
+                                            </span>
+                                            <span>•</span>
+                                            <span className="font-medium">{selectedProject.date}</span>
                                         </DialogDescription>
                                     </div>
                                 </div>
@@ -511,6 +544,34 @@ export function ProjectsSection() {
                                                 {para}
                                             </p>
                                         ))}
+                                    </div>
+                                    {/* Infos projet */}
+                                    <div className="mt-6 bg-neutral-50 dark:bg-white/5 rounded-lg p-4 border border-neutral-200 dark:border-white/10">
+                                        <div className="flex flex-wrap gap-6 text-sm">
+                                            <div className="flex items-center gap-2">
+                                                <span className="text-neutral-500 dark:text-white/50 font-semibold">Équipe :</span>
+                                                <span className="text-neutral-700 dark:text-white/80">{selectedProject.nombrePersonnes} {selectedProject.nombrePersonnes > 1 ? 'personnes' : 'personne'}</span>
+                                            </div>
+                                            <div className="flex items-center gap-2">
+                                                <span className="text-neutral-500 dark:text-white/50 font-semibold">Durée :</span>
+                                                <span className="text-neutral-700 dark:text-white/80">{selectedProject.tempsRealisation}</span>
+                                            </div>
+                                        </div>
+                                        {selectedProject.collaborateurs && selectedProject.collaborateurs.length > 0 && (
+                                            <div className="mt-3 pt-3 border-t border-neutral-200 dark:border-white/10">
+                                                <span className="text-neutral-500 dark:text-white/50 font-semibold text-sm">Collaborateurs :</span>
+                                                <div className="mt-2 flex flex-wrap gap-2">
+                                                    {selectedProject.collaborateurs.map((collab, i) => (
+                                                        <span
+                                                            key={i}
+                                                            className="px-3 py-1 bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-white/20 rounded-full text-xs text-neutral-700 dark:text-white/80"
+                                                        >
+                                                            {collab}
+                                                        </span>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
 
