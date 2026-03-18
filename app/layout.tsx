@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Cyprien Bons | Portfolio - Étudiant en Informatique & QA",
-  description: "Portfolio de Cyprien Bons, étudiant en BUT Informatique parcours DACS (Réseau & CyberSécurité), actuellement en alternance chez ITESOFT en tant qu'Assistant Ingénieur QA.",
-  keywords: ["Cyprien Bons", "Portfolio", "Développeur", "QA", "Quality Assurance", "BUT Informatique", "DACS", "Cypress", "Selenium", "Java", "PHP"],
+  title: "Cyprien Bons | Portfolio - Étudiant en Informatique & Quality Assurance",
+  description: "Portfolio de Cyprien Bons, étudiant en BUT Informatique parcours DACS (Réseau & CyberSécurité), actuellement en alternance chez ITESOFT en tant qu'Assistant Ingénieur Quality Assurance.",
+  keywords: ["Cyprien Bons", "Portfolio", "Développeur", "Quality Assurance", "Quality Assurance", "BUT Informatique", "DACS", "Cypress", "Selenium", "Java", "PHP"],
   authors: [{ name: "Cyprien Bons" }],
   creator: "Cyprien Bons",
   openGraph: {
@@ -23,13 +23,13 @@ export const metadata: Metadata = {
     locale: "fr_FR",
     url: "https://cyprienbons.com",
     title: "Cyprien Bons | Portfolio",
-    description: "Portfolio de Cyprien Bons - Étudiant en Informatique & Assistant Ingénieur QA",
+    description: "Portfolio de Cyprien Bons - Étudiant en Informatique & Assistant Ingénieur Quality Assurance",
     siteName: "Cyprien Bons Portfolio",
   },
   twitter: {
     card: "summary_large_image",
     title: "Cyprien Bons | Portfolio",
-    description: "Portfolio de Cyprien Bons - Étudiant en Informatique & Assistant Ingénieur QA",
+    description: "Portfolio de Cyprien Bons - Étudiant en Informatique & Assistant Ingénieur Quality Assurance",
   },
   icons: {
     icon: "/img/Logo_CB.png",

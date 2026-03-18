@@ -23,7 +23,7 @@ const experiences: ExperienceAnalysis[] = [
     {
         id: "orchestra",
         period: "Février 2025 — Mars 2025 (8 semaines)",
-        position: "Stage — Développeur QA",
+        position: "Stage — Développeur Quality Assurance",
         company: "Orchestra - TravelSoft",
         location: "Paris, France",
         type: "stage",
@@ -33,7 +33,7 @@ const experiences: ExperienceAnalysis[] = [
                 label: "Contexte et missions",
                 content: [
                     "Orchestra - TravelSoft est un éditeur de solution SaaS pour le secteur du tourisme, permettant aux agences de comparer et réserver des vols.",
-                    "Mon stage s'est déroulé au sein de l'équipe QA, dans les locaux parisiens. Ma mission : concevoir des tests automatisés en Java avec Selenium pour valider l'intégration de nouvelles compagnies aériennes.",
+                    "Mon stage s'est déroulé au sein de l'équipe Quality Assurance, dans les locaux parisiens. Ma mission : concevoir des tests automatisés en Java avec Selenium pour valider l'intégration de nouvelles compagnies aériennes.",
                     "Les tests comparaient automatiquement les données XML (vols, bagages, suppléments) avec l'affichage web, sans intervention humaine. L'objectif était de structurer un framework générique, réutilisable pour toute nouvelle compagnie à intégrer.",
                 ],
             },
@@ -42,7 +42,7 @@ const experiences: ExperienceAnalysis[] = [
                 label: "Difficultés rencontrées",
                 content: [
                     "La première difficulté a été la prise en main d'une solution SaaS complexe. Avant d'écrire le moindre test, il fallait comprendre l'architecture globale, les formats IATA/XML et les conventions internes de l'équipe.",
-                    "Première expérience en équipe QA professionnelle : découverte de Jira, Allure, revues de code. L'adaptation a été rapide mais exigeante.",
+                    "Première expérience en équipe Quality Assurance professionnelle : découverte de Jira, Allure, revues de code. L'adaptation a été rapide mais exigeante.",
                     "Sur le plan personnel, travailler à Paris m'a sorti de ma zone de confort. Le rythme intense de la ville m'a confronté à un environnement professionnel stimulant et m'a appris l'autonomie et l'adaptation rapide.",
                 ],
             },
@@ -51,14 +51,14 @@ const experiences: ExperienceAnalysis[] = [
                 label: "Compétences développées",
                 content: [
                     "Compétences techniques : maîtrise de Selenium WebDriver (Java), compréhension des formats XML IATA, utilisation d'Allure (rapports visuels) et Jira (suivi des anomalies).",
-                    "Compétences méthodologiques : conception d'un framework de tests réutilisable et maintenable, structuré pour fonctionner avec n'importe quelle compagnie aérienne. Initiation aux bonnes pratiques de conception en QA.",
+                    "Compétences méthodologiques : conception d'un framework de tests réutilisable et maintenable, structuré pour fonctionner avec n'importe quelle compagnie aérienne. Initiation aux bonnes pratiques de conception en Quality Assurance.",
                 ],
             },
             {
                 id: "bilan",
                 label: "Bilan",
                 content: [
-                    "Ce stage a été le point de départ de mon orientation vers la QA. J'ai découvert un métier correspondant à ma façon de penser : rigueur, goût du détail et compréhension approfondie des systèmes.",
+                    "Ce stage a été le point de départ de mon orientation vers la Quality Assurance. J'ai découvert un métier correspondant à ma façon de penser : rigueur, goût du détail et compréhension approfondie des systèmes.",
                     "L'expérience parisienne a été formatrice humainement : autonomie et capacité d'adaptation, qualités aussi importantes que les compétences techniques.",
                 ],
             },
@@ -67,7 +67,7 @@ const experiences: ExperienceAnalysis[] = [
     {
         id: "itesoft",
         period: "Septembre 2025 — Maintenant",
-        position: "Alternance — Assistant Ingénieur QA",
+        position: "Alternance — Assistant Ingénieur Quality Assurance",
         company: "ITESOFT",
         location: "Aimargues, France",
         type: "alternance",
@@ -101,8 +101,8 @@ const experiences: ExperienceAnalysis[] = [
                 id: "bilan",
                 label: "Bilan",
                 content: [
-                    "Cette alternance confirme et approfondit l'orientation initiée chez Orchestra. Évoluer dans une équipe QA structurée sur une solution d'envergure me permet de mesurer la réalité du métier au quotidien.",
-                    "Le QA, peu présent dans les cursus universitaires, n'est véritablement utile que sur des logiciels complexes. Y contribuer dès maintenant me donne une longueur d'avance et renforce mon projet de Master spécialisé en qualité logicielle.",
+                    "Cette alternance confirme et approfondit l'orientation initiée chez Orchestra. Évoluer dans une équipe Quality Assurance structurée sur une solution d'envergure me permet de mesurer la réalité du métier au quotidien.",
+                    "Le Quality Assurance, peu présent dans les cursus universitaires, n'est véritablement utile que sur des logiciels complexes. Y contribuer dès maintenant me donne une longueur d'avance et renforce mon projet de Master spécialisé en qualité logicielle.",
                 ],
             },
         ],
@@ -138,7 +138,7 @@ export function ExperiencePPPSection() {
                         </Link>
                     </div>
                     <p className="text-lg text-neutral-600 dark:text-white/60 leading-relaxed max-w-2xl">
-                        Analyse détaillée de mon stage chez Orchestra - TravelSoft et de mon alternance chez ITESOFT, deux expériences complémentaires qui ont forgé mon orientation vers la QA.
+                        Analyse détaillée de mon stage chez Orchestra - TravelSoft et de mon alternance chez ITESOFT, deux expériences complémentaires qui ont forgé mon orientation vers la Quality Assurance.
                     </p>
                 </motion.div>
 

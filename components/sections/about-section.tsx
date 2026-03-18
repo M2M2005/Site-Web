@@ -91,8 +91,8 @@ export function AboutSection() {
                         </p>
 
                         <p className="text-lg text-white/90 dark:text-neutral-950/90 leading-relaxed">
-                            Actuellement en alternance chez ITESOFT au sein de l'équipe QA, je conçois et améliore des
-                            processus de tests automatisés pour garantir la qualité des produits livrés. La QA s'impose
+                            Actuellement en alternance chez ITESOFT au sein de l'équipe Quality Assurance, je conçois et améliore des
+                            processus de tests automatisés pour garantir la qualité des produits livrés. La Quality Assurance s'impose
                             naturellement comme mon domaine de prédilection. Elle allie exigence technique et impact
                             concret, où chaque test représente une garantie supplémentaire pour l'utilisateur final.
                         </p>
