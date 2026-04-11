@@ -1,10 +1,10 @@
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
-import { ApprentissageSection } from "@/components/sections/apprentissage-section";
+import { ApprentissageHubSection } from "@/components/sections/apprentissage-hub-section";
 
 export const metadata = {
     title: "Apprentissage Critique - Cyprien Bons",
-    description: "Portfolio d'apprentissage critique de Cyprien Bons",
+    description: "Portfolio d'apprentissage critique de Cyprien Bons - BUT Informatique",
 };
 
 export default function ApprentissagePage() {
@@ -12,7 +12,7 @@ export default function ApprentissagePage() {
         <>
             <Navigation />
             <main className="w-full pt-20">
-                <ApprentissageSection />
+                <ApprentissageHubSection />
             </main>
             <Footer />
         </>
