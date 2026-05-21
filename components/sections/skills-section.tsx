@@ -117,35 +117,6 @@ export function SkillsSection() {
                         </motion.div>
                     ))}
                 </div>
-
-                {/* Portfolio d'apprentissage link */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: 0.4 }}
-                    className="mt-20"
-                >
-                    <Link
-                        href="/apprentissage"
-                        className="group flex items-center justify-between w-full p-6 rounded-2xl border border-neutral-950/15 dark:border-white/15 hover:border-neutral-950/30 dark:hover:border-white/30 hover:bg-neutral-950/5 dark:hover:bg-white/5 transition-all duration-300"
-                    >
-                        <div>
-                            <p className="text-xs font-semibold uppercase tracking-wider text-neutral-500 dark:text-white/50 mb-1">
-                                Portfolio Académique
-                            </p>
-                            <p className="text-xl font-bold text-neutral-950 dark:text-white">
-                                Apprentissage Critique
-                            </p>
-                            <p className="text-sm text-neutral-600 dark:text-white/60 mt-1">
-                                Optimiser, Gérer, Conduire — compétences acquises et projets analysés
-                            </p>
-                        </div>
-                        <span className="flex-shrink-0 w-10 h-10 rounded-full bg-neutral-950 dark:bg-white text-white dark:text-neutral-950 flex items-center justify-center text-lg group-hover:scale-110 transition-transform duration-200">
-                            →
-                        </span>
-                    </Link>
-                </motion.div>
             </div>
         </section>
     );

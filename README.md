@@ -14,7 +14,6 @@ Ce portfolio a été réalisé pour améliorer ma visibilité professionnelle et
 - **Section Projets** avec grille Bento asymétrique et modals détaillés
 - **Section Compétences** avec barres de progression animées
 - **Section Contact** avec formulaire Formspree
-- **Page Portfolio d'Apprentissage** détaillant les compétences BUT et projets
 - **Navigation intelligente** avec détection de section active et smooth scroll
 - **Mode sombre** supporté
 - **Design responsive** (mobile, tablette, desktop)
@@ -42,39 +41,6 @@ Ce portfolio a été réalisé pour améliorer ma visibilité professionnelle et
 ### Services externes
 - **Formspree** (gestion des formulaires)
 - **Next.js Image** (optimisation d'images)
-
-## 📁 Structure du projet
-
-```
-portfolio/
-├── app/                          # Next.js App Router
-│   ├── apprentissage/           # Page portfolio d'apprentissage
-│   │   └── page.tsx
-│   ├── layout.tsx               # Layout principal
-│   ├── page.tsx                 # Page d'accueil
-│   └── globals.css              # Styles globaux
-├── components/
-│   ├── sections/                # Sections de page
-│   │   ├── about-section.tsx
-│   │   ├── apprentissage-section.tsx
-│   │   ├── contact-section.tsx
-│   │   ├── experiences-section.tsx
-│   │   ├── projects-section.tsx
-│   │   └── skills-section.tsx
-│   ├── ui/                      # Composants UI réutilisables
-│   │   ├── background-paths.tsx
-│   │   ├── button.tsx
-│   │   └── dialog.tsx
-│   ├── demo-background-paths.tsx
-│   ├── navigation.tsx
-│   └── footer.tsx
-├── public/
-│   ├── img/                     # Images du portfolio
-│   └── docs/                    # Documents (CV)
-└── lib/
-    └── utils.ts                 # Utilitaires
-
-```
 
 ## 🚀 Installation et démarrage
 
@@ -119,14 +85,7 @@ npm start
 - **Projets** : 7 projets en grille Bento avec modals
 - **Compétences** : Langages, outils, langues avec progression
 - **Contact** : Formulaire avec Formspree
-
-### Page Apprentissage (`/apprentissage`)
-- **Optimiser des applications**
-- **Gérer des données de l'information**
-- **Conduire un projet**
-
-Chaque section détaille les apprentissages critiques avec liens vers les projets correspondants.
-
+- 
 ## 🎨 Design
 
 - **Palette de couleurs** : Noir/Blanc avec alternance par section
@@ -202,7 +161,6 @@ vercel
 ## 🔗 Liens
 
 - **Site web** : [cyprienbons.com](https://cyprienbons.com/)
-- **Portfolio d'apprentissage** : [cyprienbons.com/apprentissage](https://cyprienbons.com/apprentissage)
 
 ## 📜 Licence
 
