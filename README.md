@@ -2,11 +2,11 @@
 
 Portfolio personnel moderne et interactif présentant mon parcours, mes projets et mes compétences en développement informatique.
 
-## 🎯 Contexte
+## Contexte
 
 Ce portfolio a été réalisé pour améliorer ma visibilité professionnelle et mettre en avant mon savoir-faire en développement web. Il présente mon parcours en tant qu'alternant Quality Assurance chez ITESOFT et étudiant en BUT Informatique parcours Réseau & CyberSécurité.
 
-## ✨ Fonctionnalités
+## Fonctionnalités
 
 - **Page d'accueil** avec animation BackgroundPaths interactive
 - **Section À propos** avec présentation personnelle et passion (escalade)
@@ -19,7 +19,7 @@ Ce portfolio a été réalisé pour améliorer ma visibilité professionnelle et
 - **Design responsive** (mobile, tablette, desktop)
 - **Animations fluides** au scroll avec Framer Motion
 
-## 🛠️ Technologies utilisées
+## Technologies utilisées
 
 ### Framework & Langages
 - **Next.js 15** (App Router)
@@ -42,7 +42,7 @@ Ce portfolio a été réalisé pour améliorer ma visibilité professionnelle et
 - **Formspree** (gestion des formulaires)
 - **Next.js Image** (optimisation d'images)
 
-## 🚀 Installation et démarrage
+## Installation et démarrage
 
 ### Prérequis
 - Node.js 18+
@@ -76,7 +76,7 @@ npm run build
 npm start
 ```
 
-## 📄 Pages
+## Pages
 
 ### Page d'accueil (`/`)
 - **Hero** : Animation BackgroundPaths avec titre et CTA
@@ -86,7 +86,7 @@ npm start
 - **Compétences** : Langages, outils, langues avec progression
 - **Contact** : Formulaire avec Formspree
 - 
-## 🎨 Design
+## Design
 
 - **Palette de couleurs** : Noir/Blanc avec alternance par section
 - **Typographie** : Geist Sans (système)
@@ -94,7 +94,7 @@ npm start
 - **Animations** : Framer Motion pour les transitions et scroll
 - **Glassmorphism** : Effets de flou sur certaines sections
 
-## 📝 Configuration
+## Configuration
 
 ### Personnalisation des couleurs
 
@@ -133,7 +133,7 @@ const nextConfig: NextConfig = {
 };
 ```
 
-## 🌐 Déploiement
+## Déploiement
 
 Le site peut être déployé sur :
 - **Vercel** (recommandé pour Next.js)
@@ -150,7 +150,7 @@ npm i -g vercel
 vercel
 ```
 
-## 📧 Contact
+## Contact
 
 **Cyprien Bons**
 - Email : [contact@cyprienbons.com](mailto:contact@cyprienbons.com)
@@ -158,10 +158,10 @@ vercel
 - LinkedIn : [linkedin.com/in/cyprien-bons](https://www.linkedin.com/in/cyprien-bons/)
 - GitHub : [github.com/M2M2005](https://github.com/M2M2005)
 
-## 🔗 Liens
+## Liens
 
 - **Site web** : [cyprienbons.com](https://cyprienbons.com/)
 
-## 📜 Licence
+## Licence
 
 © 2026 Cyprien Bons - Tous droits réservés
