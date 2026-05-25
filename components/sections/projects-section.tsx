@@ -291,8 +291,8 @@ export const projects: Project[] = [
         ],
         links: [
             { label: "Google Drive", url: "https://drive.google.com/drive/folders/1aXPQoZu6ZVLKaPpNFQsAJGHnI8vSY_jp?usp=sharing" },
-            { label: "GitHub", url: "https://github.com/M2M2005/Site-Web" },
-            { label: "Site web", url: "https://cobescalade.cyprienbons.com/" },
+            { label: "GitHub", url: "https://github.com/M2M2005/CobEscalade" },
+            { label: "Site web", url: "https://ceb.cyprienbons.com/" },
         ],
         images: [
             { src: "/img/button_voir_details/Competition_Escalade/competition_Escalade1.png", caption: "Site résultat" },
