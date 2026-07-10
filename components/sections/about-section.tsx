@@ -98,9 +98,8 @@ export function AboutSection() {
                         </p>
 
                         <p className="text-lg text-white/90 dark:text-neutral-950/90 leading-relaxed">
-                            Mon objectif : intégrer le Master Développement et Validation du Logiciel (DVL) à
-                            l'Université de Franche-Comté à Besançon pour approfondir mon expertise en validation
-                            logicielle et devenir ingénieur test.
+                            Mon objectif : intégrer le Master Sécurité informatique, cybersécurité et cyber menaces à
+                            l'Université de Montpellier.
                         </p>
 
                         {/* Stats */}
