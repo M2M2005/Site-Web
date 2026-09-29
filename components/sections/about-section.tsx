@@ -85,8 +85,9 @@ export function AboutSection() {
                         className="space-y-6"
                     >
                         <p className="text-lg text-white/90 dark:text-neutral-950/90 leading-relaxed">
-                            Étudiant en BUT Informatique à l'IUT de Montpellier, spécialité Réseau & CyberSécurité,
-                            je développe un esprit analytique et un sens aigu du détail. Cette rigueur me permet
+                            Diplômé d'un BUT Informatique (parcours Réseau & CyberSécurité) à l'IUT de Montpellier-Sète, je suis
+                            désormais en Master Informatique, parcours Sécurité informatique, cybersécurité et cybermenaces,
+                            au CNAM de Montpellier. J'y développe un esprit analytique et un sens aigu du détail. Cette rigueur me permet
                             d'identifier rapidement les problèmes complexes et d'y apporter des solutions créatives.
                         </p>
 
@@ -98,8 +99,8 @@ export function AboutSection() {
                         </p>
 
                         <p className="text-lg text-white/90 dark:text-neutral-950/90 leading-relaxed">
-                            Mon objectif : intégrer le Master Sécurité informatique, cybersécurité et cyber menaces à
-                            l'Université de Montpellier.
+                            Mon objectif : allier la rigueur de la Quality Assurance et l'expertise en cybersécurité
+                            pour contribuer à des logiciels à la fois fiables et sûrs.
                         </p>
 
                         {/* Stats */}

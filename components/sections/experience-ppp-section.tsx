@@ -102,7 +102,7 @@ const experiences: ExperienceAnalysis[] = [
                 label: "Bilan",
                 content: [
                     "Cette alternance confirme et approfondit l'orientation initiée chez Orchestra. Évoluer dans une équipe Quality Assurance structurée sur une solution d'envergure me permet de mesurer la réalité du métier au quotidien.",
-                    "Le Quality Assurance, peu présent dans les cursus universitaires, n'est véritablement utile que sur des logiciels complexes. Y contribuer dès maintenant me donne une longueur d'avance et renforce mon projet de Master spécialisé en qualité logicielle.",
+                    "Le Quality Assurance, peu présent dans les cursus universitaires, n'est véritablement utile que sur des logiciels complexes. Y contribuer dès maintenant me donne une longueur d'avance et m'accompagne désormais dans mon Master Informatique, parcours Sécurité informatique, cybersécurité et cybermenaces : la rigueur du test et la sécurité logicielle se complètent naturellement.",
                 ],
             },
         ],
@@ -138,7 +138,7 @@ export function ExperiencePPPSection() {
                         </Link>
                     </div>
                     <p className="text-lg text-neutral-600 dark:text-white/60 leading-relaxed max-w-2xl">
-                        Analyse détaillée de mon stage chez Orchestra - TravelSoft et de mon alternance chez ITESOFT, deux expériences complémentaires qui ont forgé mon orientation vers la Quality Assurance.
+                        Analyse détaillée de mon stage chez Orchestra - TravelSoft et de mon alternance chez ITESOFT, deux expériences complémentaires qui ont forgé mon orientation vers la Quality Assurance, aujourd'hui prolongée par un Master en cybersécurité.
                     </p>
                 </motion.div>
 

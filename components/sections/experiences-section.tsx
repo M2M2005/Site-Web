@@ -23,6 +23,23 @@ interface Experience {
 
 const experiences: Experience[] = [
     {
+        id: "master",
+        period: "Septembre 2026 - Maintenant",
+        position: "Master Informatique",
+        company: "CNAM",
+        image: "/img/cnam.png",
+        location: "Montpellier, France",
+        description: [
+            "Étudiant en première année de Master Informatique, parcours Sécurité informatique, cybersécurité et cybermenaces, au CNAM de Montpellier.",
+            "Formation suivie en alternance chez ITESOFT, pour approfondir la sécurité des systèmes et des applications tout en poursuivant mon activité en Quality Assurance.",
+        ],
+        keyPoints: [
+            "Parcours : Sécurité informatique, cybersécurité et cybermenaces",
+            "En alternance chez ITESOFT",
+        ],
+        type: "education",
+    },
+    {
         id: "itesoft",
         period: "Septembre 2025 - Maintenant",
         position: "Alternance - Assistant Ingénieur Quality Assurance",
@@ -60,25 +77,21 @@ const experiences: Experience[] = [
             {
                 label: "Vidéo démo",
                 url: "https://www.youtube.com/watch?v=-nnQ908SqKk",
-            },
-            {
-                label: "Rapport de stage",
-                url: "/docs/Rapport_Stage_BONS_Orchestra_TravelSoft.pdf",
-            },
+            }
         ],
         videoCaption: "Cette vidéo montre l'exécution d'un test Selenium : connexion à la plateforme, récupération des données affichées, puis comparaison automatique avec le fichier XML de la compagnie aérienne.",
         type: "work",
     },
     {
         id: "iut",
-        period: "2023 - Maintenant",
+        period: "2023 - 2026",
         position: "BUT Informatique",
         company: "IUT Montpellier-Sète",
         location: "Montpellier, France",
         image: "/img/iut-Montpellier-cete.jpeg",
         description: [
-            "Étudiant en troisième année de BUT Informatique à l'IUT Montpellier-Sète.",
-            "Spécialisation Réseau & CyberSécurité pour acquérir une expertise en cybersécurité et réseaux avancés, tout en consolidant mes compétences en développement.",
+            "BUT Informatique obtenu à l'IUT Montpellier-Sète.",
+            "Parcours Réseau & CyberSécurité, qui m'a permis d'acquérir des bases solides en cybersécurité et en réseaux, tout en consolidant mes compétences en développement.",
         ],
         keyPoints: [
             "Spécialité : Réseau & CyberSécurité",
