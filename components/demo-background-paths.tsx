@@ -13,7 +13,7 @@ export function DemoBackgroundPaths() {
     return (
         <BackgroundPaths
             title="Cyprien Bons"
-            subtitle="Alternant chez ITESOFT | BUT Informatique - Réseau & CyberSécurité"
+            subtitle="Alternant chez ITESOFT | Master Informatique - CyberSécurité"
             buttonText="Découvrir mon parcours"
             onButtonClick={handleScrollToAbout}
         />
