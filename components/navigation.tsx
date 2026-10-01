@@ -3,15 +3,57 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useRouter, usePathname } from "next/navigation";
+import { useLanguage, type Lang, type Localized } from "@/lib/i18n";
 
-const navItems = [
-    { name: "Accueil", href: "#hero" },
-    { name: "À propos", href: "#about" },
-    { name: "Parcours", href: "#experiences" },
-    { name: "Projets", href: "#projects" },
-    { name: "Compétences", href: "#skills" },
-    { name: "Contact", href: "#contact" },
+const navItems: { name: Localized; href: string }[] = [
+    { name: { fr: "Accueil", en: "Home" }, href: "#hero" },
+    { name: { fr: "À propos", en: "About" }, href: "#about" },
+    { name: { fr: "Parcours", en: "Background" }, href: "#experiences" },
+    { name: { fr: "Projets", en: "Projects" }, href: "#projects" },
+    { name: { fr: "Compétences", en: "Skills" }, href: "#skills" },
+    { name: { fr: "Contact", en: "Contact" }, href: "#contact" },
 ];
+
+const texts = {
+    fr: { downloadCv: "Télécharger CV", switchLanguage: "Changer de langue" },
+    en: { downloadCv: "Download CV", switchLanguage: "Switch language" },
+};
+
+function LanguageToggle({ lightText }: { lightText: boolean }) {
+    const { lang, setLang } = useLanguage();
+    const languages: Lang[] = ["fr", "en"];
+
+    return (
+        <div
+            role="group"
+            aria-label={texts[lang].switchLanguage}
+            className={`flex items-center rounded-lg border p-0.5 text-xs font-semibold ${
+                lightText
+                    ? "border-white/20 dark:border-neutral-950/20"
+                    : "border-neutral-950/15 dark:border-white/20"
+            }`}
+        >
+            {languages.map((code) => (
+                <button
+                    key={code}
+                    onClick={() => setLang(code)}
+                    aria-pressed={lang === code}
+                    className={`px-2 py-1 rounded-md uppercase transition-all duration-200 ${
+                        lang === code
+                            ? lightText
+                                ? "bg-white dark:bg-neutral-950 text-neutral-950 dark:text-white"
+                                : "bg-neutral-950 dark:bg-white text-white dark:text-neutral-950"
+                            : lightText
+                            ? "text-white/60 dark:text-neutral-950/60 hover:text-white dark:hover:text-neutral-950"
+                            : "text-neutral-600 dark:text-white/60 hover:text-neutral-950 dark:hover:text-white"
+                    }`}
+                >
+                    {code}
+                </button>
+            ))}
+        </div>
+    );
+}
 
 export function Navigation() {
     const [activeSection, setActiveSection] = useState("hero");
@@ -19,6 +61,7 @@ export function Navigation() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const router = useRouter();
     const pathname = usePathname();
+    const { lang } = useLanguage();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -113,7 +156,7 @@ export function Navigation() {
                                     const isActive = activeSection === item.href.substring(1);
                                     return (
                                         <button
-                                            key={item.name}
+                                            key={item.href}
                                             onClick={() => scrollToSection(item.href)}
                                             className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                                                 isActive
@@ -125,11 +168,13 @@ export function Navigation() {
                                                     : "text-neutral-600 dark:text-white/60 hover:text-neutral-950 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-white/10"
                                             }`}
                                         >
-                                            {item.name}
+                                            {item.name[lang]}
                                         </button>
                                     );
                                 })}
                             </div>
+
+                            <LanguageToggle lightText={useLightText} />
 
                             {/* CV Download Button */}
                             <a
@@ -159,38 +204,41 @@ export function Navigation() {
                             </a>
                         </div>
 
-                        {/* Mobile Menu Button */}
-                        <button
-                            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                            className={`md:hidden p-2 transition-colors ${
-                                useLightText
-                                    ? "text-white dark:text-neutral-950"
-                                    : "text-neutral-950 dark:text-white"
-                            }`}
-                        >
-                            <svg
-                                className="w-6 h-6"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
+                        {/* Mobile: Language + Menu Button */}
+                        <div className="md:hidden flex items-center gap-2">
+                            <LanguageToggle lightText={useLightText} />
+                            <button
+                                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                                className={`p-2 transition-colors ${
+                                    useLightText
+                                        ? "text-white dark:text-neutral-950"
+                                        : "text-neutral-950 dark:text-white"
+                                }`}
                             >
-                                {isMobileMenuOpen ? (
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M6 18L18 6M6 6l12 12"
-                                    />
-                                ) : (
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M4 6h16M4 12h16M4 18h16"
-                                    />
-                                )}
-                            </svg>
-                        </button>
+                                <svg
+                                    className="w-6 h-6"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                >
+                                    {isMobileMenuOpen ? (
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth={2}
+                                            d="M6 18L18 6M6 6l12 12"
+                                        />
+                                    ) : (
+                                        <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth={2}
+                                            d="M4 6h16M4 12h16M4 18h16"
+                                        />
+                                    )}
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -205,7 +253,7 @@ export function Navigation() {
                         <div className="container mx-auto px-4 py-4 space-y-2">
                             {navItems.map((item) => (
                                 <button
-                                    key={item.name}
+                                    key={item.href}
                                     onClick={() => scrollToSection(item.href)}
                                     className={`w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 ${
                                         activeSection === item.href.substring(1)
@@ -213,7 +261,7 @@ export function Navigation() {
                                             : "text-neutral-600 dark:text-white/60 hover:bg-neutral-100 dark:hover:bg-white/10"
                                     }`}
                                 >
-                                    {item.name}
+                                    {item.name[lang]}
                                 </button>
                             ))}
 
@@ -237,7 +285,7 @@ export function Navigation() {
                                         d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                                     />
                                 </svg>
-                                Télécharger CV
+                                {texts[lang].downloadCv}
                             </a>
                         </div>
                     </motion.div>

@@ -3,118 +3,204 @@
 import {motion} from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useLanguage, type Localized } from "@/lib/i18n";
 
 interface Experience {
     id: string;
-    period: string;
-    position: string;
+    period: Localized;
+    position: Localized;
     company: string;
     location: string;
     image?: string;
-    description: string[];
+    description: Localized<string[]>;
     technologies?: string[];
-    keyPoints?: string[];
-    links?: { label: string; url: string }[];
+    keyPoints?: Localized<string[]>;
+    links?: { label: Localized; url: string }[];
     images?: string[];
-    videoCaption?: string;
-    mention?: string;
+    videoCaption?: Localized;
+    mention?: Localized;
     type: "work" | "education";
 }
+
+const texts = {
+    fr: {
+        title: "Parcours",
+        analysisTag: "Stage · Alternance",
+        analysisTitle: "Analyse de mes expériences professionnelles",
+        analysisSubtitle: "Orchestra - TravelSoft & ITESOFT — contexte, missions, compétences, bilan",
+        technologies: "Technologies :",
+        educationKeyPoints: "Points clés :",
+        workKeyPoints: "Apports clés :",
+    },
+    en: {
+        title: "Background",
+        analysisTag: "Internship · Work-study",
+        analysisTitle: "Analysis of my professional experiences",
+        analysisSubtitle: "Orchestra - TravelSoft & ITESOFT — context, missions, skills, review",
+        technologies: "Technologies:",
+        educationKeyPoints: "Key points:",
+        workKeyPoints: "Key takeaways:",
+    },
+};
 
 const experiences: Experience[] = [
     {
         id: "master",
-        period: "Septembre 2026 - Maintenant",
-        position: "Master Informatique",
+        period: { fr: "Septembre 2026 - Maintenant", en: "September 2026 - Present" },
+        position: { fr: "Master Informatique", en: "Master's in Computer Science" },
         company: "CNAM",
         image: "/img/cnam.png",
         location: "Montpellier, France",
-        description: [
-            "Étudiant en première année de Master Informatique, parcours Sécurité informatique, cybersécurité et cybermenaces, au CNAM de Montpellier.",
-            "Formation suivie en alternance chez ITESOFT, pour approfondir la sécurité des systèmes et des applications tout en poursuivant mon activité en Quality Assurance.",
-        ],
-        keyPoints: [
-            "Parcours : Sécurité informatique, cybersécurité et cybermenaces",
-            "En alternance chez ITESOFT",
-        ],
+        description: {
+            fr: [
+                "Étudiant en première année de Master Informatique, parcours Sécurité informatique, cybersécurité et cybermenaces, au CNAM de Montpellier.",
+                "Formation suivie en alternance chez ITESOFT, pour approfondir la sécurité des systèmes et des applications tout en poursuivant mon activité en Quality Assurance.",
+            ],
+            en: [
+                "First-year Master's student in Computer Science, specializing in IT security, cybersecurity and cyber threats, at the CNAM in Montpellier.",
+                "A work-study program with ITESOFT, to deepen my knowledge of system and application security while continuing my Quality Assurance work.",
+            ],
+        },
+        keyPoints: {
+            fr: [
+                "Parcours : Sécurité informatique, cybersécurité et cybermenaces",
+                "En alternance chez ITESOFT",
+            ],
+            en: [
+                "Track: IT security, cybersecurity and cyber threats",
+                "Work-study at ITESOFT",
+            ],
+        },
         type: "education",
     },
     {
         id: "itesoft",
-        period: "Septembre 2025 - Maintenant",
-        position: "Alternance - Assistant Ingénieur Quality Assurance",
+        period: { fr: "Septembre 2025 - Maintenant", en: "September 2025 - Present" },
+        position: {
+            fr: "Alternance - Assistant Ingénieur Quality Assurance",
+            en: "Work-study - Quality Assurance Assistant Engineer",
+        },
         company: "ITESOFT",
         location: "Aimargues, France",
         image: "/img/button_voir_details/ITESOFT/itesoft-logo.png",
-        description: [
-            "Actuellement en alternance chez ITESOFT, éditeur d'une solution de facturation électronique, j'occupe le poste d'Assistant Ingénieur Quality Assurance.",
-            "Ma mission : développer des tests automatisés avec Cypress pour garantir la non-régression du logiciel à chaque version. Je réalise également des tests manuels sur les fonctionnalités complexes nécessitant une validation humaine.",
-        ],
+        description: {
+            fr: [
+                "Actuellement en alternance chez ITESOFT, éditeur d'une solution de facturation électronique, j'occupe le poste d'Assistant Ingénieur Quality Assurance.",
+                "Ma mission : développer des tests automatisés avec Cypress pour garantir la non-régression du logiciel à chaque version. Je réalise également des tests manuels sur les fonctionnalités complexes nécessitant une validation humaine.",
+            ],
+            en: [
+                "I am currently a work-study Quality Assurance Assistant Engineer at ITESOFT, a software publisher of an electronic invoicing solution.",
+                "My mission: develop automated tests with Cypress to prevent regressions in every software release. I also perform manual tests on complex features that require human validation.",
+            ],
+        },
         technologies: ["Cypress", "n8n", "gitLab", "Docker"],
-        keyPoints: [
-            "Développement de tests automatisés",
-            "Réalisation de tests manuels",
-        ],
+        keyPoints: {
+            fr: [
+                "Développement de tests automatisés",
+                "Réalisation de tests manuels",
+            ],
+            en: [
+                "Development of automated tests",
+                "Manual testing",
+            ],
+        },
         type: "work",
     },
     {
         id: "orchestra",
-        period: "Février 2025 - Mars 2025 (8 semaines)",
-        position: "Stage - Développeur Quality Assurance",
+        period: {
+            fr: "Février 2025 - Mars 2025 (8 semaines)",
+            en: "February 2025 - March 2025 (8 weeks)",
+        },
+        position: {
+            fr: "Stage - Développeur Quality Assurance",
+            en: "Internship - Quality Assurance Developer",
+        },
         company: "Orchestra - TravelSoft",
         location: "Paris, France",
         image: "/img/button_voir_details/Orchestra/orchestra-plateforme.jpg",
-        description: [
-            "Durant mon stage chez Orchestra - TravelSoft, éditeur de solution SaaS pour le secteur du tourisme, j'ai intégré l'équipe Quality Assurance en tant que développeur.",
-            "Mission : concevoir des tests automatisés avec Selenium (Java) pour valider l'intégration de nouvelles compagnies aériennes. Les tests comparaient automatiquement les données XML (vols, bagages, suppléments) avec l'affichage web, sans intervention humaine.",
-        ],
+        description: {
+            fr: [
+                "Durant mon stage chez Orchestra - TravelSoft, éditeur de solution SaaS pour le secteur du tourisme, j'ai intégré l'équipe Quality Assurance en tant que développeur.",
+                "Mission : concevoir des tests automatisés avec Selenium (Java) pour valider l'intégration de nouvelles compagnies aériennes. Les tests comparaient automatiquement les données XML (vols, bagages, suppléments) avec l'affichage web, sans intervention humaine.",
+            ],
+            en: [
+                "During my internship at Orchestra - TravelSoft, a SaaS publisher for the travel industry, I joined the Quality Assurance team as a developer.",
+                "Mission: design automated tests with Selenium (Java) to validate the integration of new airlines. The tests automatically compared the XML data (flights, baggage, extras) with what was displayed on the website, with no human intervention.",
+            ],
+        },
         technologies: ["Java", "Selenium", "XML", "Allure", "Jira"],
-        keyPoints: [
-            "Développement de tests automatisés",
-            "Structuration générique des nouveaux tests",
-        ],
+        keyPoints: {
+            fr: [
+                "Développement de tests automatisés",
+                "Structuration générique des nouveaux tests",
+            ],
+            en: [
+                "Development of automated tests",
+                "Generic structure for new tests",
+            ],
+        },
         links: [
             {
-                label: "Vidéo démo",
+                label: { fr: "Vidéo démo", en: "Demo video" },
                 url: "https://www.youtube.com/watch?v=-nnQ908SqKk",
             }
         ],
-        videoCaption: "Cette vidéo montre l'exécution d'un test Selenium : connexion à la plateforme, récupération des données affichées, puis comparaison automatique avec le fichier XML de la compagnie aérienne.",
+        videoCaption: {
+            fr: "Cette vidéo montre l'exécution d'un test Selenium : connexion à la plateforme, récupération des données affichées, puis comparaison automatique avec le fichier XML de la compagnie aérienne.",
+            en: "This video shows a Selenium test running: logging in to the platform, retrieving the displayed data, then automatically comparing it with the airline's XML file.",
+        },
         type: "work",
     },
     {
         id: "iut",
-        period: "2023 - 2026",
-        position: "BUT Informatique",
+        period: { fr: "2023 - 2026", en: "2023 - 2026" },
+        position: { fr: "BUT Informatique", en: "Bachelor's in Computer Science (BUT)" },
         company: "IUT Montpellier-Sète",
         location: "Montpellier, France",
         image: "/img/iut-Montpellier-cete.jpeg",
-        description: [
-            "BUT Informatique obtenu à l'IUT Montpellier-Sète.",
-            "Parcours Réseau & CyberSécurité, qui m'a permis d'acquérir des bases solides en cybersécurité et en réseaux, tout en consolidant mes compétences en développement.",
-        ],
-        keyPoints: [
-            "Spécialité : Réseau & CyberSécurité",
-        ],
+        description: {
+            fr: [
+                "BUT Informatique obtenu à l'IUT Montpellier-Sète.",
+                "Parcours Réseau & CyberSécurité, qui m'a permis d'acquérir des bases solides en cybersécurité et en réseaux, tout en consolidant mes compétences en développement.",
+            ],
+            en: [
+                "Bachelor's degree in Computer Science (BUT) earned at the IUT Montpellier-Sète.",
+                "Networks & Cybersecurity track, which gave me a solid foundation in cybersecurity and networking while strengthening my development skills.",
+            ],
+        },
+        keyPoints: {
+            fr: ["Spécialité : Réseau & CyberSécurité"],
+            en: ["Specialization: Networks & Cybersecurity"],
+        },
         type: "education",
     },
     {
         id: "bac",
-        period: "2020 - 2023",
-        position: "Baccalauréat STI2D",
+        period: { fr: "2020 - 2023", en: "2020 - 2023" },
+        position: { fr: "Baccalauréat STI2D", en: "French Baccalaureate STI2D" },
         company: "Lycée Emmanuel d'Alzon",
         location: "Nîmes, France",
-        mention: "Mention Assez Bien",
+        mention: { fr: "Mention Assez Bien", en: "With honors (Assez Bien)" },
         image: "/img/d'alzon.png",
-        description: [
-            "Baccalauréat STI2D obtenu avec mention Assez Bien au Lycée Emmanuel d'Alzon.",
-            "Ce parcours axé sur les sciences et technologies de l'industrie m'a permis de découvrir l'électronique, la mécanique et le développement, éveillant mon intérêt pour l'informatique et l'innovation technologique.",
-        ],
+        description: {
+            fr: [
+                "Baccalauréat STI2D obtenu avec mention Assez Bien au Lycée Emmanuel d'Alzon.",
+                "Ce parcours axé sur les sciences et technologies de l'industrie m'a permis de découvrir l'électronique, la mécanique et le développement, éveillant mon intérêt pour l'informatique et l'innovation technologique.",
+            ],
+            en: [
+                "French Baccalaureate in Industrial Science and Technology (STI2D) earned with honors at the Lycée Emmanuel d'Alzon.",
+                "This science and industrial technology program introduced me to electronics, mechanics and programming, sparking my interest in computer science and technological innovation.",
+            ],
+        },
         type: "education",
     },
 ];
 
 export function ExperiencesSection() {
+    const { lang } = useLanguage();
+    const t = texts[lang];
+
     return (
         <section
             id="experiences"
@@ -129,7 +215,7 @@ export function ExperiencesSection() {
                     className="mb-16"
                 >
                     <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-neutral-950 dark:text-white mb-4">
-                        Parcours
+                        {t.title}
                     </h2>
                     <div className="w-20 h-1 bg-neutral-950/20 dark:bg-white/20"></div>
                 </motion.div>
@@ -148,13 +234,13 @@ export function ExperiencesSection() {
                     >
                         <div>
                             <p className="text-xs font-semibold uppercase tracking-wider text-neutral-500 dark:text-white/50 mb-1">
-                                Stage · Alternance
+                                {t.analysisTag}
                             </p>
                             <p className="text-xl font-bold text-neutral-950 dark:text-white">
-                                Analyse de mes expériences professionnelles
+                                {t.analysisTitle}
                             </p>
                             <p className="text-sm text-neutral-600 dark:text-white/60 mt-1">
-                                Orchestra - TravelSoft &amp; ITESOFT — contexte, missions, compétences, bilan
+                                {t.analysisSubtitle}
                             </p>
                         </div>
                         <span
@@ -202,11 +288,11 @@ export function ExperiencesSection() {
                                                     : "md:float-left md:mr-4"
                                             }`}
                                         >
-                                            {exp.period}
+                                            {exp.period[lang]}
                                         </div>
 
                                         <h3 className="text-2xl font-bold text-neutral-950 dark:text-white mb-2 clear-both">
-                                            {exp.position}
+                                            {exp.position[lang]}
                                         </h3>
                                         <p className="text-lg font-semibold text-neutral-700 dark:text-white/80 mb-1">
                                             {exp.company}
@@ -216,14 +302,14 @@ export function ExperiencesSection() {
                                         </p>
                                         {exp.mention && (
                                             <p className="text-sm text-neutral-600 dark:text-white/60 mb-6 font-medium">
-                                                {exp.mention}
+                                                {exp.mention[lang]}
                                             </p>
                                         )}
                                         {!exp.mention && <div className="mb-4"/>}
 
                                         {/* Description */}
                                         <div className="space-y-3 mb-6">
-                                            {exp.description.map((para, i) => (
+                                            {exp.description[lang].map((para, i) => (
                                                 <p
                                                     key={i}
                                                     className="text-neutral-700 dark:text-white/80 leading-relaxed"
@@ -237,7 +323,7 @@ export function ExperiencesSection() {
                                         {exp.technologies && exp.technologies.length > 0 && (
                                             <div className="mb-4">
                                                 <p className="text-sm font-semibold text-neutral-950 dark:text-white mb-2">
-                                                    Technologies :
+                                                    {t.technologies}
                                                 </p>
                                                 <div
                                                     className={`flex flex-wrap gap-2 ${
@@ -259,10 +345,10 @@ export function ExperiencesSection() {
                                         )}
 
                                         {/* Key points */}
-                                        {exp.keyPoints && exp.keyPoints.length > 0 && (
+                                        {exp.keyPoints && exp.keyPoints[lang].length > 0 && (
                                             <div className="border-t border-neutral-950/10 dark:border-white/10 pt-4">
                                                 <p className="text-sm font-semibold text-neutral-950 dark:text-white mb-2">
-                                                    {exp.type === "education" ? "Points clés :" : "Apports clés :"}
+                                                    {exp.type === "education" ? t.educationKeyPoints : t.workKeyPoints}
                                                 </p>
                                                 <ul
                                                     className={`space-y-1 ${
@@ -271,7 +357,7 @@ export function ExperiencesSection() {
                                                             : ""
                                                     }`}
                                                 >
-                                                    {exp.keyPoints.map((point, i) => (
+                                                    {exp.keyPoints[lang].map((point, i) => (
                                                         <li
                                                             key={i}
                                                             className="text-neutral-700 dark:text-white/80"
@@ -310,7 +396,7 @@ export function ExperiencesSection() {
                                                             })}
                                                             className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-neutral-950/30 dark:border-white/30 text-sm font-medium text-neutral-950 dark:text-white hover:bg-neutral-950 hover:text-white dark:hover:bg-white dark:hover:text-neutral-950 transition-colors duration-200"
                                                         >
-                                                            {link.label} →
+                                                            {link.label[lang]} →
                                                         </a>
                                                     );
                                                 })}

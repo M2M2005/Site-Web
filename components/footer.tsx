@@ -1,8 +1,25 @@
 "use client";
 
 import Image from "next/image";
+import { useLanguage } from "@/lib/i18n";
+
+const texts = {
+    fr: {
+        rights: "Tous droits réservés.",
+        social: "Réseaux sociaux",
+        builtWith: "Développé avec Next.js, Tailwind CSS & Framer Motion",
+    },
+    en: {
+        rights: "All rights reserved.",
+        social: "Social media",
+        builtWith: "Built with Next.js, Tailwind CSS & Framer Motion",
+    },
+};
 
 export function Footer() {
+    const { lang } = useLanguage();
+    const t = texts[lang];
+
     return (
         <footer className="w-full bg-white dark:bg-neutral-950 border-t border-neutral-200 dark:border-white/10 py-12 px-4 md:px-6">
             <div className="container mx-auto max-w-6xl">
@@ -13,7 +30,7 @@ export function Footer() {
                             Cyprien Bons
                         </span>
                         <p className="text-sm text-neutral-600 dark:text-white/60">
-                            © {new Date().getFullYear()} Cyprien Bons. Tous droits réservés.
+                            © {new Date().getFullYear()} Cyprien Bons. {t.rights}
                         </p>
                     </div>
 
@@ -45,7 +62,7 @@ export function Footer() {
                     {/* Right: Social Links */}
                     <div className="space-y-3">
                         <h3 className="text-sm font-semibold text-neutral-950 dark:text-white uppercase tracking-wider mb-4">
-                            Réseaux sociaux
+                            {t.social}
                         </h3>
                         <div className="flex gap-4">
                             <a
@@ -85,7 +102,7 @@ export function Footer() {
                 {/* Bottom: Attribution */}
                 <div className="pt-8 border-t border-neutral-200 dark:border-white/10">
                     <p className="text-center text-xs text-neutral-500 dark:text-white/40">
-                        Développé avec Next.js, Tailwind CSS & Framer Motion
+                        {t.builtWith}
                     </p>
                 </div>
             </div>
