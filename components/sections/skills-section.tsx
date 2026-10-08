@@ -23,7 +23,7 @@ const skillsData: SkillCategory[] = [
             { name: "JavaScript" },
             { name: "TypeScript" },
             { name: "Angular" },
-            { name: "C++" },
+            { name: "C" },
             { name: "Google Apps Script" },
             { name: "Bash" },
         ],
