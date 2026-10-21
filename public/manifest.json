@@ -1,0 +1,21 @@
+{
+  "name": "Cyprien Bons | Portfolio",
+  "short_name": "C. Bons",
+  "description": "Portfolio de Cyprien Bons - QA Automation Engineer & Master Cybersécurité",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#5b7cff",
+  "icons": [
+    {
+      "src": "/img/Logo_CB.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/img/Logo_CB.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

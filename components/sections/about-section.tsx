@@ -8,9 +8,9 @@ import { useLanguage } from "@/lib/i18n";
 const texts = {
     fr: {
         title: "À propos",
-        intro: "Diplômé d'un BUT Informatique (parcours Réseau & CyberSécurité) à l'IUT de Montpellier-Sète, je suis désormais en Master Informatique, parcours Sécurité informatique, cybersécurité et cybermenaces, au CNAM de Montpellier. J'y développe un esprit analytique et un sens aigu du détail. Cette rigueur me permet d'identifier rapidement les problèmes complexes et d'y apporter des solutions créatives.",
-        work: "Actuellement en alternance chez ITESOFT au sein de l'équipe Quality Assurance, je conçois et améliore des processus de tests automatisés pour garantir la qualité des produits livrés. La Quality Assurance s'impose naturellement comme mon domaine de prédilection. Elle allie exigence technique et impact concret, où chaque test représente une garantie supplémentaire pour l'utilisateur final.",
-        goal: "Mon objectif : allier la rigueur de la Quality Assurance et l'expertise en cybersécurité pour contribuer à des logiciels à la fois fiables et sûrs.",
+        intro: "Ingénieur QA Automation chez ITESOFT avec plus d'un an d'expérience dans la conception et l'implémentation de tests automatisés end-to-end pour logiciels d'entreprise. Je me spécialise dans l'automatisation de tests avec Cypress et JavaScript, avec une expertise supplémentaire en Selenium et frameworks de test basés sur Java.",
+        work: "Chez ITESOFT, j'ai mené l'industrialisation des workflows de tests automatisés, implémenté des pipelines CI/CD intégrant les tests Cypress avec Node.js. Durant mon stage à Orchestra à Paris, j'ai développé des suites de tests automatisés avec Selenium et Java pour le logiciel de gestion de voyages. Je suis actuellement en Master Cybersécurité et Réseaux au CNAM Montpellier, après avoir obtenu mon BUT Informatique à l'IUT de Montpellier.",
+        goal: "Passionné par la qualité logicielle et l'automatisation des tests, je cherche à approfondir mon expertise en test automation, cybersécurité et pratiques DevOps pour contribuer à la création de systèmes robustes et fiables.",
         age: "Ans",
         projects: "Projets",
         experience: "Expérience",
@@ -27,9 +27,9 @@ const texts = {
     },
     en: {
         title: "About",
-        intro: "After earning a Bachelor's degree in Computer Science (BUT, Networks & Cybersecurity track) at the IUT of Montpellier-Sète, I am now studying for a Master's in Computer Science, specializing in IT security, cybersecurity and cyber threats, at the CNAM in Montpellier. There I am developing an analytical mindset and a keen eye for detail. This rigor helps me quickly identify complex problems and find creative solutions to them.",
-        work: "Currently a work-study student at ITESOFT in the Quality Assurance team, I design and improve automated testing processes to ensure the quality of delivered products. Quality Assurance has naturally become my field of choice. It combines technical rigor with real-world impact, where every test is one more guarantee for the end user.",
-        goal: "My goal: to combine the rigor of Quality Assurance with cybersecurity expertise to help build software that is both reliable and secure.",
+        intro: "QA Automation Engineer at ITESOFT with over a year of experience designing and implementing end-to-end automated tests for enterprise software. I specialize in Cypress and JavaScript test automation, with additional expertise in Selenium and Java-based testing frameworks.",
+        work: "At ITESOFT, I led the industrialization of automated testing workflows, implementing CI/CD pipelines that integrated Cypress tests with Node.js. During my internship at Orchestra in Paris, I built automated test suites using Selenium and Java for travel management software. I am currently pursuing a Master's in Cybersecurity and Networks at CNAM Montpellier, after earning my BUT in Computer Science from IUT Montpellier.",
+        goal: "Passionate about software quality and test automation, I'm seeking to deepen my expertise in test automation, cybersecurity, and DevOps practices to contribute to building robust and reliable systems.",
         age: "Years old",
         projects: "Projects",
         experience: "Experience",
