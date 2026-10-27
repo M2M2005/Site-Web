@@ -1,0 +1,36 @@
+name: Generate CV PDF
+
+on:
+  push:
+    paths:
+      - 'scripts/generate-cv.js'
+    branches:
+      - master
+
+jobs:
+  generate-cv:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate CV PDF
+        run: npm run generate-cv
+
+      - name: Commit and push PDF
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add public/docs/CV_Cyprien_Bons.pdf
+          git diff --staged --quiet || git commit -m "Auto-generate CV PDF"
+          git push

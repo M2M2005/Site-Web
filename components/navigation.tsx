@@ -5,13 +5,14 @@ import { motion } from "framer-motion";
 import { useRouter, usePathname } from "next/navigation";
 import { useLanguage, type Lang, type Localized } from "@/lib/i18n";
 
-const navItems: { name: Localized; href: string }[] = [
+const navItems: { name: Localized; href: string; isPage?: boolean }[] = [
     { name: { fr: "Accueil", en: "Home" }, href: "#hero" },
     { name: { fr: "À propos", en: "About" }, href: "#about" },
     { name: { fr: "Parcours", en: "Background" }, href: "#experiences" },
     { name: { fr: "Projets", en: "Projects" }, href: "#projects" },
     { name: { fr: "Compétences", en: "Skills" }, href: "#skills" },
     { name: { fr: "Contact", en: "Contact" }, href: "#contact" },
+    { name: { fr: "CV", en: "CV" }, href: "/cv", isPage: true },
 ];
 
 const texts = {
@@ -97,7 +98,14 @@ export function Navigation() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, [pathname]);
 
-    const scrollToSection = (href: string) => {
+    const scrollToSection = (href: string, isPage?: boolean) => {
+        // If it's a page link (like /cv), navigate directly
+        if (isPage) {
+            router.push(href);
+            setIsMobileMenuOpen(false);
+            return;
+        }
+
         // If we're not on home page, navigate to home first
         if (pathname !== "/") {
             router.push(`/${href}`);
@@ -153,13 +161,14 @@ export function Navigation() {
                         <div className="hidden md:flex items-center gap-3">
                             <div className="flex items-center gap-1">
                                 {navItems.map((item) => {
-                                    const isActive = activeSection === item.href.substring(1);
+                                    const isActive = !item.isPage && activeSection === item.href.substring(1);
+                                    const isCurrentPage = item.isPage && pathname === item.href;
                                     return (
                                         <button
                                             key={item.href}
-                                            onClick={() => scrollToSection(item.href)}
+                                            onClick={() => scrollToSection(item.href, item.isPage)}
                                             className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-                                                isActive
+                                                isActive || isCurrentPage
                                                     ? useLightText
                                                         ? "bg-white dark:bg-neutral-950 text-neutral-950 dark:text-white"
                                                         : "bg-neutral-950 dark:bg-white text-white dark:text-neutral-950"
@@ -175,33 +184,6 @@ export function Navigation() {
                             </div>
 
                             <LanguageToggle lightText={useLightText} />
-
-                            {/* CV Download Button */}
-                            <a
-                                href="/docs/CV_BONS.pdf"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 flex items-center gap-2 ${
-                                    useLightText
-                                        ? "bg-white dark:bg-neutral-950 text-neutral-950 dark:text-white hover:bg-white/90 dark:hover:bg-neutral-900"
-                                        : "bg-neutral-950 dark:bg-white text-white dark:text-neutral-950 hover:bg-neutral-800 dark:hover:bg-neutral-100"
-                                }`}
-                            >
-                                <svg
-                                    className="w-4 h-4"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                                    />
-                                </svg>
-                                CV
-                            </a>
                         </div>
 
                         {/* Mobile: Language + Menu Button */}
@@ -251,42 +233,23 @@ export function Navigation() {
                         className="md:hidden bg-white dark:bg-neutral-950 border-t border-neutral-200 dark:border-white/10"
                     >
                         <div className="container mx-auto px-4 py-4 space-y-2">
-                            {navItems.map((item) => (
-                                <button
-                                    key={item.href}
-                                    onClick={() => scrollToSection(item.href)}
-                                    className={`w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 ${
-                                        activeSection === item.href.substring(1)
-                                            ? "bg-neutral-950 dark:bg-white text-white dark:text-neutral-950"
-                                            : "text-neutral-600 dark:text-white/60 hover:bg-neutral-100 dark:hover:bg-white/10"
-                                    }`}
-                                >
-                                    {item.name[lang]}
-                                </button>
-                            ))}
-
-                            {/* CV Download Button - Mobile */}
-                            <a
-                                href="/docs/CV_BONS.pdf"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 bg-neutral-950 dark:bg-white text-white dark:text-neutral-950 hover:bg-neutral-800 dark:hover:bg-neutral-100"
-                            >
-                                <svg
-                                    className="w-4 h-4"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth={2}
-                                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                                    />
-                                </svg>
-                                {texts[lang].downloadCv}
-                            </a>
+                            {navItems.map((item) => {
+                                const isActive = !item.isPage && activeSection === item.href.substring(1);
+                                const isCurrentPage = item.isPage && pathname === item.href;
+                                return (
+                                    <button
+                                        key={item.href}
+                                        onClick={() => scrollToSection(item.href, item.isPage)}
+                                        className={`w-full text-left px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 ${
+                                            isActive || isCurrentPage
+                                                ? "bg-neutral-950 dark:bg-white text-white dark:text-neutral-950"
+                                                : "text-neutral-600 dark:text-white/60 hover:bg-neutral-100 dark:hover:bg-white/10"
+                                        }`}
+                                    >
+                                        {item.name[lang]}
+                                    </button>
+                                );
+                            })}
                         </div>
                     </motion.div>
                 )}

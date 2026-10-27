@@ -16,7 +16,7 @@ const texts = {
         experience: "Expérience",
         months: "mois",
         phone: "Tél:",
-        downloadCv: "Télécharger mon CV",
+        downloadCv: "Voir mon CV",
         climbingTitle: "Escalade",
         climbingPeriod: "2018 - Maintenant",
         climbing: [
@@ -35,7 +35,7 @@ const texts = {
         experience: "Experience",
         months: "months",
         phone: "Phone:",
-        downloadCv: "Download my CV",
+        downloadCv: "View my CV",
         climbingTitle: "Climbing",
         climbingPeriod: "2018 - Present",
         climbing: [
@@ -180,12 +180,10 @@ export function AboutSection() {
                             </div>
                         </div>
 
-                        {/* CV Download */}
+                        {/* CV Link */}
                         <div className="pt-6">
                             <a
-                                href="/docs/CV_BONS.pdf"
-                                target="_blank"
-                                rel="noopener noreferrer"
+                                href="/cv"
                                 className="inline-flex items-center gap-2 px-6 py-3 bg-white dark:bg-neutral-950 text-neutral-950 dark:text-white rounded-lg font-semibold hover:bg-white/90 dark:hover:bg-neutral-950/90 transition-all duration-300 shadow-lg hover:shadow-xl"
                             >
                                 <svg
@@ -198,7 +196,7 @@ export function AboutSection() {
                                         strokeLinecap="round"
                                         strokeLinejoin="round"
                                         strokeWidth={2}
-                                        d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                                     />
                                 </svg>
                                 {t.downloadCv}

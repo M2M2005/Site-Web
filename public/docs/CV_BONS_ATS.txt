@@ -1,0 +1,86 @@
+CYPRIEN BONS
+Ingénieur QA | Test Automation
+
+Email: contact@cyprienbons.com
+Téléphone: 07 68 51 20 06
+Adresse: 91 Impasse Villehardouin, 34090 Montpellier
+LinkedIn: linkedin.com/in/cyprien-bons
+Site web: cyprienbons.com
+Permis B
+
+================================================================================
+EXPERIENCES PROFESSIONNELLES
+================================================================================
+
+ITESOFT - Alternance Développeur QA
+Aimargues (30) | Septembre 2025 - Présent
+
+- Tests automatisés avec Selenium pour applications web entreprise
+- Identification de bugs mineurs et problèmes de matching
+- Etablissement des bonnes pratiques d'automatisation pour l'équipe QA
+
+---
+
+ORCHESTRA - TRAVELSOFT - Stage Développeur QA
+Paris (75) | Février - Mars 2025
+
+- 22 tests automatisés créés avec Cypress
+- Industrialisation CI/CD avec n8n, réduction du testing manuel de 75%
+- Détection de 2-3 bugs par semaine via tests automatiques
+- Application des méthodes Agile pour garantir la qualité continue
+
+================================================================================
+FORMATIONS
+================================================================================
+
+Master Informatique - Cybersécurité et Réseaux
+CNAM Montpellier | 2026 - 2028 (en cours)
+
+BUT Informatique
+IUT Montpellier-Sète | 2023 - 2026
+
+BAC Technologique STI2D - Mention Assez Bien
+Lycée Emmanuel d'Alzon, Nîmes | 2019 - 2023
+
+================================================================================
+COMPETENCES TECHNIQUES
+================================================================================
+
+Langages: Java, JavaScript, HTML/CSS, PHP, SQL/PL SQL, C, Bash
+Test Automation: Selenium, Cypress, TestFX
+Outils: Git/GitHub, Linux, JetBrains IDE, n8n
+Méthodologies: Agile, Scrum, CI/CD
+
+================================================================================
+SOFT SKILLS
+================================================================================
+
+- Résolution de problèmes complexes
+- Travail en équipe et collaboration
+- Adaptabilité et gestion du stress
+- Rigueur et attention aux détails (QA mindset)
+
+================================================================================
+PROJETS
+================================================================================
+
+Application de votes
+Création d'une application Java de vote à distance avec implémentation de tests automatiques via le framework TestFX.
+Technologies: Java, JavaFX, Cryptographie
+
+Cypress E-Commerce
+Projet de tests automatiques E2E avec Cypress sur site e-commerce.
+Technologies: Cypress, JavaScript, Node.js
+
+================================================================================
+LANGUES
+================================================================================
+
+Français: Langue maternelle
+Anglais: Technique et professionnel
+
+================================================================================
+CENTRES D'INTERET
+================================================================================
+
+Escalade (7 ans) - Persévérance, gestion des risques, relever des défis
