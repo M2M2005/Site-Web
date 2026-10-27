@@ -400,7 +400,7 @@ export function ContactSection() {
                                         />
                                     </a>
                                     <a
-                                        href="https://github.com/CyprienBONS"
+                                        href="https://github.com/M2M2005"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="w-12 h-12 rounded-full bg-white/10 dark:bg-neutral-950/10 flex items-center justify-center hover:bg-white/20 dark:hover:bg-neutral-950/20 transition-colors"

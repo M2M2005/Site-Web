@@ -77,7 +77,7 @@ const jsonLd = {
   knowsAbout: ["Cypress", "Selenium", "JavaScript", "Test Automation", "CI/CD", "Cybersecurity"],
   sameAs: [
     "https://www.linkedin.com/in/cyprien-bons/",
-    "https://github.com/CyprienBONS",
+    "https://github.com/M2M2005",
   ],
 };
 

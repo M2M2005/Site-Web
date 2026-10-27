@@ -81,7 +81,7 @@ export function Footer() {
                                 />
                             </a>
                             <a
-                                href="https://github.com/CyprienBONS"
+                                href="https://github.com/M2M2005"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="w-10 h-10 rounded-full bg-neutral-100 dark:bg-white/10 flex items-center justify-center hover:bg-neutral-200 dark:hover:bg-white/20 transition-colors"
