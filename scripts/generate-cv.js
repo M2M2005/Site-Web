@@ -7,9 +7,114 @@ const imagePath = path.resolve(__dirname, '../public/img/cyprien.jpg');
 const imageBase64 = fs.readFileSync(imagePath).toString('base64');
 const imageDataUri = `data:image/jpeg;base64,${imageBase64}`;
 
-const cvHtml = `
+// Traductions FR/EN
+const translations = {
+  fr: {
+    lang: 'fr',
+    title: 'Ingenieur QA | Test Automation',
+    subtitle: 'Alternance ITESOFT | Master Cybersecurite et Reseaux - CNAM Montpellier',
+    location: 'Montpellier (34)',
+    license: 'Permis B',
+    experiencesTitle: 'Experiences Professionnelles',
+    exp1Title: 'Alternance - Developpeur QA',
+    exp1Date: 'Sept 2025 - Present',
+    exp1Company: 'ITESOFT - Aimargues (30)',
+    exp1Tasks: [
+      'Tests automatises avec Selenium pour applications web entreprise',
+      'Identification de bugs mineurs et problemes de matching',
+      'Etablissement des bonnes pratiques d\'automatisation pour l\'equipe QA'
+    ],
+    exp2Title: 'Stage - Developpeur QA',
+    exp2Date: 'Fev - Mars 2025',
+    exp2Company: 'Orchestra - TravelSoft - Paris (75)',
+    exp2Tasks: [
+      '22 tests automatises crees avec Cypress',
+      'Industrialisation CI/CD avec n8n, reduction du testing manuel de 75%',
+      'Detection de 2-3 bugs par semaine via tests automatiques',
+      'Application des methodes Agile pour garantir la qualite continue'
+    ],
+    skillsTitle: 'Competences Techniques',
+    skillAutomation: 'Test Automation',
+    skillLanguages: 'Langages',
+    skillTools: 'Outils',
+    skillMethodologies: 'Methodologies',
+    educationTitle: 'Formations',
+    edu1Title: 'Master Informatique - Cybersecurite et Reseaux',
+    edu1School: 'CNAM Montpellier',
+    edu1Date: '2026 - 2028 (en cours)',
+    edu2Title: 'BUT Informatique',
+    edu2School: 'IUT Montpellier-Sete',
+    edu2Date: '2023 - 2026',
+    edu3Title: 'BAC STI2D - Mention Assez Bien',
+    edu3School: 'Lycee Emmanuel d\'Alzon, Nimes',
+    edu3Date: '2019 - 2023',
+    projectsTitle: 'Projets',
+    proj1Title: 'Application de votes',
+    proj1Desc: 'Application Java de vote a distance avec tests TestFX',
+    proj2Title: 'Cypress E-Commerce',
+    proj2Desc: 'Tests automatiques E2E sur site e-commerce',
+    languagesTitle: 'Langues',
+    langFr: 'Francais',
+    langFrLevel: '- Langue maternelle',
+    langEn: 'Anglais',
+    langEnLevel: '- Technique et professionnel'
+  },
+  en: {
+    lang: 'en',
+    title: 'QA Engineer | Test Automation',
+    subtitle: 'Work-Study at ITESOFT | Master Cybersecurity & Networks - CNAM Montpellier',
+    location: 'Montpellier, France',
+    license: 'Driver\'s License',
+    experiencesTitle: 'Professional Experience',
+    exp1Title: 'Work-Study - QA Developer',
+    exp1Date: 'Sept 2025 - Present',
+    exp1Company: 'ITESOFT - Aimargues, France',
+    exp1Tasks: [
+      'Automated testing with Selenium for enterprise web applications',
+      'Identification of minor bugs and matching issues',
+      'Establishing automation best practices for the QA team'
+    ],
+    exp2Title: 'Internship - QA Developer',
+    exp2Date: 'Feb - Mar 2025',
+    exp2Company: 'Orchestra - TravelSoft - Paris, France',
+    exp2Tasks: [
+      '22 automated tests created with Cypress',
+      'CI/CD industrialization with n8n, 75% reduction in manual testing',
+      'Detection of 2-3 bugs per week via automated tests',
+      'Application of Agile methods to ensure continuous quality'
+    ],
+    skillsTitle: 'Technical Skills',
+    skillAutomation: 'Test Automation',
+    skillLanguages: 'Languages',
+    skillTools: 'Tools',
+    skillMethodologies: 'Methodologies',
+    educationTitle: 'Education',
+    edu1Title: 'Master in Computer Science - Cybersecurity & Networks',
+    edu1School: 'CNAM Montpellier',
+    edu1Date: '2026 - 2028 (ongoing)',
+    edu2Title: 'Bachelor in Computer Science (BUT)',
+    edu2School: 'IUT Montpellier-Sete',
+    edu2Date: '2023 - 2026',
+    edu3Title: 'High School Diploma STI2D - With Honors',
+    edu3School: 'Lycee Emmanuel d\'Alzon, Nimes',
+    edu3Date: '2019 - 2023',
+    projectsTitle: 'Projects',
+    proj1Title: 'Voting Application',
+    proj1Desc: 'Java remote voting application with TestFX tests',
+    proj2Title: 'Cypress E-Commerce',
+    proj2Desc: 'E2E automated tests on e-commerce website',
+    languagesTitle: 'Languages',
+    langFr: 'French',
+    langFrLevel: '- Native',
+    langEn: 'English',
+    langEnLevel: '- Technical & Professional'
+  }
+};
+
+function generateCvHtml(t) {
+  return `
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="${t.lang}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -228,8 +333,8 @@ const cvHtml = `
     <div class="header">
       <div class="header-info">
         <h1>CYPRIEN BONS</h1>
-        <p class="title">Ingenieur QA | Test Automation</p>
-        <p class="subtitle">Alternance ITESOFT | Master Cybersecurite et Reseaux - CNAM Montpellier</p>
+        <p class="title">${t.title}</p>
+        <p class="subtitle">${t.subtitle}</p>
       </div>
       <img src="${imageDataUri}" alt="Cyprien Bons" class="photo" />
     </div>
@@ -238,60 +343,55 @@ const cvHtml = `
     <div class="contact-bar">
       <span>contact@cyprienbons.com</span>
       <span>07 68 51 20 06</span>
-      <span>Montpellier (34)</span>
-      <span>Permis B</span>
+      <span>${t.location}</span>
+      <span>${t.license}</span>
       <a href="https://linkedin.com/in/cyprien-bons">linkedin.com/in/cyprien-bons</a>
       <a href="https://cyprienbons.com">cyprienbons.com</a>
     </div>
 
     <!-- Experiences -->
     <section>
-      <h2>Experiences Professionnelles</h2>
+      <h2>${t.experiencesTitle}</h2>
       <div class="experience-item">
         <div class="experience-header">
-          <strong>Alternance - Developpeur QA</strong>
-          <span class="date">Sept 2025 - Present</span>
+          <strong>${t.exp1Title}</strong>
+          <span class="date">${t.exp1Date}</span>
         </div>
-        <p class="experience-company">ITESOFT - Aimargues (30)</p>
+        <p class="experience-company">${t.exp1Company}</p>
         <ul class="experience-list">
-          <li>Tests automatises avec Selenium pour applications web entreprise</li>
-          <li>Identification de bugs mineurs et problemes de matching</li>
-          <li>Etablissement des bonnes pratiques d'automatisation pour l'equipe QA</li>
+          ${t.exp1Tasks.map(task => `<li>${task}</li>`).join('\n          ')}
         </ul>
       </div>
       <div class="experience-item">
         <div class="experience-header">
-          <strong>Stage - Developpeur QA</strong>
-          <span class="date">Fev - Mars 2025</span>
+          <strong>${t.exp2Title}</strong>
+          <span class="date">${t.exp2Date}</span>
         </div>
-        <p class="experience-company">Orchestra - TravelSoft - Paris (75)</p>
+        <p class="experience-company">${t.exp2Company}</p>
         <ul class="experience-list">
-          <li>22 tests automatises crees avec Cypress</li>
-          <li>Industrialisation CI/CD avec n8n, reduction du testing manuel de 75%</li>
-          <li>Detection de 2-3 bugs par semaine via tests automatiques</li>
-          <li>Application des methodes Agile pour garantir la qualite continue</li>
+          ${t.exp2Tasks.map(task => `<li>${task}</li>`).join('\n          ')}
         </ul>
       </div>
     </section>
 
     <!-- Skills -->
     <section>
-      <h2>Competences Techniques</h2>
+      <h2>${t.skillsTitle}</h2>
       <div class="skills-grid">
         <div class="skill-item">
-          <strong>Test Automation</strong>
+          <strong>${t.skillAutomation}</strong>
           <span>Selenium, Cypress, TestFX</span>
         </div>
         <div class="skill-item">
-          <strong>Langages</strong>
+          <strong>${t.skillLanguages}</strong>
           <span>Java, JavaScript, SQL, PHP, C, Bash</span>
         </div>
         <div class="skill-item">
-          <strong>Outils</strong>
+          <strong>${t.skillTools}</strong>
           <span>Git/GitHub, Linux, JetBrains, n8n</span>
         </div>
         <div class="skill-item">
-          <strong>Methodologies</strong>
+          <strong>${t.skillMethodologies}</strong>
           <span>Agile, Scrum, CI/CD</span>
         </div>
       </div>
@@ -300,33 +400,33 @@ const cvHtml = `
     <!-- Formations + Projets -->
     <div class="two-columns">
       <section>
-        <h2>Formations</h2>
+        <h2>${t.educationTitle}</h2>
         <div class="formation-item">
-          <strong>Master Informatique - Cybersecurite et Reseaux</strong>
-          <p class="details">CNAM Montpellier</p>
-          <p class="date">2026 - 2028 (en cours)</p>
+          <strong>${t.edu1Title}</strong>
+          <p class="details">${t.edu1School}</p>
+          <p class="date">${t.edu1Date}</p>
         </div>
         <div class="formation-item">
-          <strong>BUT Informatique</strong>
-          <p class="details">IUT Montpellier-Sete</p>
-          <p class="date">2023 - 2026</p>
+          <strong>${t.edu2Title}</strong>
+          <p class="details">${t.edu2School}</p>
+          <p class="date">${t.edu2Date}</p>
         </div>
         <div class="formation-item">
-          <strong>BAC STI2D - Mention Assez Bien</strong>
-          <p class="details">Lycee Emmanuel d'Alzon, Nimes</p>
-          <p class="date">2019 - 2023</p>
+          <strong>${t.edu3Title}</strong>
+          <p class="details">${t.edu3School}</p>
+          <p class="date">${t.edu3Date}</p>
         </div>
       </section>
       <section>
-        <h2>Projets</h2>
+        <h2>${t.projectsTitle}</h2>
         <div class="project-item">
-          <strong>Application de votes</strong>
-          <p class="details">Application Java de vote a distance avec tests TestFX</p>
+          <strong>${t.proj1Title}</strong>
+          <p class="details">${t.proj1Desc}</p>
           <p class="tech">Java, JavaFX, Cryptographie</p>
         </div>
         <div class="project-item">
-          <strong>Cypress E-Commerce</strong>
-          <p class="details">Tests automatiques E2E sur site e-commerce</p>
+          <strong>${t.proj2Title}</strong>
+          <p class="details">${t.proj2Desc}</p>
           <p class="tech">Cypress, JavaScript, Node.js</p>
         </div>
       </section>
@@ -334,15 +434,15 @@ const cvHtml = `
 
     <!-- Langues -->
     <section>
-      <h2>Langues</h2>
+      <h2>${t.languagesTitle}</h2>
       <div class="languages">
         <div class="language-item">
-          <strong>Francais</strong>
-          <span>- Langue maternelle</span>
+          <strong>${t.langFr}</strong>
+          <span>${t.langFrLevel}</span>
         </div>
         <div class="language-item">
-          <strong>Anglais</strong>
-          <span>- Technique et professionnel</span>
+          <strong>${t.langEn}</strong>
+          <span>${t.langEnLevel}</span>
         </div>
       </div>
     </section>
@@ -350,9 +450,10 @@ const cvHtml = `
 </body>
 </html>
 `;
+}
 
 async function generateCV() {
-  console.log('Generating CV PDF...');
+  console.log('Generating CV PDFs (FR & EN)...');
 
   const browser = await puppeteer.launch({
     headless: 'new',
@@ -361,22 +462,32 @@ async function generateCV() {
 
   const page = await browser.newPage();
 
-  await page.setContent(cvHtml, {
-    waitUntil: 'networkidle0'
-  });
-
-  const outputPath = path.resolve(__dirname, '../public/docs/CV_Cyprien_Bons.pdf');
-
+  // Generate French CV
+  const frHtml = generateCvHtml(translations.fr);
+  await page.setContent(frHtml, { waitUntil: 'domcontentloaded' });
+  const frOutputPath = path.resolve(__dirname, '../public/docs/CV_Cyprien_Bons_FR.pdf');
   await page.pdf({
-    path: outputPath,
+    path: frOutputPath,
     format: 'A4',
     printBackground: true,
     margin: { top: 0, right: 0, bottom: 0, left: 0 }
   });
+  console.log(`CV FR generated: ${frOutputPath}`);
+
+  // Generate English CV
+  const enHtml = generateCvHtml(translations.en);
+  await page.setContent(enHtml, { waitUntil: 'domcontentloaded' });
+  const enOutputPath = path.resolve(__dirname, '../public/docs/CV_Cyprien_Bons_EN.pdf');
+  await page.pdf({
+    path: enOutputPath,
+    format: 'A4',
+    printBackground: true,
+    margin: { top: 0, right: 0, bottom: 0, left: 0 }
+  });
+  console.log(`CV EN generated: ${enOutputPath}`);
 
   await browser.close();
-
-  console.log(`CV PDF generated: ${outputPath}`);
+  console.log('All CVs generated successfully!');
 }
 
 generateCV().catch(console.error);

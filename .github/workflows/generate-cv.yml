@@ -36,6 +36,6 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add public/docs/CV_Cyprien_Bons.pdf
+          git add public/docs/CV_Cyprien_Bons_FR.pdf public/docs/CV_Cyprien_Bons_EN.pdf
           git diff --staged --quiet || git commit -m "Auto-generate CV PDF"
           git push

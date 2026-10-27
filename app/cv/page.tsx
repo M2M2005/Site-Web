@@ -1,7 +1,34 @@
+"use client";
+
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
+import { useLanguage } from "@/lib/i18n";
+
+const texts = {
+  fr: {
+    title: "Mon CV",
+    subtitle: "Ingénieur QA | Test Automation - Alternance ITESOFT",
+    downloadPdf: "Télécharger PDF",
+    atsVersion: "Version ATS",
+    preview: "Aperçu du CV",
+    pdfFile: "/docs/CV_Cyprien_Bons_FR.pdf",
+    pdfDownloadName: "CV_Cyprien_Bons_FR.pdf",
+  },
+  en: {
+    title: "My Resume",
+    subtitle: "QA Engineer | Test Automation - Work-Study at ITESOFT",
+    downloadPdf: "Download PDF",
+    atsVersion: "ATS Version",
+    preview: "Resume Preview",
+    pdfFile: "/docs/CV_Cyprien_Bons_EN.pdf",
+    pdfDownloadName: "CV_Cyprien_Bons_EN.pdf",
+  },
+};
 
 export default function CVPage() {
+  const { lang } = useLanguage();
+  const t = texts[lang];
+
   return (
     <>
       <Navigation />
@@ -11,10 +38,10 @@ export default function CVPage() {
           {/* Header */}
           <div className="mb-16">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">
-              Mon CV
+              {t.title}
             </h1>
             <p className="text-white/60 text-lg">
-              Ingénieur QA | Test Automation - Alternance ITESOFT
+              {t.subtitle}
             </p>
             <div className="w-20 h-1 bg-white/20 mt-4"></div>
           </div>
@@ -22,14 +49,14 @@ export default function CVPage() {
           {/* Download Buttons */}
           <div className="flex flex-wrap gap-4 mb-12">
             <a
-              href="/docs/CV_Cyprien_Bons.pdf"
-              download="CV_Cyprien_Bons.pdf"
+              href={t.pdfFile}
+              download={t.pdfDownloadName}
               className="inline-flex items-center gap-2 px-6 py-3 bg-white text-neutral-950 font-semibold rounded-lg hover:bg-white/90 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
-              Télécharger PDF
+              {t.downloadPdf}
             </a>
             <a
               href="/docs/CV_BONS_ATS.txt"
@@ -39,7 +66,7 @@ export default function CVPage() {
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
-              Version ATS
+              {t.atsVersion}
             </a>
           </div>
 
@@ -50,11 +77,11 @@ export default function CVPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
               </svg>
-              <span className="font-medium text-white">Aperçu du CV</span>
+              <span className="font-medium text-white">{t.preview}</span>
             </div>
-            <div className="w-full" style={{ height: "min(calc((100vw - 3rem) * 1.414), 1150px)" }}>
+            <div className="w-full aspect-[1/1.414]">
               <iframe
-                src="/docs/CV_Cyprien_Bons.pdf#toolbar=0&navpanes=0"
+                src={`${t.pdfFile}#toolbar=0&navpanes=0&view=FitH`}
                 className="w-full h-full border-0"
                 title="CV Cyprien Bons"
               />
