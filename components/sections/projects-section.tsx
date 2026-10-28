@@ -370,7 +370,7 @@ export const projects: Project[] = [
         category: { fr: "Jeu Vidéo | Projet Personnel", en: "Video Game | Personal Project" },
         typeProjet: { fr: "Personnel", en: "Personal" },
         nombrePersonnes: 1,
-        tempsRealisation: { fr: "2 Semaine", en: "2 weeks" },
+        tempsRealisation: { fr: "2 Semaines", en: "2 weeks" },
         date: { fr: "Juillet 2025", en: "July 2025" },
         mainImage: "/img/button_voir_details/clicker-game/clicker-game2.png",
         description: {
@@ -466,7 +466,7 @@ export const projects: Project[] = [
         category: { fr: "Jeu Vidéo | Code Game Jam 2024", en: "Video Game | Code Game Jam 2024" },
         typeProjet: { fr: "Code Game Jam", en: "Code Game Jam" },
         nombrePersonnes: 5,
-        tempsRealisation: { fr: "1 Jours", en: "1 day" },
+        tempsRealisation: { fr: "1 Jour", en: "1 day" },
         collaborateurs: ["Raphaël RIVAS", "Maël NICOLAS", "Killian RAMUS", "Vincent CALATRABA"],
         date: { fr: "Janvier 2024", en: "January 2024" },
         mainImage: "/img/button_voir_details/LegendsBuster/legendsbuster3.png",

@@ -71,6 +71,7 @@ export function ContactSection() {
         email: "",
         title: "",
         message: "",
+        website: "", // Honeypot field - should remain empty
     });
 
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -86,6 +87,12 @@ export function ContactSection() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         if (!isFormValid) return;
+
+        // Honeypot check - if filled, it's a bot
+        if (formData.website) {
+            setSubmitStatus("success"); // Fake success to fool bots
+            return;
+        }
 
         setIsSubmitting(true);
         setSubmitStatus("idle");
@@ -113,6 +120,7 @@ export function ContactSection() {
                     email: "",
                     title: "",
                     message: "",
+                    website: "",
                 });
             } else {
                 setSubmitStatus("error");
@@ -241,6 +249,20 @@ export function ContactSection() {
                                         rows={6}
                                         className="bg-white/10 dark:bg-neutral-950/10 border-white/20 dark:border-neutral-950/20 text-white dark:text-neutral-950 placeholder:text-white/40 dark:placeholder:text-neutral-950/40 resize-none"
                                         placeholder={t.messagePlaceholder}
+                                    />
+                                </div>
+
+                                {/* Honeypot - hidden from users, visible to bots */}
+                                <div className="absolute -left-[9999px]" aria-hidden="true">
+                                    <label htmlFor="website">Website</label>
+                                    <input
+                                        type="text"
+                                        id="website"
+                                        name="website"
+                                        value={formData.website}
+                                        onChange={handleChange}
+                                        tabIndex={-1}
+                                        autoComplete="off"
                                     />
                                 </div>
 
