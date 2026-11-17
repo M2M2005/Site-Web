@@ -29,6 +29,44 @@ const linkLabels: Record<LinkType, Localized> = {
     drive: { fr: "Google Drive", en: "Google Drive" },
 };
 
+const videoTexts = {
+    fr: {
+        notice: "Cette vidéo est hébergée par YouTube (Google). En la chargeant, vous acceptez que YouTube dépose des cookies et collecte des données sur votre navigation.",
+        load: "Charger la vidéo",
+    },
+    en: {
+        notice: "This video is hosted on YouTube (Google). By loading it, you accept that YouTube sets cookies and collects data about your browsing.",
+        load: "Load the video",
+    },
+};
+
+// La vidéo YouTube n'est chargée qu'au clic, pour ne déposer aucun traceur sans accord
+function YouTubeEmbed({ videoId, title }: { videoId: string; title: string }) {
+    const { lang } = useLanguage();
+    const [loaded, setLoaded] = useState(false);
+
+    if (loaded) {
+        return (
+            <iframe
+                src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1`}
+                title={title}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full"
+            />
+        );
+    }
+
+    return (
+        <div className="w-full h-full flex flex-col items-center justify-center gap-4 bg-neutral-900 text-white p-6 text-center">
+            <p className="text-sm text-white/70 max-w-md">{videoTexts[lang].notice}</p>
+            <Button type="button" onClick={() => setLoaded(true)}>
+                {videoTexts[lang].load}
+            </Button>
+        </div>
+    );
+}
+
 const texts = {
     fr: {
         title: "Projets",
@@ -659,12 +697,10 @@ export function ProjectsSection() {
                                         return (
                                             <div>
                                                 <div className="w-full rounded-lg overflow-hidden shadow-2xl aspect-video">
-                                                    <iframe
-                                                        src={`https://www.youtube.com/embed/${videoId}`}
+                                                    <YouTubeEmbed
+                                                        key={videoId}
+                                                        videoId={videoId}
                                                         title={selectedProject.title[lang]}
-                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                                        allowFullScreen
-                                                        className="w-full h-full"
                                                     />
                                                 </div>
                                                 {selectedProject.videoCaption && (

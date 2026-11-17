@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+import { openConsentBanner } from "@/lib/consent";
 import { useLanguage } from "@/lib/i18n";
 
 const texts = {
@@ -8,11 +10,15 @@ const texts = {
         rights: "Tous droits réservés.",
         social: "Réseaux sociaux",
         builtWith: "Développé avec Next.js, Tailwind CSS & Framer Motion",
+        legal: "Mentions légales & confidentialité",
+        cookies: "Gérer les cookies",
     },
     en: {
         rights: "All rights reserved.",
         social: "Social media",
         builtWith: "Built with Next.js, Tailwind CSS & Framer Motion",
+        legal: "Legal notice & privacy",
+        cookies: "Manage cookies",
     },
 };
 
@@ -101,6 +107,18 @@ export function Footer() {
 
                 {/* Bottom: Attribution */}
                 <div className="pt-8 border-t border-neutral-200 dark:border-white/10">
+                    <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-4 text-xs text-neutral-500 dark:text-white/50">
+                        <Link href="/confidentialite" className="hover:text-neutral-950 dark:hover:text-white transition-colors">
+                            {t.legal}
+                        </Link>
+                        <button
+                            type="button"
+                            onClick={openConsentBanner}
+                            className="hover:text-neutral-950 dark:hover:text-white transition-colors"
+                        >
+                            {t.cookies}
+                        </button>
+                    </div>
                     <p className="text-center text-xs text-neutral-500 dark:text-white/40">
                         {t.builtWith}
                     </p>

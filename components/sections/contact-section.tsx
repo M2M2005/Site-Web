@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 import { useLanguage } from "@/lib/i18n";
 
 const texts = {
@@ -33,6 +34,8 @@ const texts = {
         location: "Localisation",
         social: "Réseaux sociaux",
         downloadCv: "Voir mon CV",
+        privacyNotice: "Les informations saisies sont transmises via le service Formspree et utilisées uniquement pour répondre à votre message. Elles sont conservées au maximum 3 ans après notre dernier échange.",
+        privacyLink: "Vos droits et la politique de confidentialité",
     },
     en: {
         title: "Contact",
@@ -58,6 +61,8 @@ const texts = {
         location: "Location",
         social: "Social media",
         downloadCv: "View my CV",
+        privacyNotice: "The information you enter is sent through the Formspree service and used only to reply to your message. It is kept for at most 3 years after our last exchange.",
+        privacyLink: "Your rights and the privacy policy",
     },
 };
 
@@ -265,6 +270,14 @@ export function ContactSection() {
                                         autoComplete="off"
                                     />
                                 </div>
+
+                                {/* Information RGPD */}
+                                <p className="text-xs text-white/60 dark:text-neutral-950/60 leading-relaxed">
+                                    {t.privacyNotice}{" "}
+                                    <Link href="/confidentialite" className="underline hover:text-white dark:hover:text-neutral-950">
+                                        {t.privacyLink}
+                                    </Link>
+                                </p>
 
                                 {/* Submit Button */}
                                 <Button
