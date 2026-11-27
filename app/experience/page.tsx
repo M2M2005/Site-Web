@@ -4,7 +4,7 @@ import { ExperiencePPPSection } from "@/components/sections/experience-ppp-secti
 
 export const metadata = {
     title: "Analyse de l'expérience en entreprise - Cyprien Bons",
-    description: "Analyse de mon expérience en alternance chez ITESOFT - Cyprien Bons",
+    description: "Analyse de mes expériences en entreprise : alternance chez ITESOFT et stage chez Orchestra - TravelSoft - Cyprien Bons",
 };
 
 export default function ExperiencePage() {

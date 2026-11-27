@@ -19,6 +19,7 @@ interface Experience {
     images?: string[];
     videoCaption?: Localized;
     mention?: Localized;
+    testimonial?: { quote: Localized; author: string; role: Localized };
     type: "work" | "education";
 }
 
@@ -77,20 +78,20 @@ const experiences: Experience[] = [
         id: "itesoft",
         period: { fr: "Septembre 2025 - Maintenant", en: "September 2025 - Present" },
         position: {
-            fr: "Alternance - Ingénieur QA Automation",
-            en: "Work-study - QA Automation Engineer",
+            fr: "Alternance - Assistant Ingénieur QA Automation",
+            en: "Work-study - Assistant QA Automation Engineer",
         },
         company: "ITESOFT",
         location: "Aimargues, France",
         image: "/img/button_voir_details/ITESOFT/itesoft-logo.png",
         description: {
             fr: [
-                "Actuellement en alternance chez ITESOFT, éditeur d'une solution de facturation électronique, j'occupe le poste d'Ingénieur QA Automation au sein de l'équipe Quality Assurance.",
-                "Conception et implémentation de 22 tests E2E automatisés avec Cypress et JavaScript, atteignant 70% de couverture sur 5 modules d'intégration aérienne critiques. Industrialisation de l'infrastructure de tests via intégration CI/CD avec Node.js et n8n, réduisant le temps de testing manuel de 75% (de 1h à 15 min par suite de tests).",
+                "Actuellement en alternance chez ITESOFT, éditeur d'une solution de facturation électronique, j'occupe le poste d'Assistant Ingénieur QA Automation au sein de l'équipe Quality Assurance.",
+                "Conception et implémentation de 22 tests E2E automatisés avec Cypress et JavaScript, atteignant 70% de couverture sur 5 modules critiques, avec des tests de connectivité entre les modules et des tests de flux complets de bout en bout. Industrialisation de l'infrastructure de tests via intégration CI/CD avec Node.js et n8n, réduisant le temps de testing manuel de 75% (de 1h à 15 min par suite de tests).",
             ],
             en: [
-                "Currently a work-study QA Automation Engineer at ITESOFT, a software publisher of an electronic invoicing solution.",
-                "Designed and implemented 22 end-to-end automated test suites using Cypress and JavaScript, achieving 70% test coverage across 5 critical airline integration modules. Industrialized testing infrastructure by integrating Cypress tests with Node.js and n8n-based CI/CD pipelines, reducing manual testing time by 75% (from 1 hour to 15 minutes per test suite execution).",
+                "Currently a work-study Assistant QA Automation Engineer at ITESOFT, a software publisher of an electronic invoicing solution.",
+                "Designed and implemented 22 end-to-end automated test suites using Cypress and JavaScript, achieving 70% test coverage across 5 critical modules, including connectivity tests between modules and full end-to-end workflow tests. Industrialized testing infrastructure by integrating Cypress tests with Node.js and n8n-based CI/CD pipelines, reducing manual testing time by 75% (from 1 hour to 15 minutes per test suite execution).",
             ],
         },
         technologies: ["Cypress", "JavaScript", "Node.js", "n8n", "GitLab", "Docker", "Allure"],
@@ -108,6 +109,20 @@ const experiences: Experience[] = [
                 "Qualification of 9 business tickets per Agile sprint",
             ],
         },
+        testimonial: {
+            quote: {
+                fr: "Cyprien possède cette curiosité technique et la rigueur qui font les excellents profils QA. Il a été un atout majeur pour notre R&D.",
+                en: "Cyprien has the technical curiosity and rigor that make excellent QA profiles. He has been a major asset to our R&D. (translated from French)",
+            },
+            author: "Kévin Langles",
+            role: { fr: "Team Leader QA, ITESOFT", en: "QA Team Leader, ITESOFT" },
+        },
+        links: [
+            {
+                label: { fr: "Lettre de recommandation", en: "Recommendation letter (French)" },
+                url: "/docs/Recommandation_Cyprien_Bons_ITESOFT.pdf",
+            },
+        ],
         type: "work",
     },
     {
@@ -389,11 +404,27 @@ export function ExperiencesSection() {
                                             </div>
                                         )}
 
+                                        {/* Testimonial */}
+                                        {exp.testimonial && (
+                                            <figure className="mt-6 border-t border-neutral-950/10 dark:border-white/10 pt-4">
+                                                <blockquote className="italic text-neutral-700 dark:text-white/80 leading-relaxed">
+                                                    « {exp.testimonial.quote[lang]} »
+                                                </blockquote>
+                                                <figcaption className="mt-2 text-sm text-neutral-600 dark:text-white/60">
+                                                    <span className="font-semibold text-neutral-950 dark:text-white">
+                                                        {exp.testimonial.author}
+                                                    </span>
+                                                    {" · "}
+                                                    {exp.testimonial.role[lang]}
+                                                </figcaption>
+                                            </figure>
+                                        )}
+
                                         {/* Links */}
                                         {exp.links && exp.links.length > 0 && (
                                             <div className="mt-4 flex flex-wrap gap-2">
                                                 {exp.links.map((link) => {
-                                                    const isInternal = link.url.startsWith("/");
+                                                    const isInternal = link.url.startsWith("/") && !link.url.endsWith(".pdf");
                                                     return (
                                                         <a
                                                             key={link.url}

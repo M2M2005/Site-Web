@@ -59,7 +59,7 @@ const jsonLd = {
   name: "Cyprien Bons",
   url: "https://cyprienbons.com",
   image: "https://cyprienbons.com/img/cyprien.jpg",
-  jobTitle: "QA Automation Engineer",
+  jobTitle: "Assistant QA Automation Engineer",
   worksFor: {
     "@type": "Organization",
     name: "ITESOFT",
@@ -74,7 +74,26 @@ const jsonLd = {
       name: "IUT Montpellier-Sète",
     },
   ],
-  knowsAbout: ["Cypress", "Selenium", "JavaScript", "Test Automation", "CI/CD", "Cybersecurity"],
+  knowsAbout: ["Cypress", "Selenium", "JavaScript", "Test Automation", "CI/CD", "Cybersecurity", "RGPD", "GDPR", "Data Protection"],
+  hasCredential: [
+    ...[
+      ["Module 1 : Le RGPD et ses notions clés", "CNIL_RGPD_Module_1.pdf"],
+      ["Module 2 : Les principes de la protection des données", "CNIL_RGPD_Module_2.pdf"],
+      ["Module 3 : Les responsabilités des acteurs", "CNIL_RGPD_Module_3.pdf"],
+      ["Module 4 : Le DPO et les outils de la conformité", "CNIL_RGPD_Module_4.pdf"],
+    ].map(([name, file]) => ({
+      "@type": "EducationalOccupationalCredential",
+      name: `MOOC L'atelier RGPD - ${name}`,
+      credentialCategory: "certificate",
+      dateCreated: "2024-12-21",
+      url: `https://cyprienbons.com/docs/certifications/${file}`,
+      recognizedBy: {
+        "@type": "GovernmentOrganization",
+        name: "CNIL - Commission Nationale de l'Informatique et des Libertés",
+        url: "https://www.cnil.fr",
+      },
+    })),
+  ],
   sameAs: [
     "https://www.linkedin.com/in/cyprien-bons/",
     "https://github.com/M2M2005",

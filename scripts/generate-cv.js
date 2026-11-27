@@ -11,53 +11,61 @@ const imageDataUri = `data:image/jpeg;base64,${imageBase64}`;
 const translations = {
   fr: {
     lang: 'fr',
-    title: 'Ingenieur QA | Test Automation',
-    subtitle: 'Alternance ITESOFT | Master Cybersecurite et Reseaux - CNAM Montpellier',
+    title: 'Ingénieur QA | Test Automation',
+    subtitle: 'Alternance ITESOFT | Master Cybersécurité et Réseaux - CNAM Montpellier',
     location: 'Montpellier (34)',
     license: 'Permis B',
-    experiencesTitle: 'Experiences Professionnelles',
-    exp1Title: 'Alternance - Developpeur QA',
-    exp1Date: 'Sept 2025 - Present',
+    experiencesTitle: 'Expériences Professionnelles',
+    exp1Title: 'Alternance - Assistant Ingénieur QA Automation',
+    exp1Date: 'Sept 2025 - Présent',
     exp1Company: 'ITESOFT - Aimargues (30)',
     exp1Tasks: [
-      'Tests automatises avec Selenium pour applications web entreprise',
-      'Identification de bugs mineurs et problemes de matching',
-      'Etablissement des bonnes pratiques d\'automatisation pour l\'equipe QA'
+      '22 tests automatisés créés avec Cypress',
+      'Industrialisation CI/CD avec n8n, réduction du testing manuel de 75%',
+      'Détection de 2-3 bugs par semaine via tests automatiques',
+      'Application des méthodes Agile pour garantir la qualité continue'
     ],
-    exp2Title: 'Stage - Developpeur QA',
-    exp2Date: 'Fev - Mars 2025',
+    exp2Title: 'Stage - Développeur QA Automation',
+    exp2Date: 'Fév - Mars 2025',
     exp2Company: 'Orchestra - TravelSoft - Paris (75)',
     exp2Tasks: [
-      '22 tests automatises crees avec Cypress',
-      'Industrialisation CI/CD avec n8n, reduction du testing manuel de 75%',
-      'Detection de 2-3 bugs par semaine via tests automatiques',
-      'Application des methodes Agile pour garantir la qualite continue'
+      'Tests automatisés Selenium/Java : validation des intégrations aériennes réduite de 10 jours à 10 minutes',
+      'Identification de bugs mineurs et problèmes de matching',
+      'Établissement des bonnes pratiques d\'automatisation pour l\'équipe QA'
     ],
-    skillsTitle: 'Competences Techniques',
+    skillsTitle: 'Compétences Techniques',
     skillAutomation: 'Test Automation',
     skillLanguages: 'Langages',
     skillTools: 'Outils',
-    skillMethodologies: 'Methodologies',
+    skillMethodologies: 'Méthodologies',
+    softSkillsTitle: 'Soft Skills',
+    softSkills: 'Travail en équipe · Communication · Esprit critique · Autonomie · Confiance en soi et gestion du stress · Sens de la sécurité',
     educationTitle: 'Formations',
-    edu1Title: 'Master Informatique - Cybersecurite et Reseaux',
+    edu1Title: 'Master Informatique - Cybersécurité et Réseaux',
     edu1School: 'CNAM Montpellier',
     edu1Date: '2026 - 2028 (en cours)',
     edu2Title: 'BUT Informatique',
-    edu2School: 'IUT Montpellier-Sete',
+    edu2School: 'IUT Montpellier-Sète',
     edu2Date: '2023 - 2026',
     edu3Title: 'BAC STI2D - Mention Assez Bien',
-    edu3School: 'Lycee Emmanuel d\'Alzon, Nimes',
+    edu3School: 'Lycée Emmanuel d\'Alzon, Nîmes',
     edu3Date: '2019 - 2023',
     projectsTitle: 'Projets',
     proj1Title: 'Application de votes',
-    proj1Desc: 'Application Java de vote a distance avec tests TestFX',
+    proj1Desc: 'Application Java de vote à distance avec tests TestFX',
     proj2Title: 'Cypress E-Commerce',
     proj2Desc: 'Tests automatiques E2E sur site e-commerce',
+    proj3Title: 'Scoring de compétitions d\'escalade',
+    proj3Desc: 'Scores calculés et affichés en temps réel, utilisé en compétition',
     languagesTitle: 'Langues',
-    langFr: 'Francais',
+    langFr: 'Français',
     langFrLevel: '- Langue maternelle',
     langEn: 'Anglais',
-    langEnLevel: '- Technique et professionnel'
+    langEnLevel: '- B2 (technique et professionnel)',
+    certTitle: 'Certifications',
+    cert1Title: 'MOOC RGPD - CNIL (4 modules)',
+    cert1Details: 'Notions clés, principes, responsabilités, DPO - Score moyen 91%',
+    cert1Date: 'Décembre 2024'
   },
   en: {
     lang: 'en',
@@ -66,48 +74,56 @@ const translations = {
     location: 'Montpellier, France',
     license: 'Driver\'s License',
     experiencesTitle: 'Professional Experience',
-    exp1Title: 'Work-Study - QA Developer',
+    exp1Title: 'Work-Study - Assistant QA Automation Engineer',
     exp1Date: 'Sept 2025 - Present',
     exp1Company: 'ITESOFT - Aimargues, France',
     exp1Tasks: [
-      'Automated testing with Selenium for enterprise web applications',
-      'Identification of minor bugs and matching issues',
-      'Establishing automation best practices for the QA team'
-    ],
-    exp2Title: 'Internship - QA Developer',
-    exp2Date: 'Feb - Mar 2025',
-    exp2Company: 'Orchestra - TravelSoft - Paris, France',
-    exp2Tasks: [
       '22 automated tests created with Cypress',
       'CI/CD industrialization with n8n, 75% reduction in manual testing',
       'Detection of 2-3 bugs per week via automated tests',
       'Application of Agile methods to ensure continuous quality'
+    ],
+    exp2Title: 'Internship - QA Automation Developer',
+    exp2Date: 'Feb - Mar 2025',
+    exp2Company: 'Orchestra - TravelSoft - Paris, France',
+    exp2Tasks: [
+      'Selenium/Java automated tests: airline integration validation cut from 10 days to 10 minutes',
+      'Identification of minor bugs and matching issues',
+      'Establishing automation best practices for the QA team'
     ],
     skillsTitle: 'Technical Skills',
     skillAutomation: 'Test Automation',
     skillLanguages: 'Languages',
     skillTools: 'Tools',
     skillMethodologies: 'Methodologies',
+    softSkillsTitle: 'Soft Skills',
+    softSkills: 'Teamwork · Communication · Critical thinking · Autonomy · Self-confidence and stress management · Security mindset',
     educationTitle: 'Education',
     edu1Title: 'Master in Computer Science - Cybersecurity & Networks',
     edu1School: 'CNAM Montpellier',
     edu1Date: '2026 - 2028 (ongoing)',
     edu2Title: 'Bachelor in Computer Science (BUT)',
-    edu2School: 'IUT Montpellier-Sete',
+    edu2School: 'IUT Montpellier-Sète',
     edu2Date: '2023 - 2026',
     edu3Title: 'High School Diploma STI2D - With Honors',
-    edu3School: 'Lycee Emmanuel d\'Alzon, Nimes',
+    edu3School: 'Lycée Emmanuel d\'Alzon, Nîmes',
     edu3Date: '2019 - 2023',
     projectsTitle: 'Projects',
     proj1Title: 'Voting Application',
     proj1Desc: 'Java remote voting application with TestFX tests',
     proj2Title: 'Cypress E-Commerce',
     proj2Desc: 'E2E automated tests on e-commerce website',
+    proj3Title: 'Climbing Competition Scoring',
+    proj3Desc: 'Real-time score calculation and display, used at live competitions',
     languagesTitle: 'Languages',
     langFr: 'French',
     langFrLevel: '- Native',
     langEn: 'English',
-    langEnLevel: '- Technical & Professional'
+    langEnLevel: '- B2 (technical & professional)',
+    certTitle: 'Certifications',
+    cert1Title: 'GDPR MOOC - CNIL (4 modules)',
+    cert1Details: 'Key concepts, principles, responsibilities, DPO - Average score 91%',
+    cert1Date: 'December 2024'
   }
 };
 
@@ -261,6 +277,10 @@ function generateCvHtml(t) {
       border-left: 2px solid rgba(255, 255, 255, 0.4);
     }
 
+    .skill-item.full {
+      grid-column: 1 / -1;
+    }
+
     .skill-item strong {
       color: rgba(255, 255, 255, 0.6);
       font-size: 9px;
@@ -307,7 +327,8 @@ function generateCvHtml(t) {
 
     .languages {
       display: flex;
-      gap: 16px;
+      flex-direction: column;
+      gap: 8px;
     }
 
     .language-item {
@@ -384,15 +405,19 @@ function generateCvHtml(t) {
         </div>
         <div class="skill-item">
           <strong>${t.skillLanguages}</strong>
-          <span>Java, JavaScript, SQL, PHP, C, Bash</span>
+          <span>Java, JavaScript, TypeScript, Angular, SQL, PHP, C, Bash</span>
         </div>
         <div class="skill-item">
           <strong>${t.skillTools}</strong>
-          <span>Git/GitHub, Linux, JetBrains, n8n</span>
+          <span>Git/GitHub, GitLab, Docker, Jira, Azure DevOps, n8n, Linux</span>
         </div>
         <div class="skill-item">
           <strong>${t.skillMethodologies}</strong>
           <span>Agile, Scrum, CI/CD</span>
+        </div>
+        <div class="skill-item full">
+          <strong>${t.softSkillsTitle}</strong>
+          <span>${t.softSkills}</span>
         </div>
       </div>
     </section>
@@ -429,23 +454,38 @@ function generateCvHtml(t) {
           <p class="details">${t.proj2Desc}</p>
           <p class="tech">Cypress, JavaScript, Node.js</p>
         </div>
+        <div class="project-item">
+          <strong>${t.proj3Title}</strong>
+          <p class="details">${t.proj3Desc}</p>
+          <p class="tech">Google Sheets, Apps Script, JavaScript</p>
+        </div>
       </section>
     </div>
 
-    <!-- Langues -->
-    <section>
-      <h2>${t.languagesTitle}</h2>
-      <div class="languages">
-        <div class="language-item">
-          <strong>${t.langFr}</strong>
-          <span>${t.langFrLevel}</span>
+    <!-- Langues + Certifications -->
+    <div class="two-columns">
+      <section>
+        <h2>${t.languagesTitle}</h2>
+        <div class="languages">
+          <div class="language-item">
+            <strong>${t.langFr}</strong>
+            <span>${t.langFrLevel}</span>
+          </div>
+          <div class="language-item">
+            <strong>${t.langEn}</strong>
+            <span>${t.langEnLevel}</span>
+          </div>
         </div>
-        <div class="language-item">
-          <strong>${t.langEn}</strong>
-          <span>${t.langEnLevel}</span>
+      </section>
+      <section>
+        <h2>${t.certTitle}</h2>
+        <div class="formation-item">
+          <strong>${t.cert1Title}</strong>
+          <p class="details">${t.cert1Details}</p>
+          <p class="date">${t.cert1Date}</p>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   </div>
 </body>
 </html>

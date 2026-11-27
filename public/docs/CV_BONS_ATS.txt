@@ -3,7 +3,7 @@ Ingénieur QA | Test Automation
 
 Email: contact@cyprienbons.com
 Téléphone: 07 68 51 20 06
-Adresse: 91 Impasse Villehardouin, 34090 Montpellier
+Localisation: Montpellier (34)
 LinkedIn: linkedin.com/in/cyprien-bons
 Site web: cyprienbons.com
 Permis B
@@ -12,22 +12,25 @@ Permis B
 EXPERIENCES PROFESSIONNELLES
 ================================================================================
 
-ITESOFT - Alternance Développeur QA
+ITESOFT - Alternance Assistant Ingénieur QA Automation
 Aimargues (30) | Septembre 2025 - Présent
-
-- Tests automatisés avec Selenium pour applications web entreprise
-- Identification de bugs mineurs et problèmes de matching
-- Etablissement des bonnes pratiques d'automatisation pour l'équipe QA
-
----
-
-ORCHESTRA - TRAVELSOFT - Stage Développeur QA
-Paris (75) | Février - Mars 2025
 
 - 22 tests automatisés créés avec Cypress
 - Industrialisation CI/CD avec n8n, réduction du testing manuel de 75%
 - Détection de 2-3 bugs par semaine via tests automatiques
 - Application des méthodes Agile pour garantir la qualité continue
+
+Recommandation de Kévin Langles, Team Leader QA chez ITESOFT : « Cyprien possède cette curiosité technique et la rigueur qui font les excellents profils QA. Il a été un atout majeur pour notre R&D. »
+Lettre complète : cyprienbons.com/docs/Recommandation_Cyprien_Bons_ITESOFT.pdf
+
+---
+
+ORCHESTRA - TRAVELSOFT - Stage Développeur QA Automation
+Paris (75) | Février - Mars 2025
+
+- Tests automatisés Selenium/Java : validation des intégrations aériennes réduite de 10 jours à 10 minutes
+- Identification de bugs mineurs et problèmes de matching
+- Etablissement des bonnes pratiques d'automatisation pour l'équipe QA
 
 ================================================================================
 FORMATIONS
@@ -43,22 +46,35 @@ BAC Technologique STI2D - Mention Assez Bien
 Lycée Emmanuel d'Alzon, Nîmes | 2019 - 2023
 
 ================================================================================
+CERTIFICATIONS
+================================================================================
+
+MOOC RGPD "L'atelier RGPD" - CNIL | Décembre 2024
+- Module 1 : Le RGPD et ses notions clés (93%)
+- Module 2 : Les principes de la protection des données (88%)
+- Module 3 : Les responsabilités des acteurs (89%)
+- Module 4 : Le DPO et les outils de la conformité (93%)
+Compétences : RGPD, protection des données personnelles, conformité, DPO
+
+================================================================================
 COMPETENCES TECHNIQUES
 ================================================================================
 
-Langages: Java, JavaScript, HTML/CSS, PHP, SQL/PL SQL, C, Bash
+Langages: Java, JavaScript, TypeScript, Angular, HTML/CSS, PHP, SQL/PL SQL, C, Bash
 Test Automation: Selenium, Cypress, TestFX
-Outils: Git/GitHub, Linux, JetBrains IDE, n8n
+Outils: Git/GitHub, GitLab, Docker, Jira, Azure DevOps, n8n, Node.js, Linux, JetBrains IDE
 Méthodologies: Agile, Scrum, CI/CD
 
 ================================================================================
 SOFT SKILLS
 ================================================================================
 
-- Résolution de problèmes complexes
-- Travail en équipe et collaboration
-- Adaptabilité et gestion du stress
-- Rigueur et attention aux détails (QA mindset)
+- Travail en équipe : référent Cypress dans une équipe QA de 5 personnes chez ITESOFT, formation d'une nouvelle arrivante (2 semaines) puis accompagnement depuis 3 mois.
+- Communication : 5 à 10 tickets de bug rédigés par mois, accompagnement des développeurs sur les cas complexes.
+- Esprit critique : remise en question des spécifications pour vérifier qu'elles répondent au besoin réel du client.
+- Autonomie : framework de tests Selenium conçu seul en 8 semaines chez Orchestra, validation réduite de 10 jours à 10 minutes.
+- Confiance en soi et gestion du stress : escalade depuis 2018, en compétition ; sang-froid en hauteur et sécurité vérifiée avant chaque voie.
+- Sens de la sécurité : certifié RGPD par la CNIL, mise en conformité RGPD de mon portfolio, Master en cybersécurité.
 
 ================================================================================
 PROJETS
@@ -72,15 +88,19 @@ Cypress E-Commerce
 Projet de tests automatiques E2E avec Cypress sur site e-commerce.
 Technologies: Cypress, JavaScript, Node.js
 
+Système de scoring pour compétitions d'escalade
+Calcul automatique et affichage en temps réel des scores, utilisé en production lors de vraies compétitions (ceb.cyprienbons.com).
+Technologies: Google Sheets, Google Apps Script, API Google Sheets, JavaScript
+
 ================================================================================
 LANGUES
 ================================================================================
 
 Français: Langue maternelle
-Anglais: Technique et professionnel
+Anglais: B2 (technique et professionnel)
 
 ================================================================================
 CENTRES D'INTERET
 ================================================================================
 
-Escalade (7 ans) - Persévérance, gestion des risques, relever des défis
+Escalade (depuis 2018, en compétition) - Persévérance, gestion des risques, confiance en soi

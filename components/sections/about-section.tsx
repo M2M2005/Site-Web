@@ -8,7 +8,7 @@ import { useLanguage } from "@/lib/i18n";
 const texts = {
     fr: {
         title: "À propos",
-        intro: "Ingénieur QA Automation chez ITESOFT avec plus d'un an d'expérience dans la conception et l'implémentation de tests automatisés end-to-end pour logiciels d'entreprise. Je me spécialise dans l'automatisation de tests avec Cypress et JavaScript, avec une expertise supplémentaire en Selenium et frameworks de test basés sur Java.",
+        intro: "Assistant Ingénieur QA Automation en alternance chez ITESOFT, avec plus d'un an d'expérience dans la conception et l'implémentation de tests automatisés end-to-end pour logiciels d'entreprise. Je me spécialise dans l'automatisation de tests avec Cypress et JavaScript, avec une expertise supplémentaire en Selenium et frameworks de test basés sur Java.",
         work: "Chez ITESOFT, j'ai mené l'industrialisation des workflows de tests automatisés, implémenté des pipelines CI/CD intégrant les tests Cypress avec Node.js. Durant mon stage à Orchestra à Paris, j'ai développé des suites de tests automatisés avec Selenium et Java pour le logiciel de gestion de voyages. Je suis actuellement en Master Cybersécurité et Réseaux au CNAM Montpellier, après avoir obtenu mon BUT Informatique à l'IUT de Montpellier.",
         goal: "Passionné par la qualité logicielle et l'automatisation des tests, je cherche à approfondir mon expertise en test automation, cybersécurité et pratiques DevOps pour contribuer à la création de systèmes robustes et fiables.",
         age: "Ans",
@@ -27,7 +27,7 @@ const texts = {
     },
     en: {
         title: "About",
-        intro: "QA Automation Engineer at ITESOFT with over a year of experience designing and implementing end-to-end automated tests for enterprise software. I specialize in Cypress and JavaScript test automation, with additional expertise in Selenium and Java-based testing frameworks.",
+        intro: "Work-study Assistant QA Automation Engineer at ITESOFT, with over a year of experience designing and implementing end-to-end automated tests for enterprise software. I specialize in Cypress and JavaScript test automation, with additional expertise in Selenium and Java-based testing frameworks.",
         work: "At ITESOFT, I led the industrialization of automated testing workflows, implementing CI/CD pipelines that integrated Cypress tests with Node.js. During my internship at Orchestra in Paris, I built automated test suites using Selenium and Java for travel management software. I am currently pursuing a Master's in Cybersecurity and Networks at CNAM Montpellier, after earning my BUT in Computer Science from IUT Montpellier.",
         goal: "Passionate about software quality and test automation, I'm seeking to deepen my expertise in test automation, cybersecurity, and DevOps practices to contribute to building robust and reliable systems.",
         age: "Years old",
